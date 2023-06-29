@@ -16,10 +16,8 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-        self.welcomeLabel.text = "\(UserDefaults.standard.getFirstName())" + " " +  "\(UserDefaults.standard.string(forKey: "last") ?? "x")"
+        self.welcomeLabel.text = "\(UserDefaults.standard.getFirstName())" + " " +  "\(UserDefaults.standard.getLastName())"
             
-//        }
 
     }
     

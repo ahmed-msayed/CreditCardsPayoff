@@ -29,21 +29,20 @@ class LoginVC: UIViewController {
     
     func getUserData(userId: String) {
         db.collection("users").whereField("userId", isEqualTo: userId)
-            .getDocuments() { (querySnapshot, err) in
+            .getDocuments() { [weak self] (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
                         let data = document.data()
-                        if let firstName = data["firstName"], let lastName = data["lastName"] {
-                            UserDefaults.standard.setFirstName(value: firstName as! String)
-//                            UserDefaults.standard.setLastName(value: lastName as! String)
-                            UserDefaults.standard.set(lastName, forKey: "last")
+                        if let firstName = data["firstName"] as? String, let lastName = data["lastName"] as? String {
+                            UserDefaults.standard.setFirstName(value: firstName)
+                            UserDefaults.standard.setLastName(value: lastName)
                             UserDefaults.standard.setUserID(value: userId)
                             UserDefaults.standard.setLoggedIn(value: true)
                             
-//                            UserDefaults.standard.set("hello", forKey: "test")
+                            self?.goToHomeVC()
                         }
                     }
                 }
@@ -92,8 +91,6 @@ class LoginVC: UIViewController {
                     if let userId = Auth.auth().currentUser?.uid {
                         self?.getUserData(userId: userId)
                     }
-                    
-                    self?.goToHomeVC()
                 }
             }
         }

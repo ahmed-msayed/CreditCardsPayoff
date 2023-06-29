@@ -7,20 +7,9 @@
 
 import Foundation
 
-struct User {
-    let userId: String = ""
-    let firstName: String = ""
-    let lastName: String = ""
-    let email: String = ""
+struct User: Codable {
+    let userId: String
+    let firstName: String
+    let lastName: String
+    let email: String
 }
-
-
-//struct City: Codable {
-//    var id: Int?
-//    var name: String?
-//
-//    enum CodingKeys: String, CodingKey {
-//        case id = "Id"
-//        case name = "Name"
-//    }
-//}
