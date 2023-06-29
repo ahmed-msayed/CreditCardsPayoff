@@ -1,10 +1,9 @@
 //
-//  ValidationExt.swift
-//  Tirhaly
+//  User.swift
+//  CreditCardsPayoff
 //
-//  Created by Ahmed Sayed on 04/01/2022.
+//  Created by Ahmed Sayed on 29/06/2023.
 //
-
 import Foundation
 
 extension String {

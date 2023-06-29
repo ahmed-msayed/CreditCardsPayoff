@@ -1,8 +1,8 @@
 //
-//  CodableExt.swift
-//  Tirhaly
+//  User.swift
+//  CreditCardsPayoff
 //
-//  Created by Mostafa Sayed on 24/10/2021.
+//  Created by Ahmed Sayed on 29/06/2023.
 //
 
 import Foundation

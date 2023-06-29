@@ -48,9 +48,11 @@ extension UserDefaults{
         case lastName
     }
     
-    
     func resetUserDefaults() {
-        UserDefaultsKeys.allCases.forEach { removeObject(forKey: $0.rawValue) }
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+        UserDefaults.standard.set("", forKey: "userID")
+        UserDefaults.standard.set("", forKey: "firstName")
+        UserDefaults.standard.set("", forKey: "lastName")
     }
 }
 
