@@ -124,7 +124,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" translatesAutoresizingMaskIntoConstraints="NO" id="sjC-Dy-3Y1">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat Password" translatesAutoresizingMaskIntoConstraints="NO" id="sjC-Dy-3Y1">
                                             <rect key="frame" x="0.0" y="216" width="260" height="44"/>
                                             <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
                                             <color key="tintColor" name="Theme"/>
