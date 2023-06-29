@@ -10,13 +10,46 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+
+        
+        // if user is logged in before
+        if UserDefaults.standard.isLoggedIn() {
+            // instantiate the main tab bar controller and set it as root view controller
+            // using the storyboard identifier we set earlier
+            let tabBarController = storyboard.instantiateViewController(identifier: "TabBarController")
+            window?.rootViewController = tabBarController
+        } else {
+            // if user isn't logged in
+            // instantiate the navigation controller and set it as root view controller
+            // using the storyboard identifier we set earlier
+            let mainNavController = storyboard.instantiateViewController(identifier: "MainNavigationController")
+            window?.rootViewController = mainNavController
+        }
+    }
+    
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard let window = self.window else {
+            return
+        }
+        
+        // change the root view controller to your specific view controller
+        window.rootViewController = vc
+        
+        // add animation
+        UIView.transition(with: window,
+                          duration: 1,
+                          options: [.transitionCrossDissolve],
+                          animations: nil,
+                          completion: nil)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

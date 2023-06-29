@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>557850396323-1auif7skeu7bq8qvaka0m4h05iqq402v.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.557850396323-1auif7skeu7bq8qvaka0m4h05iqq402v</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAyY91OwiVCH_of3Kelh4PRJJ8WAiHT6u8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>557850396323</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.AMS.CreditCardsPayoff</string>
+	<key>PROJECT_ID</key>
+	<string>creditcardpayoff-190ce</string>
+	<key>STORAGE_BUCKET</key>
+	<string>creditcardpayoff-190ce.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:557850396323:ios:e055e6537f7b6d2cdce116</string>
+</dict>
+</plist>

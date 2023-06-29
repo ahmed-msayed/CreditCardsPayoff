@@ -1,0 +1,6 @@
+framework module Pods_CreditCardsPayoff {
+  umbrella header "Pods-CreditCardsPayoff-umbrella.h"
+
+  export *
+  module * { export * }
+}
