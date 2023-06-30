@@ -15,7 +15,7 @@ extension UIViewController {
             return
         }
         
-        let alertVC = storyboard?.instantiateViewController(withIdentifier: "AlertVC") as! AlertVC
+        let alertVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlertVC") as! AlertVC
         alertVC.alertMessageText = message
         alertVC.alertType = type
         alertVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext

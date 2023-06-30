@@ -38,16 +38,16 @@ class SignupVC: UIViewController {
     
     func saveUserData(userId: String) {
         if let firstName = textFieldFirstName.text, let lastName = textFieldLastName.text, let email = Auth.auth().currentUser?.email {
+            self.showSpinner(onView: self.view)
             db.collection("users").addDocument(data: ["firstName": firstName, "lastName": lastName, "email": email, "userId": userId]) { [weak self](error) in
-                if let error = error {
-                    print(error)
+                self?.removeSpinner()
+                if let error = error?.localizedDescription {
+                    self?.showAlert(message: error , type: false)
                 } else {
-                    
                     UserDefaults.standard.setFirstName(value: firstName)
                     UserDefaults.standard.setLastName(value: lastName)
                     UserDefaults.standard.setUserID(value: userId)
                     UserDefaults.standard.setLoggedIn(value: true)
-                    
                     self?.goToHomeVC()
                 }
             }
@@ -70,26 +70,33 @@ class SignupVC: UIViewController {
     @IBAction func actionContinue(_ sender: Any) {
         
         if let email = textFieldEmail.text, let password = textFieldPassword.text {
-            Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult, error in
-                
-                if let error = error {
-                    print(error)
-                    let alert = UIAlertController(title: "error", message: "\(error.localizedDescription))", preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                    self?.present(alert, animated: true, completion: nil)
-                    self?.textFieldEmail.text = ""
-                    self?.textFieldPassword.text = ""
-                    self?.textFieldPassword2.text = ""
-                    
-                } else {
-                    
-                    if let userId = Auth.auth().currentUser?.uid {
-                        self?.saveUserData(userId: userId)
+            if textFieldFirstName.text != "" {
+                if email.isEmail {
+                    if password.isValidPassword {
+                        self.showSpinner(onView: self.view)
+                        Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult, err in
+                            self?.removeSpinner()
+                            if let error = err?.localizedDescription {
+                                self?.showAlert(message: error , type: false)
+                                self?.textFieldEmail.text = ""
+                                self?.textFieldPassword.text = ""
+                                self?.textFieldPassword2.text = ""
+                            } else {
+                                if let userId = Auth.auth().currentUser?.uid {
+                                    self?.saveUserData(userId: userId)
+                                }
+                            }
+                        }
+                    } else {
+                        self.showAlert(message: "Password must be at least 6 characters!", type: false)
                     }
+                } else {
+                    self.showAlert(message: "Invalid Email Address!", type: false)
                 }
+            } else {
+                self.showAlert(message: "Enter Valid Name!", type: false)
             }
         }
-        dismiss(animated: true)
     }
     
     @IBAction func actionTerms(_ sender: Any) {
