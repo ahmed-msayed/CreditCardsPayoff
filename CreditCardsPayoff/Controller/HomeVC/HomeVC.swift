@@ -9,18 +9,14 @@ import UIKit
 
 class HomeVC: UIViewController {
 
-    @IBOutlet weak var welcomeLabel: UILabel!
-    
     var welcomeLabelText = ""
+
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-        self.welcomeLabel.text = "\(UserDefaults.standard.getFirstName())" + " " +  "\(UserDefaults.standard.string(forKey: "last") ?? "x")"
-            
-//        }
-
+        self.welcomeLabel.text = "\(UserDefaults.standard.getFirstName())" + " " +  "\(UserDefaults.standard.getLastName())"
     }
     
     @IBAction func clearUserDefaultsBtn(_ sender: Any) {
@@ -28,6 +24,4 @@ class HomeVC: UIViewController {
         
         welcomeLabel.text = "\(UserDefaults.standard.getFirstName())" + " " +  "\(UserDefaults.standard.getLastName())"
     }
-    
-
 }

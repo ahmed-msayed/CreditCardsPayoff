@@ -9,7 +9,6 @@ import Foundation
 
 extension UserDefaults{
 
-    //MARK: Check Login
     func setLoggedIn(value: Bool) {
         set(value, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
     }
@@ -18,12 +17,10 @@ extension UserDefaults{
         return bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue)
     }
 
-    //MARK: Save User Data
     func setUserID(value: String) {
         set(value, forKey: UserDefaultsKeys.userID.rawValue)
     }
 
-    //MARK: Retrieve User Data
     func getUserID() -> String {
         return string(forKey: UserDefaultsKeys.userID.rawValue) ?? ""
     }
@@ -51,9 +48,11 @@ extension UserDefaults{
         case lastName
     }
     
-    
     func resetUserDefaults() {
-        UserDefaultsKeys.allCases.forEach { removeObject(forKey: $0.rawValue) }
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+        UserDefaults.standard.set("", forKey: "userID")
+        UserDefaults.standard.set("", forKey: "firstName")
+        UserDefaults.standard.set("", forKey: "lastName")
     }
 }
 

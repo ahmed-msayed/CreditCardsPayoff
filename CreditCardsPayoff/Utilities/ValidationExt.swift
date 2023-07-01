@@ -1,10 +1,9 @@
 //
-//  ValidationExt.swift
-//  Tirhaly
+//  User.swift
+//  CreditCardsPayoff
 //
-//  Created by Ahmed Sayed on 04/01/2022.
+//  Created by Ahmed Sayed on 29/06/2023.
 //
-
 import Foundation
 
 extension String {
@@ -34,10 +33,10 @@ extension String {
     //validate Password
     var isValidPassword: Bool {
         do {
-            let regex = try NSRegularExpression(pattern: "^(?=.*[a-zA-Z]).{8,}$", options: .caseInsensitive)
+            let regex = try NSRegularExpression(pattern: "^(?=.*[a-zA-Z]).{6,}$", options: .caseInsensitive)
             if(regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count)) != nil){
 
-                if(self.count>=8 && self.count<=20){
+                if(self.count>=6 && self.count<=20){
                     return true
                 }else{
                     return false

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		93EF22DCBD50C635B327B248 /* Pods_CreditCardsPayoff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9355362CEDFBEE7BE470E /* Pods_CreditCardsPayoff.framework */; };
 		E23F118F2A48E6000072A78A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F118E2A48E6000072A78A /* User.swift */; };
+		E24F8B5F2A4DEC53006CB187 /* CodableExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */; };
+		E24F8B612A4E3162006CB187 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B602A4E3162006CB187 /* UserVM.swift */; };
+		E24F8B652A4E36A0006CB187 /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B642A4E36A0006CB187 /* AlertVC.swift */; };
+		E24F8B672A4E3A55006CB187 /* ShowAlertExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B662A4E3A55006CB187 /* ShowAlertExt.swift */; };
 		E26352532A45B2FC00587953 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26352522A45B2FC00587953 /* GoogleService-Info.plist */; };
 		E273E2452A487EBA00722832 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273E2432A487EBA00722832 /* SignupVC.swift */; };
 		E273E2462A487EBA00722832 /* SignupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E273E2442A487EBA00722832 /* SignupVC.xib */; };
@@ -39,6 +43,10 @@
 		A9A9355362CEDFBEE7BE470E /* Pods_CreditCardsPayoff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CreditCardsPayoff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA39B46B15CDF13EE745007 /* Pods-CreditCardsPayoff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditCardsPayoff.release.xcconfig"; path = "Target Support Files/Pods-CreditCardsPayoff/Pods-CreditCardsPayoff.release.xcconfig"; sourceTree = "<group>"; };
 		E23F118E2A48E6000072A78A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExt.swift; sourceTree = "<group>"; };
+		E24F8B602A4E3162006CB187 /* UserVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
+		E24F8B642A4E36A0006CB187 /* AlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
+		E24F8B662A4E3A55006CB187 /* ShowAlertExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAlertExt.swift; sourceTree = "<group>"; };
 		E26352522A45B2FC00587953 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E273E2432A487EBA00722832 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		E273E2442A487EBA00722832 /* SignupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupVC.xib; sourceTree = "<group>"; };
@@ -95,6 +103,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E24F8B622A4E3168006CB187 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E24F8B602A4E3162006CB187 /* UserVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E24F8B632A4E368A006CB187 /* AlertVC */ = {
+			isa = PBXGroup;
+			children = (
+				E24F8B642A4E36A0006CB187 /* AlertVC.swift */,
+			);
+			path = AlertVC;
+			sourceTree = "<group>";
+		};
 		E273E2422A487E8A00722832 /* SignupVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +169,7 @@
 				E2EF63322A3D05590084A8CA /* Controller */,
 				E2EF63312A3D054F0084A8CA /* View */,
 				E2EF63302A3D05410084A8CA /* Model */,
+				E24F8B622A4E3168006CB187 /* ViewModel */,
 				E2EF631C2A3C92420084A8CA /* AppDelegate.swift */,
 				E2EF631E2A3C92420084A8CA /* SceneDelegate.swift */,
 				E2EF63222A3C92420084A8CA /* Main.storyboard */,
@@ -174,6 +199,7 @@
 		E2EF63322A3D05590084A8CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E24F8B632A4E368A006CB187 /* AlertVC */,
 				E273E2422A487E8A00722832 /* SignupVC */,
 				E28F3AD22A45CF1800233A74 /* SettingsVC */,
 				E28F3ACF2A45CDBB00233A74 /* HomeVC */,
@@ -203,6 +229,8 @@
 				E2EF633C2A3D0AC90084A8CA /* AppColor.swift */,
 				E2EF633D2A3D0AC90084A8CA /* UITextField+Extension.swift */,
 				E2931C912A4A19D30028BE46 /* UserDefaultsExt.swift */,
+				E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */,
+				E24F8B662A4E3A55006CB187 /* ShowAlertExt.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -338,8 +366,11 @@
 			files = (
 				E273E2452A487EBA00722832 /* SignupVC.swift in Sources */,
 				E28F3AD42A45CF5E00233A74 /* SettingsVC.swift in Sources */,
+				E24F8B612A4E3162006CB187 /* UserVM.swift in Sources */,
 				E2EF63422A3D0AC90084A8CA /* UITextField+Extension.swift in Sources */,
+				E24F8B652A4E36A0006CB187 /* AlertVC.swift in Sources */,
 				E2EF633F2A3D0AC90084A8CA /* UIView+Extension.swift in Sources */,
+				E24F8B5F2A4DEC53006CB187 /* CodableExt.swift in Sources */,
 				E2931C922A4A19D30028BE46 /* UserDefaultsExt.swift in Sources */,
 				E2EF63412A3D0AC90084A8CA /* AppColor.swift in Sources */,
 				E2EF63402A3D0AC90084A8CA /* NavController.swift in Sources */,
@@ -350,6 +381,7 @@
 				E2931C902A4A15330028BE46 /* ValidationExt.swift in Sources */,
 				E2EF634A2A3D106F0084A8CA /* OnboardingVC.swift in Sources */,
 				E2EF631D2A3C92420084A8CA /* AppDelegate.swift in Sources */,
+				E24F8B672A4E3A55006CB187 /* ShowAlertExt.swift in Sources */,
 				E28F3AD12A45CDEB00233A74 /* HomeVC.swift in Sources */,
 				E2EF634B2A3D106F0084A8CA /* OnboardingCell.swift in Sources */,
 				E2EF631F2A3C92420084A8CA /* SceneDelegate.swift in Sources */,

@@ -1,8 +1,8 @@
 //
-//  SpinnerExt.swift
-//  Tirhaly
+//  User.swift
+//  CreditCardsPayoff
 //
-//  Created by Ahmed Sayed on 07/12/2021.
+//  Created by Ahmed Sayed on 29/06/2023.
 //
 
 import UIKit
