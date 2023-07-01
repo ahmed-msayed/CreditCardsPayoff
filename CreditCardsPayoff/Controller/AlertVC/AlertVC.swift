@@ -24,13 +24,8 @@ class AlertVC: UIViewController {
     }
     
     func initializeViews() {
-        mainView.backgroundColor = UIColor(named: "alert-view-background")
-        alertView.backgroundColor = UIColor(named: "alert-background")
         alertView.layer.cornerRadius = 21
-        
         alertMessageLabel.text = alertMessageText
-        alertMessageLabel.textColor = UIColor(named: "alert-label")
-        
         alertImage.image = alertType == false ? UIImage(named: "check-circle-wrong-100") : UIImage(named: "check-circle-right-100")
     }
     
