@@ -63,7 +63,7 @@ class LoginVC: UIViewController {
     // MARK: - Data methods
     
     func loadData() {
-        labelTitle.text = "Welcome to \nCreditCardsPayoff"
+        labelTitle.text = "Welcome to \nCredit Cards Payoff"
         labelSubTitle.text = "An exciting place to organize and payoff your credit cards"
     }
     
