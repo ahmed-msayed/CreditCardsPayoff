@@ -22,18 +22,8 @@ class SignupVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationItem.largeTitleDisplayMode = .never
-        
-        navigationItem.titleView = UIImageView(image: UIImage(systemName: "circles.hexagongrid.fill"))
-        
-        textFieldFirstName.setLeftPadding(value: 15)
-        textFieldLastName.setLeftPadding(value: 15)
-        textFieldEmail.setLeftPadding(value: 15)
-        textFieldPassword.setLeftPadding(value: 15)
-        textFieldPassword2.setLeftPadding(value: 15)
-        
+        navigationControllerSetup()
+        textFieldsPaddingSetup()
     }
     
     func saveUserData(userId: String) {
@@ -61,6 +51,20 @@ class SignupVC: UIViewController {
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabBarController)
     }
     
+    func navigationControllerSetup() {
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.titleView = UIImageView(image: UIImage(systemName: "circles.hexagongrid.fill"))
+    }
+    
+    func textFieldsPaddingSetup() {
+        textFieldFirstName.setLeftPadding(value: 15)
+        textFieldLastName.setLeftPadding(value: 15)
+        textFieldEmail.setLeftPadding(value: 15)
+        textFieldPassword.setLeftPadding(value: 15)
+        textFieldPassword2.setLeftPadding(value: 15)
+    }
+    
     // MARK: - User actions
     
     @IBAction func actionFacebook(_ sender: Any) {
@@ -68,24 +72,27 @@ class SignupVC: UIViewController {
     }
     
     @IBAction func actionContinue(_ sender: Any) {
-        
         if let email = textFieldEmail.text, let password = textFieldPassword.text {
-            if textFieldFirstName.text != "" {
+            if textFieldFirstName.text != "", textFieldLastName.text != "" {
                 if email.isEmail {
                     if password.isValidPassword {
-                        self.showSpinner(onView: self.view)
-                        Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult, err in
-                            self?.removeSpinner()
-                            if let error = err?.localizedDescription {
-                                self?.showAlert(message: error , type: false)
-                                self?.textFieldEmail.text = ""
-                                self?.textFieldPassword.text = ""
-                                self?.textFieldPassword2.text = ""
-                            } else {
-                                if let userId = Auth.auth().currentUser?.uid {
-                                    self?.saveUserData(userId: userId)
+                        if textFieldPassword.text == textFieldPassword2.text {
+                            self.showSpinner(onView: self.view)
+                            Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult, err in
+                                self?.removeSpinner()
+                                if let error = err?.localizedDescription {
+                                    self?.showAlert(message: error , type: false)
+                                    self?.textFieldEmail.text = ""
+                                    self?.textFieldPassword.text = ""
+                                    self?.textFieldPassword2.text = ""
+                                } else {
+                                    if let userId = Auth.auth().currentUser?.uid {
+                                        self?.saveUserData(userId: userId)
+                                    }
                                 }
                             }
+                        } else {
+                            self.showAlert(message: "Passwords don't match!", type: false)
                         }
                     } else {
                         self.showAlert(message: "Password must be at least 6 characters!", type: false)
@@ -94,7 +101,7 @@ class SignupVC: UIViewController {
                     self.showAlert(message: "Invalid Email Address!", type: false)
                 }
             } else {
-                self.showAlert(message: "Enter Valid Name!", type: false)
+                self.showAlert(message: "Enter First Name & Last Name!", type: false)
             }
         }
     }
