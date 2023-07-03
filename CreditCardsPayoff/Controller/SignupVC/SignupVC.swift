@@ -65,8 +65,6 @@ class SignupVC: UIViewController {
         textFieldPassword2.setLeftPadding(value: 15)
     }
     
-    // MARK: - User actions
-    
     @IBAction func actionFacebook(_ sender: Any) {
         print(#function)
     }
@@ -89,17 +87,12 @@ class SignupVC: UIViewController {
             return
         }
         self.showSpinner(onView: self.view)
-        Auth.auth().createUser(withEmail: textFieldEmail.text!, password: textFieldPassword.text!) {[weak self] authResult, err in
+        Auth.auth().createUser(withEmail: textFieldEmail.text!, password: textFieldPassword.text!) {[weak self] authResult, error in
             self?.removeSpinner()
-            if let error = err?.localizedDescription {
-                self?.showAlert(message: error , type: false)
-                self?.textFieldEmail.text = ""
-                self?.textFieldPassword.text = ""
-                self?.textFieldPassword2.text = ""
+            if error == nil, let userId = Auth.auth().currentUser?.uid {
+                self?.saveUserData(userId: userId)
             } else {
-                if let userId = Auth.auth().currentUser?.uid {
-                    self?.saveUserData(userId: userId)
-                }
+                self?.showAlert(message: error?.localizedDescription ?? "" , type: false)
             }
         }
     }

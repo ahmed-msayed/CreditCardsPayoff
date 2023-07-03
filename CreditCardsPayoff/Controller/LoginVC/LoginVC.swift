@@ -30,9 +30,9 @@ class LoginVC: UIViewController {
     func getUserData(userId: String) {
         self.showSpinner(onView: self.view)
         db.collection("users").whereField("userId", isEqualTo: userId)
-            .getDocuments() { [weak self] (querySnapshot, err) in
+            .getDocuments() { [weak self] (querySnapshot, error) in
                 self?.removeSpinner()
-                if let error = err?.localizedDescription {
+                if let error = error?.localizedDescription {
                     self?.showAlert(message: error , type: false)
                 } else {
                     for document in querySnapshot!.documents {
@@ -81,39 +81,33 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func actionLogin(_ sender: Any) {
-        if let email = textFieldEmail.text, let password = textFieldPassword.text {
-            if textFieldEmail.text != "", textFieldEmail.text?.isEmail == true {
-                if textFieldPassword.text != "" {
-                    self.showSpinner(onView: self.view)
-                    Auth.auth().signIn(withEmail: email, password: password) { [weak self]authResult, error in
-                        self?.removeSpinner()
-                        if let error = error?.localizedDescription {
-                            self?.showAlert(message: error , type: false)
-                            self?.textFieldEmail.text = ""
-                            self?.textFieldPassword.text = ""
-                        } else {
-                            if let userId = Auth.auth().currentUser?.uid {
-                                self?.getUserData(userId: userId)
-                            }
-                        }
-                    }
-                } else {
-                    self.showAlert(message: "Enter Password!", type: false)
-                }
+        if textFieldEmail.text == "" || !textFieldEmail.text!.isEmail {
+            self.showAlert(message: "Enter Valid Email Address!", type: false)
+            return
+        }
+        if textFieldPassword.text == "" {
+            self.showAlert(message: "Enter Password!", type: false)
+            return
+        }
+        self.showSpinner(onView: self.view)
+        Auth.auth().signIn(withEmail: textFieldEmail.text!, password: textFieldPassword.text!) { [weak self]authResult, error in
+            self?.removeSpinner()
+            if error == nil, let userId = Auth.auth().currentUser?.uid {
+                self?.getUserData(userId: userId)
             } else {
-                self.showAlert(message: "Enter Valid Email Address!", type: false)
+                self?.showAlert(message: error?.localizedDescription ?? "", type: false)
             }
         }
     }
-    
-    @IBAction func actionForgotPassword(_ sender: Any) {
-        print(#function)
-        dismiss(animated: true)
+        
+        @IBAction func actionForgotPassword(_ sender: Any) {
+            print(#function)
+            dismiss(animated: true)
+        }
+        
+        @IBAction func actionSignUp(_ sender: Any) {
+            let signupVC : SignupVC = SignupVC(nibName :"SignupVC",bundle : nil)
+            self.navigationController?.pushViewController(signupVC, animated: true)
+            dismiss(animated: true)
+        }
     }
-    
-    @IBAction func actionSignUp(_ sender: Any) {
-        let signupVC : SignupVC = SignupVC(nibName :"SignupVC",bundle : nil)
-        self.navigationController?.pushViewController(signupVC, animated: true)
-        dismiss(animated: true)
-    }
-}
