@@ -9,19 +9,16 @@ import UIKit
 
 class HomeVC: UIViewController {
 
-    var welcomeLabelText = ""
-
     @IBOutlet weak var welcomeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.welcomeLabel.text = "\(UserDefaults.standard.getFirstName())" + " " +  "\(UserDefaults.standard.getLastName())"
+        guard let user = UserVM.getLocalUser() else {return}
+        self.welcomeLabel.text = "\(user.firstName)" + " " +  "\(user.lastName)"
     }
     
     @IBAction func clearUserDefaultsBtn(_ sender: Any) {
-        UserDefaults.standard.resetUserDefaults()
-        
-        welcomeLabel.text = "\(UserDefaults.standard.getFirstName())" + " " +  "\(UserDefaults.standard.getLastName())"
+        UserVM.removeLocalUser()
+        welcomeLabel.text = "\(UserVM.getLocalUser()?.firstName ?? "")"+" "+"\(UserVM.getLocalUser()?.lastName ?? "")"
     }
 }

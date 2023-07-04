@@ -35,16 +35,13 @@ class LoginVC: UIViewController {
                 if let error = error?.localizedDescription {
                     self?.showAlert(message: error , type: false)
                 } else {
-                    for document in querySnapshot!.documents {
-                        let data = document.data()
-                        if let firstName = data["firstName"] as? String, let lastName = data["lastName"] as? String {
-                            UserDefaults.standard.setFirstName(value: firstName)
-                            UserDefaults.standard.setLastName(value: lastName)
-                            UserDefaults.standard.setUserID(value: userId)
-                            UserDefaults.standard.setLoggedIn(value: true)
-                            self?.goToHomeVC()
-                        }
-                    }
+                    guard let document = querySnapshot!.documents .first else { return }
+                    let data = document.data()
+                    let user: User? = data.getObject()
+                    guard let user = user else { return }
+                    let userVM = UserVM(user: user)
+                    userVM.saveUserLocally()
+                    self?.goToHomeVC()
                 }
             }
     }
@@ -64,7 +61,7 @@ class LoginVC: UIViewController {
     
     func loadData() {
         labelTitle.text = "Welcome to \nCredit Cards Payoff"
-        labelSubTitle.text = "An exciting place to organize and payoff your credit cards"
+        labelSubTitle.text = "A simple way to organize and payoff your credit cards"
     }
     
     func textFieldsPaddingSetup() {
@@ -90,7 +87,7 @@ class LoginVC: UIViewController {
             return
         }
         self.showSpinner(onView: self.view)
-        Auth.auth().signIn(withEmail: textFieldEmail.text!, password: textFieldPassword.text!) { [weak self]authResult, error in
+        Auth.auth().signIn(withEmail: textFieldEmail.text!, password: textFieldPassword.text!) { [weak self] authResult, error in
             self?.removeSpinner()
             if error == nil, let userId = Auth.auth().currentUser?.uid {
                 self?.getUserData(userId: userId)
@@ -99,15 +96,15 @@ class LoginVC: UIViewController {
             }
         }
     }
-        
-        @IBAction func actionForgotPassword(_ sender: Any) {
-            print(#function)
-            dismiss(animated: true)
-        }
-        
-        @IBAction func actionSignUp(_ sender: Any) {
-            let signupVC : SignupVC = SignupVC(nibName :"SignupVC",bundle : nil)
-            self.navigationController?.pushViewController(signupVC, animated: true)
-            dismiss(animated: true)
-        }
+    
+    @IBAction func actionForgotPassword(_ sender: Any) {
+        print(#function)
+        dismiss(animated: true)
     }
+    
+    @IBAction func actionSignUp(_ sender: Any) {
+        let signupVC : SignupVC = SignupVC(nibName :"SignupVC",bundle : nil)
+        self.navigationController?.pushViewController(signupVC, animated: true)
+        dismiss(animated: true)
+    }
+}

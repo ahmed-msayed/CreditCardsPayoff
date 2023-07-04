@@ -172,7 +172,7 @@
                                 <rect key="frame" x="23.666666666666657" y="326" width="346" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unfortunately, Your Booking has been failed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UDW-37-nL9">
-                                        <rect key="frame" x="30" y="120" width="286" height="60"/>
+                                        <rect key="frame" x="39" y="120" width="268" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="E3a-lz-U7x"/>
                                         </constraints>
@@ -195,9 +195,9 @@
                                     <constraint firstItem="StI-xW-B0e" firstAttribute="centerX" secondItem="JjG-Fl-uGn" secondAttribute="centerX" id="EeU-C0-WhZ"/>
                                     <constraint firstAttribute="width" constant="346" id="IWx-zd-OgC"/>
                                     <constraint firstAttribute="bottom" secondItem="UDW-37-nL9" secondAttribute="bottom" constant="20" id="XSx-9w-yVW"/>
-                                    <constraint firstItem="UDW-37-nL9" firstAttribute="centerX" secondItem="JjG-Fl-uGn" secondAttribute="centerX" id="Zrv-pV-i7R"/>
-                                    <constraint firstAttribute="trailing" secondItem="UDW-37-nL9" secondAttribute="trailing" constant="30" id="afA-ho-Git"/>
-                                    <constraint firstItem="UDW-37-nL9" firstAttribute="leading" secondItem="JjG-Fl-uGn" secondAttribute="leading" constant="30" id="jid-H0-4U4"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UDW-37-nL9" secondAttribute="trailing" constant="30" id="afA-ho-Git"/>
+                                    <constraint firstItem="UDW-37-nL9" firstAttribute="centerX" secondItem="JjG-Fl-uGn" secondAttribute="centerX" id="cAT-gv-5g6"/>
+                                    <constraint firstItem="UDW-37-nL9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JjG-Fl-uGn" secondAttribute="leading" constant="30" id="jid-H0-4U4"/>
                                     <constraint firstAttribute="height" constant="200" id="pYS-dQ-xiq"/>
                                     <constraint firstItem="StI-xW-B0e" firstAttribute="top" secondItem="JjG-Fl-uGn" secondAttribute="top" constant="20" id="q5G-Ir-W2t"/>
                                 </constraints>
