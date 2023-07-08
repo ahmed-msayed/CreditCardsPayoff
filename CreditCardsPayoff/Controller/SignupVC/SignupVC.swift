@@ -29,15 +29,14 @@ class SignupVC: UIViewController {
     func saveUserData(userId: String) {
         if let firstName = textFieldFirstName.text, let lastName = textFieldLastName.text, let email = Auth.auth().currentUser?.email {
             self.showSpinner(onView: self.view)
-            db.collection("users").addDocument(data: ["firstName": firstName, "lastName": lastName, "email": email, "userId": userId]) { [weak self](error) in
+            db.collection("users").addDocument(data: ["firstName": firstName, "lastName": lastName, "email": email, "userId": userId]) { [weak self] (error) in
                 self?.removeSpinner()
                 if let error = error?.localizedDescription {
                     self?.showAlert(message: error , type: false)
                 } else {
-                    UserDefaults.standard.setFirstName(value: firstName)
-                    UserDefaults.standard.setLastName(value: lastName)
-                    UserDefaults.standard.setUserID(value: userId)
-                    UserDefaults.standard.setLoggedIn(value: true)
+                    let user = User(userId: userId, firstName: firstName, lastName: lastName, email: email)
+                    let userVM = UserVM(user: user)
+                    userVM.saveUserLocally()
                     self?.goToHomeVC()
                 }
             }

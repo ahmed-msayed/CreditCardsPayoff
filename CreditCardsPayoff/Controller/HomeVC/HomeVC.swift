@@ -19,6 +19,7 @@ class HomeVC: UIViewController {
     
     @IBAction func clearUserDefaultsBtn(_ sender: Any) {
         UserVM.removeLocalUser()
+        UserDefaults.standard.synchronize()
         welcomeLabel.text = "\(UserVM.getLocalUser()?.firstName ?? "")"+" "+"\(UserVM.getLocalUser()?.lastName ?? "")"
     }
 }

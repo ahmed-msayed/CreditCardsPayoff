@@ -35,7 +35,7 @@ class LoginVC: UIViewController {
                 if let error = error?.localizedDescription {
                     self?.showAlert(message: error , type: false)
                 } else {
-                    guard let document = querySnapshot!.documents .first else { return }
+                    guard let document = querySnapshot!.documents.first else { return }
                     let data = document.data()
                     let user: User? = data.getObject()
                     guard let user = user else { return }
