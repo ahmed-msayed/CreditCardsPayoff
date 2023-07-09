@@ -27,7 +27,7 @@ class ProfileHeaderCell: UITableViewCell {
     }
     
     func bindData() {
-        nameLabel.text = UserVM.getLocalUser()?.firstName
+        nameLabel.text = "\(UserVM.getLocalUser()?.firstName ?? "")" + " " + "\(UserVM.getLocalUser()?.lastName ?? "")"
         informationLabel.text = UserVM.getLocalUser()?.email
     }
     

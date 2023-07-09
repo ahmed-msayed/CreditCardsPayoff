@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FittedSheets
 
 class SettingsVC: UIViewController {
 
@@ -33,6 +34,7 @@ class SettingsVC: UIViewController {
         tableView.register(UINib(nibName: "AccountSettingsCell", bundle: nil), forCellReuseIdentifier: "AccountSettingsCell")
         tableView.register(UINib(nibName: "AppSettingsCell", bundle: nil), forCellReuseIdentifier: "AppSettingsCell")
         tableView.register(UINib(nibName: "TermsConditionsCell", bundle: nil), forCellReuseIdentifier: "TermsConditionsCell")
+        self.tableView.reloadData()
     }
 
 }
@@ -109,12 +111,11 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
 extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, AppSettingsTapsDelegate, TermsConditionsTapsDelegate {
 
     func didTapEdit() {
-//        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileVC") as? EditProfileVC {
-//            self.navigationController?.pushViewController(viewController, animated: true)
-//            navigationItem.backBarButtonItem = UIBarButtonItem(
-//                title: "Edit Profile".localized(), style: .plain, target: nil, action: nil)
-//            navigationItem.backBarButtonItem?.tintColor = .white
-//        }
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChangeNameVC") as? ChangeNameVC {
+            let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(420)])
+            sheetController.cornerRadius = 35
+            self.present(sheetController, animated: true, completion: nil)
+        }
     }
     
     func didTapLanguage() {
