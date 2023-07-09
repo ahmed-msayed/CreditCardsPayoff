@@ -12,7 +12,8 @@ import FirebaseFirestore
 class ChangeNameVC: UIViewController {
     
     let db = Firestore.firestore()
-    
+    var isDismissed: (() -> Void)?
+        
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     
@@ -74,12 +75,17 @@ class ChangeNameVC: UIViewController {
                                     let userVM = UserVM(user: user)
                                     userVM.saveUserLocally()
                                     UserDefaults.standard.synchronize()
-                                    self?.dismiss(animated: true)
+                                    self?.dismissModalVC()
                                 }
                             }
                     }
                 }
         }
+        
     }
     
+    func dismissModalVC() {
+        self.isDismissed?()
+        dismiss(animated: true)
+    }
 }

@@ -114,6 +114,11 @@ extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, Ap
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChangeNameVC") as? ChangeNameVC {
             let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(420)])
             sheetController.cornerRadius = 35
+            
+            viewController.isDismissed = { [weak self] in
+                self?.tableView.reloadData()
+            }
+            
             self.present(sheetController, animated: true, completion: nil)
         }
     }
