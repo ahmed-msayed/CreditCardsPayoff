@@ -112,7 +112,7 @@ extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, Ap
 
     func didTapEdit() {
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChangeNameVC") as? ChangeNameVC {
-            let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(420)])
+            let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(550)])
             sheetController.cornerRadius = 35
             
             viewController.isDismissed = { [weak self] in
@@ -154,12 +154,16 @@ extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, Ap
     }
     
     func didTapChangeEmail() {
-//        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChangeEmailVC") as? ChangeEmailVC {
-//            self.navigationController?.pushViewController(viewController, animated: true)
-//            navigationItem.backBarButtonItem = UIBarButtonItem(
-//                title: "Change Email".localized(), style: .plain, target: nil, action: nil)
-//            navigationItem.backBarButtonItem?.tintColor = .white
-//        }
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChangeEmailVC") as? ChangeEmailVC {
+            let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(620)])
+            sheetController.cornerRadius = 35
+            
+            viewController.isDismissed = { [weak self] in
+                self?.tableView.reloadData()
+            }
+            
+            self.present(sheetController, animated: true, completion: nil)
+        }
     }
     
     func didTapChangePassword() {

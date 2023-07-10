@@ -30,12 +30,12 @@ class LoginVC: UIViewController {
     func getUserData(userId: String) {
         self.showSpinner(onView: self.view)
         db.collection("users").whereField("userId", isEqualTo: userId)
-            .getDocuments() { [weak self] (querySnapshot, error) in
+            .getDocuments() { [weak self] (response, error) in
                 self?.removeSpinner()
                 if let error = error?.localizedDescription {
                     self?.showAlert(message: error , type: false)
                 } else {
-                    guard let document = querySnapshot!.documents.first else { return }
+                    guard let document = response!.documents.first else { return }
                     let data = document.data()
                     let user: User? = data.getObject()
                     guard let user = user else { return }

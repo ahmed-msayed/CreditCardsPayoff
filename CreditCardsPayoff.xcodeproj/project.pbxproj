@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		93EF22DCBD50C635B327B248 /* Pods_CreditCardsPayoff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9355362CEDFBEE7BE470E /* Pods_CreditCardsPayoff.framework */; };
+		E20F7A612A5BE9B20057D451 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F7A5E2A5BE9B20057D451 /* ChangePasswordVC.swift */; };
+		E20F7A622A5BE9B20057D451 /* ChangeEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */; };
 		E23D1A6B2A5AB9D100049489 /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */; };
 		E23F118F2A48E6000072A78A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F118E2A48E6000072A78A /* User.swift */; };
 		E24F8B5F2A4DEC53006CB187 /* CodableExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */; };
@@ -55,6 +57,8 @@
 		7373CA4087E2E7BB78DA3E51 /* Pods-CreditCardsPayoff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditCardsPayoff.debug.xcconfig"; path = "Target Support Files/Pods-CreditCardsPayoff/Pods-CreditCardsPayoff.debug.xcconfig"; sourceTree = "<group>"; };
 		A9A9355362CEDFBEE7BE470E /* Pods_CreditCardsPayoff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CreditCardsPayoff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA39B46B15CDF13EE745007 /* Pods-CreditCardsPayoff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditCardsPayoff.release.xcconfig"; path = "Target Support Files/Pods-CreditCardsPayoff/Pods-CreditCardsPayoff.release.xcconfig"; sourceTree = "<group>"; };
+		E20F7A5E2A5BE9B20057D451 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailVC.swift; sourceTree = "<group>"; };
 		E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		E23F118E2A48E6000072A78A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExt.swift; sourceTree = "<group>"; };
@@ -131,6 +135,22 @@
 				A9A9355362CEDFBEE7BE470E /* Pods_CreditCardsPayoff.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E20F7A5D2A5BE9B20057D451 /* ChangePasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				E20F7A5E2A5BE9B20057D451 /* ChangePasswordVC.swift */,
+			);
+			path = ChangePasswordVC;
+			sourceTree = "<group>";
+		};
+		E20F7A5F2A5BE9B20057D451 /* ChangeEmailVC */ = {
+			isa = PBXGroup;
+			children = (
+				E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */,
+			);
+			path = ChangeEmailVC;
 			sourceTree = "<group>";
 		};
 		E23D1A692A5AB9D100049489 /* ChangeNameVC */ = {
@@ -281,6 +301,8 @@
 		E2EF63322A3D05590084A8CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E20F7A5F2A5BE9B20057D451 /* ChangeEmailVC */,
+				E20F7A5D2A5BE9B20057D451 /* ChangePasswordVC */,
 				E23D1A692A5AB9D100049489 /* ChangeNameVC */,
 				E24F8B632A4E368A006CB187 /* AlertVC */,
 				E273E2422A487E8A00722832 /* SignupVC */,
@@ -465,6 +487,7 @@
 				E2EF633F2A3D0AC90084A8CA /* UIView+Extension.swift in Sources */,
 				E2D2793C2A59F783003C6CDA /* AppSettingsCell.swift in Sources */,
 				E24F8B5F2A4DEC53006CB187 /* CodableExt.swift in Sources */,
+				E20F7A622A5BE9B20057D451 /* ChangeEmailVC.swift in Sources */,
 				E2931C922A4A19D30028BE46 /* UserDefaultsExt.swift in Sources */,
 				E2EF63412A3D0AC90084A8CA /* AppColor.swift in Sources */,
 				E2EF63402A3D0AC90084A8CA /* NavController.swift in Sources */,
@@ -473,6 +496,7 @@
 				E2EF633E2A3D0AC90084A8CA /* UIImageView+Extension.swift in Sources */,
 				E2931C8F2A4A15330028BE46 /* SpinnerExt.swift in Sources */,
 				E2EF63362A3D077A0084A8CA /* LoginVC.swift in Sources */,
+				E20F7A612A5BE9B20057D451 /* ChangePasswordVC.swift in Sources */,
 				E2931C902A4A15330028BE46 /* ValidationExt.swift in Sources */,
 				E2D2793D2A59F783003C6CDA /* TermsConditionsCell.swift in Sources */,
 				E2EF634A2A3D106F0084A8CA /* OnboardingVC.swift in Sources */,

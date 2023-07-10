@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 protocol ProfileHeaderTapsDelegate: AnyObject {
     func didTapEdit()
@@ -29,6 +31,7 @@ class ProfileHeaderCell: UITableViewCell {
     func bindData() {
         nameLabel.text = "\(UserVM.getLocalUser()?.firstName ?? "")" + " " + "\(UserVM.getLocalUser()?.lastName ?? "")"
         informationLabel.text = UserVM.getLocalUser()?.email
+//        informationLabel.text = Auth.auth().currentUser?.email
     }
     
     func setupViews() {

@@ -20,16 +20,8 @@ class ChangeNameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeViews()
-        navBarLayout()
     }
-    
-    func navBarLayout() {
-        let barAppearance = UINavigationBarAppearance()
-        barAppearance.backgroundColor = UIColor.lightGray
-        navigationItem.standardAppearance = barAppearance
-        navigationItem.scrollEdgeAppearance = barAppearance
-    }
-    
+
     func initializeViews() {
         firstNameTextField.text = UserVM.getLocalUser()?.firstName
         lastNameTextField.text = UserVM.getLocalUser()?.lastName
