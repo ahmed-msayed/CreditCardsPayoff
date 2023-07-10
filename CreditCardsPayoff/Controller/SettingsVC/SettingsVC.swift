@@ -9,22 +9,16 @@ import UIKit
 import FittedSheets
 
 class SettingsVC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.showSpinner(onView: self.view)
         initializeTableView()
-//        ProfileVM.getProfile() {user,error in
-//            self.removeSpinner()
-//            self.tableView.reloadData()
-//        }
     }
     
     func initializeTableView() {
@@ -36,7 +30,6 @@ class SettingsVC: UIViewController {
         tableView.register(UINib(nibName: "TermsConditionsCell", bundle: nil), forCellReuseIdentifier: "TermsConditionsCell")
         self.tableView.reloadData()
     }
-
 }
 
 // MARK: - UITableView
@@ -109,7 +102,7 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - ProfileDelegates
 extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, AppSettingsTapsDelegate, TermsConditionsTapsDelegate {
-
+    
     func didTapEdit() {
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChangeNameVC") as? ChangeNameVC {
             let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(550)])
@@ -117,40 +110,42 @@ extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, Ap
             
             viewController.isDismissed = { [weak self] in
                 self?.tableView.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    self?.showAlert(message: "Name changed successfully!", type: true)
+                }
             }
-            
             self.present(sheetController, animated: true, completion: nil)
         }
     }
     
     func didTapLanguage() {
-//        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LanguageVC") as? LanguageVC {
-//            self.navigationController?.pushViewController(viewController, animated: true)
-//            navigationItem.backBarButtonItem = UIBarButtonItem(
-//                title: "Change Language".localized(), style: .plain, target: nil, action: nil)
-//            navigationItem.backBarButtonItem?.tintColor = .white
-//        }
+        //        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LanguageVC") as? LanguageVC {
+        //            self.navigationController?.pushViewController(viewController, animated: true)
+        //            navigationItem.backBarButtonItem = UIBarButtonItem(
+        //                title: "Change Language".localized(), style: .plain, target: nil, action: nil)
+        //            navigationItem.backBarButtonItem?.tintColor = .white
+        //        }
     }
     
     func didTapCurrency() {
-//        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrencyVC") as? CurrencyVC {
-//            self.navigationController?.pushViewController(viewController, animated: true)
-//            navigationItem.backBarButtonItem = UIBarButtonItem(
-//                title: "Change Currency".localized(), style: .plain, target: nil, action: nil)
-//            navigationItem.backBarButtonItem?.tintColor = .white
-//        }
+        //        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrencyVC") as? CurrencyVC {
+        //            self.navigationController?.pushViewController(viewController, animated: true)
+        //            navigationItem.backBarButtonItem = UIBarButtonItem(
+        //                title: "Change Currency".localized(), style: .plain, target: nil, action: nil)
+        //            navigationItem.backBarButtonItem?.tintColor = .white
+        //        }
     }
     
     func didChangeModeToDark() {
-//        DMTraitCollection.setOverride(DMTraitCollection(userInterfaceStyle: .dark), animated: true)
-//        Helper.shared.interfaceMode = "dark"
-//        initializeView()
+        //        DMTraitCollection.setOverride(DMTraitCollection(userInterfaceStyle: .dark), animated: true)
+        //        Helper.shared.interfaceMode = "dark"
+        //        initializeView()
     }
     
     func didChangeModeToLight() {
-//        DMTraitCollection.setOverride(DMTraitCollection(userInterfaceStyle: .light), animated: true)
-//        Helper.shared.interfaceMode = "light"
-//        initializeView()
+        //        DMTraitCollection.setOverride(DMTraitCollection(userInterfaceStyle: .light), animated: true)
+        //        Helper.shared.interfaceMode = "light"
+        //        initializeView()
     }
     
     func didTapChangeEmail() {
@@ -160,27 +155,35 @@ extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, Ap
             
             viewController.isDismissed = { [weak self] in
                 self?.tableView.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    self?.showAlert(message: "Email changed successfully!", type: true)
+                }
             }
-            
             self.present(sheetController, animated: true, completion: nil)
         }
     }
     
     func didTapChangePassword() {
-//        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChangePasswordVC") as? ChangePasswordVC {
-//            self.navigationController?.pushViewController(viewController, animated: true)
-//            navigationItem.backBarButtonItem = UIBarButtonItem(
-//                title: "Change Password".localized(), style: .plain, target: nil, action: nil)
-//            navigationItem.backBarButtonItem?.tintColor = .white
-//        }
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChangePasswordVC") as? ChangePasswordVC {
+            let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(620)])
+            sheetController.cornerRadius = 35
+            
+            viewController.isDismissed = { [weak self] in
+                self?.tableView.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    self?.showAlert(message: "Password changed successfully!", type: true)
+                }
+            }
+            self.present(sheetController, animated: true, completion: nil)
+        }
     }
     
     func didTapTerms() {
-//        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TermsVC") as? TermsVC {
-//            self.navigationController?.pushViewController(viewController, animated: true)
-//            navigationItem.backBarButtonItem = UIBarButtonItem(
-//                title: "Terms & Conditions".localized(), style: .plain, target: nil, action: nil)
-//            navigationItem.backBarButtonItem?.tintColor = .white
-//        }
+        //        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TermsVC") as? TermsVC {
+        //            self.navigationController?.pushViewController(viewController, animated: true)
+        //            navigationItem.backBarButtonItem = UIBarButtonItem(
+        //                title: "Terms & Conditions".localized(), style: .plain, target: nil, action: nil)
+        //            navigationItem.backBarButtonItem?.tintColor = .white
+        //        }
     }
 }

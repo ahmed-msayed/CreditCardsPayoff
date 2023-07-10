@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class ChangePasswordVC: UIViewController,UITextFieldDelegate {
 
     var textPlaceholder = ""
+    var isDismissed: (() -> Void)?
 
     @IBOutlet weak var currentPasswordTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
@@ -20,50 +23,65 @@ class ChangePasswordVC: UIViewController,UITextFieldDelegate {
         currentPasswordTextField.delegate = self
         newPasswordTextField.delegate = self
         repeatPasswordTextField.delegate = self
-        navBarLayout()
+        textFieldsPaddingSetup()
     }
     
-    func navBarLayout() {
-        let barAppearance = UINavigationBarAppearance()
-        barAppearance.backgroundColor = UIColor(named: "purple-dark")
-        navigationItem.standardAppearance = barAppearance
-        navigationItem.scrollEdgeAppearance = barAppearance
+    func textFieldsPaddingSetup() {
+        currentPasswordTextField.setLeftPadding(value: 15)
+        newPasswordTextField.setLeftPadding(value: 15)
+        repeatPasswordTextField.setLeftPadding(value: 15)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-//        textPlaceholder = textField.placeholder ?? ""
-//        textField.placeholder = ""
-//        textField.textAlignment = Locale.current.languageCode == "en" ? NSTextAlignment.left : NSTextAlignment.right
+        textPlaceholder = textField.placeholder ?? ""
+        textField.placeholder = ""
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-//        if textField.text == "" {
-//        textField.placeholder = textPlaceholder
-//        textField.textAlignment = Locale.current.languageCode == "en" ? NSTextAlignment.left : NSTextAlignment.right
-//        }
+        if textField.text == "" {
+        textField.placeholder = textPlaceholder
+        }
     }
     
     @IBAction func savePasswordButtonTapped(_ sender: UIButton) {
-//        guard let newPassword = newPasswordTextField.text else {return}
-//        if newPassword.isValidPassword {
-//            if newPasswordTextField.text == repeatPasswordTextField.text {
-//                self.showSpinner(onView: self.view)
-//                ProfileVM.changePassword(password: currentPasswordTextField.text!, newPassword: newPasswordTextField.text!) {success,error in
-//                    self.removeSpinner()
-//                    if success {
-//                        self.showAlert(message: "Password changed successfully", type: true)
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                            self.navigationController?.popToRootViewController(animated: true)
-//                        }
-//                    } else {
-//                        self.showAlert(message: error ?? "Unknown Error", type: false)
-//                    }
-//                }
-//            } else {
-//                self.showAlert(message: "Passwords don't match!", type: false)
-//            }
-//        } else {
-//            self.showAlert(message: "Password must be at least 8 characters!", type: false)
-//        }
+        guard let newPassword = newPasswordTextField.text else {return}
+        if !newPassword.isValidPassword {
+            self.showAlert(message: "Write a valid password!", type: false)
+            return
+        }
+        if newPasswordTextField.text != repeatPasswordTextField.text {
+            self.showAlert(message: "Passwords don't match!", type: false)
+            return
+        }
+        authenticateCurrentUser()
+    }
+    
+    func authenticateCurrentUser() {
+        self.showSpinner(onView: self.view)
+        Auth.auth().signIn(withEmail: UserVM.getLocalUser()!.email, password: currentPasswordTextField.text!) { [weak self] authResult, error in
+            self?.removeSpinner()
+            if error == nil {
+                self?.changePassword()
+            } else {
+                self?.showAlert(message: error?.localizedDescription ?? "", type: false)
+            }
+        }
+    }
+    
+    func changePassword() {
+        self.showSpinner(onView: self.view)
+        Auth.auth().currentUser?.updatePassword(to: newPasswordTextField.text!) { error in
+            self.removeSpinner()
+            if error == nil {
+                self.dismissModalVC()
+            } else {
+                self.showAlert(message: error?.localizedDescription ?? "Unknown Error" , type: false)
+            }
+        }
+    }
+    
+    func dismissModalVC() {
+        self.isDismissed?()
+        dismiss(animated: true)
     }
 }
