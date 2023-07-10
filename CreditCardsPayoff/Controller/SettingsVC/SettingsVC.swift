@@ -96,11 +96,11 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
         case 0 :
             return 90
         case 1 :
-            return 316
+            return 240
         case 2:
-            return 180
+            return 120
         case 3:
-            return 90
+            return 60
         default:
             return 90
         }

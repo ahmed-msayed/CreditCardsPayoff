@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,21 +16,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppSettingsCell" id="0uU-BG-hHx" customClass="AppSettingsCell" customModule="Tirhaly" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="360" height="168"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppSettingsCell" rowHeight="120" id="0uU-BG-hHx" customClass="AppSettingsCell" customModule="CreditCardsPayoff" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0uU-BG-hHx" id="J7v-cl-Csg" userLabel="AppSettingsView">
-                <rect key="frame" x="0.0" y="0.0" width="360" height="168"/>
+                <rect key="frame" x="0.0" y="0.0" width="360" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="usI-fd-ALq" userLabel="AppSettingsStack">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="168"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="120"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMS-vZ-HwI" userLabel="ChangePasswordView">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="84"/>
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkerboard.shield" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="biH-Ht-wvL" userLabel="PasswordIcon">
-                                        <rect key="frame" x="20" y="30" width="25" height="24"/>
+                                        <rect key="frame" x="20" y="18" width="25" height="24"/>
                                         <color key="tintColor" red="0.66649153557690699" green="0.21803557019257586" blue="0.1742943429931898" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="GRG-3h-H3g"/>
@@ -38,13 +38,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4h-gb-kzX">
-                                        <rect key="frame" x="65" y="31.5" width="130.5" height="21"/>
+                                        <rect key="frame" x="65" y="20.5" width="131" height="19"/>
                                         <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XmM-jc-d91" userLabel="Arrow">
-                                        <rect key="frame" x="320" y="34" width="30" height="16.5"/>
+                                        <rect key="frame" x="320" y="22" width="30" height="16.5"/>
                                         <color key="tintColor" name="grey-text"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="Dgo-Aa-Qdy"/>
@@ -64,10 +64,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8n-PM-rIL" userLabel="ChangeEmailView">
-                                <rect key="frame" x="0.0" y="84" width="360" height="84"/>
+                                <rect key="frame" x="0.0" y="60" width="360" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hxn-Xt-JOb" userLabel="EmailIcon">
-                                        <rect key="frame" x="20" y="31" width="25" height="21.5"/>
+                                        <rect key="frame" x="20" y="19" width="25" height="21.5"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="IPs-Ml-TF8"/>
@@ -75,13 +75,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sv-P9-aiq">
-                                        <rect key="frame" x="65" y="31.5" width="100" height="21"/>
+                                        <rect key="frame" x="65" y="20.5" width="100" height="19"/>
                                         <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aQl-Fe-Il6" userLabel="Arrow">
-                                        <rect key="frame" x="320" y="34" width="30" height="16.5"/>
+                                        <rect key="frame" x="320" y="22" width="30" height="16.5"/>
                                         <color key="tintColor" name="grey-text"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="8UR-nO-Z12"/>
@@ -121,12 +121,12 @@
                 <outlet property="emailArrowImage" destination="aQl-Fe-Il6" id="QKR-Uc-FYB"/>
                 <outlet property="passwordArrowImage" destination="XmM-jc-d91" id="oB1-4J-Aqz"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="81.696428571428569"/>
+            <point key="canvasLocation" x="47.826086956521742" y="28.794642857142854"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="checkerboard.shield" catalog="system" width="128" height="121"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
         <namedColor name="grey-text">
             <color red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
