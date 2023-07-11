@@ -187,7 +187,7 @@
                                 <rect key="frame" x="23.666666666666657" y="326" width="346" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unfortunately, Your Booking has been failed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UDW-37-nL9">
-                                        <rect key="frame" x="39" y="120" width="268" height="60"/>
+                                        <rect key="frame" x="34" y="120" width="277.66666666666669" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="E3a-lz-U7x"/>
                                         </constraints>
@@ -408,6 +408,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWy-Tq-l5W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1431" y="765"/>
+        </scene>
+        <!--CurrencyVC-->
+        <scene sceneID="Y4h-iB-62j">
+            <objects>
+                <viewController storyboardIdentifier="CurrencyVC" id="i6J-N6-iye" customClass="CurrencyVC" customModule="CreditCardsPayoff" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MKc-2d-cbV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E94-9X-3Y0">
+                                <rect key="frame" x="10" y="159" width="393" height="559"/>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t3X-rk-W1e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E94-9X-3Y0" firstAttribute="trailing" secondItem="t3X-rk-W1e" secondAttribute="trailing" constant="10" id="kx5-6x-L4M"/>
+                            <constraint firstItem="t3X-rk-W1e" firstAttribute="bottom" secondItem="E94-9X-3Y0" secondAttribute="bottom" constant="100" id="nak-aF-RTb"/>
+                            <constraint firstItem="E94-9X-3Y0" firstAttribute="leading" secondItem="t3X-rk-W1e" secondAttribute="leading" constant="10" id="sU6-tj-sQu"/>
+                            <constraint firstItem="E94-9X-3Y0" firstAttribute="top" secondItem="t3X-rk-W1e" secondAttribute="top" constant="100" id="yDk-Vw-eyb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="E94-9X-3Y0" id="rFG-1y-DOt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJU-AO-Cdg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2262" y="765"/>
         </scene>
         <!--Change PasswordVC-->
         <scene sceneID="Mzr-qw-Ggq">

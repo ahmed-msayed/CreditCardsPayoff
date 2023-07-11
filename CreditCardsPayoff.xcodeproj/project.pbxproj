@@ -12,6 +12,7 @@
 		E20F7A622A5BE9B20057D451 /* ChangeEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */; };
 		E23D1A6B2A5AB9D100049489 /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */; };
 		E23F118F2A48E6000072A78A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F118E2A48E6000072A78A /* User.swift */; };
+		E2432FA32A5DED3C00560DEC /* CurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2432FA22A5DED3C00560DEC /* CurrencyVC.swift */; };
 		E24F8B5F2A4DEC53006CB187 /* CodableExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */; };
 		E24F8B612A4E3162006CB187 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B602A4E3162006CB187 /* UserVM.swift */; };
 		E24F8B652A4E36A0006CB187 /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B642A4E36A0006CB187 /* AlertVC.swift */; };
@@ -61,6 +62,7 @@
 		E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailVC.swift; sourceTree = "<group>"; };
 		E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		E23F118E2A48E6000072A78A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E2432FA22A5DED3C00560DEC /* CurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVC.swift; sourceTree = "<group>"; };
 		E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExt.swift; sourceTree = "<group>"; };
 		E24F8B602A4E3162006CB187 /* UserVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 		E24F8B642A4E36A0006CB187 /* AlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 				E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */,
 			);
 			path = ChangeNameVC;
+			sourceTree = "<group>";
+		};
+		E2432FA12A5DED0E00560DEC /* CurrencyVC */ = {
+			isa = PBXGroup;
+			children = (
+				E2432FA22A5DED3C00560DEC /* CurrencyVC.swift */,
+			);
+			path = CurrencyVC;
 			sourceTree = "<group>";
 		};
 		E24F8B622A4E3168006CB187 /* ViewModel */ = {
@@ -301,6 +311,7 @@
 		E2EF63322A3D05590084A8CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E2432FA12A5DED0E00560DEC /* CurrencyVC */,
 				E20F7A5F2A5BE9B20057D451 /* ChangeEmailVC */,
 				E20F7A5D2A5BE9B20057D451 /* ChangePasswordVC */,
 				E23D1A692A5AB9D100049489 /* ChangeNameVC */,
@@ -489,6 +500,7 @@
 				E24F8B5F2A4DEC53006CB187 /* CodableExt.swift in Sources */,
 				E20F7A622A5BE9B20057D451 /* ChangeEmailVC.swift in Sources */,
 				E2931C922A4A19D30028BE46 /* UserDefaultsExt.swift in Sources */,
+				E2432FA32A5DED3C00560DEC /* CurrencyVC.swift in Sources */,
 				E2EF63412A3D0AC90084A8CA /* AppColor.swift in Sources */,
 				E2EF63402A3D0AC90084A8CA /* NavController.swift in Sources */,
 				E23D1A6B2A5AB9D100049489 /* ChangeNameVC.swift in Sources */,
