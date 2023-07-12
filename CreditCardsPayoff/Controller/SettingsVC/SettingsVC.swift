@@ -128,12 +128,15 @@ extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, Ap
     }
     
     func didTapCurrency() {
-        //        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrencyVC") as? CurrencyVC {
-        //            self.navigationController?.pushViewController(viewController, animated: true)
-        //            navigationItem.backBarButtonItem = UIBarButtonItem(
-        //                title: "Change Currency".localized(), style: .plain, target: nil, action: nil)
-        //            navigationItem.backBarButtonItem?.tintColor = .white
-        //        }
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrencyVC") as? CurrencyVC {
+            let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(550)])
+            sheetController.cornerRadius = 35
+            
+            viewController.isDismissed = { [weak self] in
+                self?.tableView.reloadData()
+            }
+            self.present(sheetController, animated: true, completion: nil)
+        }
     }
     
     func didChangeModeToDark() {

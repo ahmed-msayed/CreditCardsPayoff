@@ -44,13 +44,13 @@ class AccountSettingsCell: UITableViewCell {
     }
     
     func setupArrowViews() {
-        if Locale.current.languageCode == "en" {
-            languageArrowImage.image = UIImage(named: "chevron-right-grey")
-            currencyArrowImage.image = UIImage(named: "chevron-right-grey")
-        } else if Locale.current.languageCode == "ar" {
-            languageArrowImage.image = UIImage(named: "chevron-left-grey")
-            currencyArrowImage.image = UIImage(named: "chevron-left-grey")
-        }
+//        if Locale.current.languageCode == "en" {
+//            languageArrowImage.image = UIImage(named: "chevron-right-grey")
+//            currencyArrowImage.image = UIImage(named: "chevron-right-grey")
+//        } else if Locale.current.languageCode == "ar" {
+//            languageArrowImage.image = UIImage(named: "chevron-left-grey")
+//            currencyArrowImage.image = UIImage(named: "chevron-left-grey")
+//        }
     }
     
     func initializeGestures() {
@@ -61,7 +61,7 @@ class AccountSettingsCell: UITableViewCell {
     }
     
     func bindData() {
-//        currencyLabel.text = UserVM.getLocalUser()?.currency.name()
+        currencyLabel.text = UserDefaults.standard.string(forKey: "userCurrency") ?? ""
     }
     
     @objc func didTapLanguageView(_ sender: UITapGestureRecognizer) {
