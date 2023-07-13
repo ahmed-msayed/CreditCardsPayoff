@@ -418,12 +418,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E94-9X-3Y0">
-                                <rect key="frame" x="0.0" y="159" width="393" height="216"/>
+                                <rect key="frame" x="36.666666666666657" y="318" width="320" height="216"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjr-c5-hD3">
-                                <rect key="frame" x="159" y="385" width="75" height="35"/>
+                                <rect key="frame" x="20" y="574" width="353" height="60"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="laY-c1-cIy"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Select">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="selectCurrencyButtonClick:" destination="i6J-N6-iye" eventType="touchUpInside" id="CYU-4d-afg"/>
                                 </connections>
@@ -432,12 +439,11 @@
                         <viewLayoutGuide key="safeArea" id="t3X-rk-W1e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Xjr-c5-hD3" firstAttribute="centerX" secondItem="E94-9X-3Y0" secondAttribute="centerX" id="6m4-hI-pTY"/>
-                            <constraint firstItem="Xjr-c5-hD3" firstAttribute="top" secondItem="E94-9X-3Y0" secondAttribute="bottom" constant="10" id="W4d-dr-L3T"/>
-                            <constraint firstItem="t3X-rk-W1e" firstAttribute="bottom" secondItem="Xjr-c5-hD3" secondAttribute="bottom" constant="398" id="Wri-l6-NzZ"/>
-                            <constraint firstItem="E94-9X-3Y0" firstAttribute="trailing" secondItem="t3X-rk-W1e" secondAttribute="trailing" id="kx5-6x-L4M"/>
-                            <constraint firstItem="E94-9X-3Y0" firstAttribute="leading" secondItem="t3X-rk-W1e" secondAttribute="leading" id="sU6-tj-sQu"/>
-                            <constraint firstItem="E94-9X-3Y0" firstAttribute="top" secondItem="t3X-rk-W1e" secondAttribute="top" constant="100" id="yDk-Vw-eyb"/>
+                            <constraint firstItem="Xjr-c5-hD3" firstAttribute="leading" secondItem="t3X-rk-W1e" secondAttribute="leading" constant="20" id="X8H-2r-qZA"/>
+                            <constraint firstItem="Xjr-c5-hD3" firstAttribute="top" secondItem="E94-9X-3Y0" secondAttribute="bottom" constant="40" id="cwb-Wt-0zS"/>
+                            <constraint firstItem="E94-9X-3Y0" firstAttribute="centerX" secondItem="MKc-2d-cbV" secondAttribute="centerX" id="elh-fr-H8O"/>
+                            <constraint firstItem="E94-9X-3Y0" firstAttribute="centerY" secondItem="MKc-2d-cbV" secondAttribute="centerY" id="vzv-Fk-VX5"/>
+                            <constraint firstItem="t3X-rk-W1e" firstAttribute="trailing" secondItem="Xjr-c5-hD3" secondAttribute="trailing" constant="20" id="wRw-Ea-h4O"/>
                         </constraints>
                     </view>
                     <connections>
