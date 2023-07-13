@@ -9,7 +9,7 @@ import Foundation
 
 struct CurrencyList {
     
-    let pickerCurrencyList: [(country: String, currency_code: String)] = [
+    let pickerCurrencyList: [(country: String, currencyCode: String)] = [
         ("Afghanistan","AFN"),
         ("Albania","ALL"),
         ("Algeria","DZD"),

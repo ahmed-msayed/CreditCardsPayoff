@@ -14,7 +14,9 @@ class CurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     let pickerDataSource = CurrencyList().pickerCurrencyList
     let db = Firestore.firestore()
     var isDismissed: (() -> Void)?
-    var selectedCurrency = ""
+    var selectedCurrencyCode = CurrencyVM.getUserCurrencyCode()
+    var selectedCurrencyCountry = CurrencyVM.getUserCurrencyCountry()
+    var pickerCurrentCurrency = 0
     
     @IBOutlet weak var pickerView: UIPickerView!
     
@@ -22,10 +24,18 @@ class CurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
+        initializeCurrentPickerItem()
+    }
+    
+    func initializeCurrentPickerItem() {
+        if let index = pickerDataSource.firstIndex(where: {$0.country == selectedCurrencyCountry}) {
+            pickerCurrentCurrency = index
+        }
+        pickerView.selectRow(pickerCurrentCurrency, inComponent: 0, animated: true)
     }
     
     @IBAction func selectCurrencyButtonClick(_ sender: Any) {
-        saveUserCurrencyToDB()
+        saveUserCurrency()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -45,26 +55,23 @@ class CurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         let label = view as? UILabel ?? UILabel()
         let hue = CGFloat(row)/CGFloat(pickerDataSource.count)
         label.backgroundColor = UIColor(hue: hue, saturation: 1.0, brightness:1.0, alpha: 0.5)
-        
         label.font = .systemFont(ofSize: 20)
         label.textColor = .black
         label.textAlignment = .center
-        label.text = pickerDataSource[row].country + " " + pickerDataSource[row].currency_code
-        
+        label.text = pickerDataSource[row].country + " " + pickerDataSource[row].currencyCode
         return label
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.selectedCurrency = pickerDataSource[row].currency_code
+        self.selectedCurrencyCode = pickerDataSource[row].currencyCode
+        self.selectedCurrencyCountry = pickerDataSource[row].country
     }
     
-    func saveUserCurrencyToDB() {
-//        let currency: Currency?
-//        currency.userCurrency = self.selectedCurrency
-//        guard let currency = currency else { return }
-//        let currencyVM = CurrencyVM(currency: currency)
-//        currencyVM.saveUserCurrency()
-        UserDefaults.standard.set(self.selectedCurrency, forKey: "userCurrency")
+    func saveUserCurrency() {
+        let currency = Currency(country: self.selectedCurrencyCountry, currencyCode: self.selectedCurrencyCode)
+        let currencyVM = CurrencyVM(currency: currency)
+        currencyVM.saveUserCurrency()
+//        UserDefaults.standard.set(self.selectedCurrency, forKey: "userCurrency")
         UserDefaults.standard.synchronize()
         self.dismissModalVC()
     }

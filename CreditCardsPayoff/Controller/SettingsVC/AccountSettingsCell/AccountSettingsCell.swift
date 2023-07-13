@@ -61,7 +61,8 @@ class AccountSettingsCell: UITableViewCell {
     }
     
     func bindData() {
-        currencyLabel.text = UserDefaults.standard.string(forKey: "userCurrency") ?? ""
+//        currencyLabel.text = UserDefaults.standard.string(forKey: "userCurrency") ?? ""
+        currencyLabel.text = CurrencyVM.getUserCurrencyCode()
     }
     
     @objc func didTapLanguageView(_ sender: UITapGestureRecognizer) {
