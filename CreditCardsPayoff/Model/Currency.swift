@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Currency {
+struct Currency: Codable {
     var country: String?
     var currencyCode: String?
 }

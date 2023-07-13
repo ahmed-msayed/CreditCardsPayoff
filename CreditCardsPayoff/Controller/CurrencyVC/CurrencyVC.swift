@@ -14,8 +14,8 @@ class CurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     let pickerDataSource = CurrencyList().pickerCurrencyList
     let db = Firestore.firestore()
     var isDismissed: (() -> Void)?
-    var selectedCurrencyCode = CurrencyVM.getUserCurrencyCode()
-    var selectedCurrencyCountry = CurrencyVM.getUserCurrencyCountry()
+    var selectedCurrencyCode = CurrencyVM.getLocalUserCurrency()?.currencyCode
+    var selectedCurrencyCountry = CurrencyVM.getLocalUserCurrency()?.country
     var pickerCurrentCurrency = 0
     
     @IBOutlet weak var pickerView: UIPickerView!
@@ -28,7 +28,8 @@ class CurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func initializeCurrentPickerItem() {
-        if let index = pickerDataSource.firstIndex(where: {$0.country == selectedCurrencyCountry}) {
+        guard let savedCurrency = CurrencyVM.getLocalUserCurrency() else {return}
+        if let index = pickerDataSource.firstIndex(where: {$0.country == savedCurrency.country}) {
             pickerCurrentCurrency = index
         }
         pickerView.selectRow(pickerCurrentCurrency, inComponent: 0, animated: true)
@@ -70,8 +71,7 @@ class CurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     func saveUserCurrency() {
         let currency = Currency(country: self.selectedCurrencyCountry, currencyCode: self.selectedCurrencyCode)
         let currencyVM = CurrencyVM(currency: currency)
-        currencyVM.saveUserCurrency()
-//        UserDefaults.standard.set(self.selectedCurrency, forKey: "userCurrency")
+        currencyVM.saveCurrencyLocally()
         UserDefaults.standard.synchronize()
         self.dismissModalVC()
     }

@@ -18,22 +18,14 @@ struct CurrencyVM {
         return currency.currencyCode ?? ""
     }
     
-    func saveUserCurrency() {
-        UserDefaults.standard.set(currency.country, forKey: "userCurrencyCountry")
-        UserDefaults.standard.set(currency.currencyCode, forKey: "userCurrencyCode")
+    func saveCurrencyLocally() {
+        UserDefaults.standard.saveObject(rawData: self.currency, forKey: "userCurrency")
     }
     
-    static func getUserCurrencyCode() -> String {
-        if let currencyCode = UserDefaults.standard.string(forKey: "userCurrencyCode") {
-            return currencyCode
+    static func getLocalUserCurrency() -> CurrencyVM? {
+        if let currency: Currency = UserDefaults.standard.getObject(key: "userCurrency") {
+            return CurrencyVM(currency: currency)
         }
-        return ""
-    }
-    
-    static func getUserCurrencyCountry() -> String {
-        if let currencyCountry = UserDefaults.standard.string(forKey: "userCurrencyCountry") {
-            return currencyCountry
-        }
-        return ""
+        return nil
     }
 }
