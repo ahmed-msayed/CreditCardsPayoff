@@ -60,4 +60,12 @@ class AuthenticationVM {
             }
         }
     }
+    
+    static func getCurrentUserId() -> String {
+        if let userId = Auth.auth().currentUser?.uid {
+            return userId
+        } else {
+            return ""
+        }
+    }
 }
