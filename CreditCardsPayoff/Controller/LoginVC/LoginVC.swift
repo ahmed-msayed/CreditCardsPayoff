@@ -10,9 +10,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class LoginVC: UIViewController {
-    
-    let db = Firestore.firestore()
-    
+        
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var labelSubTitle: UILabel!
     @IBOutlet var imageViewLogo: UIImageView!
@@ -25,25 +23,6 @@ class LoginVC: UIViewController {
         navigationControllerSetup()
         textFieldsPaddingSetup()
         loadData()
-    }
-    
-    func getUserData(userId: String) {
-        self.showSpinner(onView: self.view)
-        db.collection("users").whereField("userId", isEqualTo: userId)
-            .getDocuments() { [weak self] (response, error) in
-                self?.removeSpinner()
-                if let error = error?.localizedDescription {
-                    self?.showAlert(message: error , type: false)
-                } else {
-                    guard let document = response!.documents.first else { return }
-                    let data = document.data()
-                    let user: User? = data.getObject()
-                    guard let user = user else { return }
-                    let userVM = UserVM(user: user)
-                    userVM.saveUserLocally()
-                    self?.goToHomeVC()
-                }
-            }
     }
     
     func goToHomeVC() {
@@ -86,13 +65,28 @@ class LoginVC: UIViewController {
             self.showAlert(message: "Enter Password!", type: false)
             return
         }
+
+        self.login(email: textFieldEmail.text!, password: textFieldPassword.text!)
+        
+    }
+    
+    func login(email: String, password: String) {
         self.showSpinner(onView: self.view)
-        Auth.auth().signIn(withEmail: textFieldEmail.text!, password: textFieldPassword.text!) { [weak self] authResult, error in
-            self?.removeSpinner()
-            if error == nil, let userId = Auth.auth().currentUser?.uid {
-                self?.getUserData(userId: userId)
+        AuthenticationVM.login(email: email, password: password) { userId, error in
+            self.removeSpinner()
+            if let userId = userId {
+                self.showSpinner(onView: self.view)
+                AuthenticationVM.getUserDataFromDB(userId: userId) { userVM, error in
+                    self.removeSpinner()
+                    if let userVM = userVM {
+                        userVM.saveUserLocally()
+                        self.goToHomeVC()
+                    } else {
+                        self.showAlert(message: error ?? "Unknown Error", type: false)
+                    }
+                }
             } else {
-                self?.showAlert(message: error?.localizedDescription ?? "", type: false)
+                self.showAlert(message: error ?? "Unknown Error", type: false)
             }
         }
     }
