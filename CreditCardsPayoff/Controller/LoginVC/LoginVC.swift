@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
 
 class LoginVC: UIViewController {
         
@@ -49,27 +47,6 @@ class LoginVC: UIViewController {
         textFieldPassword.setRightPadding(value: 40)
     }
     
-    // MARK: - User actions
-    
-    @IBAction func actionHideShowPassword(_ sender: Any) {
-        buttonHideShowPassword.isSelected = !buttonHideShowPassword.isSelected
-        textFieldPassword.isSecureTextEntry = !buttonHideShowPassword.isSelected
-    }
-    
-    @IBAction func actionLogin(_ sender: Any) {
-        if textFieldEmail.text == "" || !textFieldEmail.text!.isEmail {
-            self.showAlert(message: "Enter Valid Email Address!", type: false)
-            return
-        }
-        if textFieldPassword.text == "" {
-            self.showAlert(message: "Enter Password!", type: false)
-            return
-        }
-
-        self.login(email: textFieldEmail.text!, password: textFieldPassword.text!)
-        
-    }
-    
     func login(email: String, password: String) {
         self.showSpinner(onView: self.view)
         AuthenticationVM.login(email: email, password: password) { userId, error in
@@ -89,6 +66,25 @@ class LoginVC: UIViewController {
                 self.showAlert(message: error ?? "Unknown Error", type: false)
             }
         }
+    }
+    
+    // MARK: - User actions
+    
+    @IBAction func actionHideShowPassword(_ sender: Any) {
+        buttonHideShowPassword.isSelected = !buttonHideShowPassword.isSelected
+        textFieldPassword.isSecureTextEntry = !buttonHideShowPassword.isSelected
+    }
+    
+    @IBAction func actionLogin(_ sender: Any) {
+        if textFieldEmail.text == "" || !textFieldEmail.text!.isEmail {
+            self.showAlert(message: "Enter Valid Email Address!", type: false)
+            return
+        }
+        if textFieldPassword.text == "" {
+            self.showAlert(message: "Enter Password!", type: false)
+            return
+        }
+        self.login(email: textFieldEmail.text!, password: textFieldPassword.text!)
     }
     
     @IBAction func actionForgotPassword(_ sender: Any) {
