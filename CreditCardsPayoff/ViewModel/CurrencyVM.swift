@@ -19,11 +19,11 @@ struct CurrencyVM {
     }
     
     func saveCurrencyLocally() {
-        UserDefaults.standard.saveObject(rawData: self.currency, forKey: "userCurrency")
+        UserDefaults.standard.saveObject(rawData: self.currency, forKey: "\((UserVM.getLocalUser()?.email) ?? "")userCurrency")
     }
     
     static func getLocalUserCurrency() -> CurrencyVM? {
-        if let currency: Currency = UserDefaults.standard.getObject(key: "userCurrency") {
+        if let currency: Currency = UserDefaults.standard.getObject(key: "\((UserVM.getLocalUser()?.email) ?? "")userCurrency") {
             return CurrencyVM(currency: currency)
         }
         return nil

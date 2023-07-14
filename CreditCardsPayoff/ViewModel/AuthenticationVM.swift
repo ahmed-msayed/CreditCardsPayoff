@@ -15,7 +15,7 @@ class AuthenticationVM {
 
     static func login(email: String, password: String, completion: @escaping (_ userId: String?, _ error: String?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if error == nil, let userId = Auth.auth().currentUser?.uid {
+            if error == nil, let userId = authResult?.user.uid {
                 completion(userId, nil)
             } else {
                 completion(nil, error?.localizedDescription)
@@ -39,7 +39,25 @@ class AuthenticationVM {
             }
     }
     
+    static func signUp(email: String, password: String, completion: @escaping (_ userId: String?, _ error: String?) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if error == nil, let userId = authResult?.user.uid {
+                completion(userId, nil)
+            } else {
+                completion(nil, error?.localizedDescription)
+            }
+        }
+    }
     
-    
-    
+    static func saveUserDataToDB(userId: String, firstName: String, lastName: String, email: String, completion: @escaping (_ userVM: UserVM?, _ error: String?) -> Void) {
+        db.collection("users").addDocument(data: ["firstName": firstName, "lastName": lastName, "email": email, "userId": userId]) { (error) in
+            if let error = error {
+                completion(nil, error.localizedDescription)
+            } else {
+                let user = User(userId: userId, firstName: firstName, lastName: lastName, email: email)
+                let userVM = UserVM(user: user)
+                completion(userVM, nil)
+            }
+        }
+    }
 }
