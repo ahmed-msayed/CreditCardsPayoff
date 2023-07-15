@@ -22,7 +22,7 @@
 		E25A13532A62A8E80039DAE6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A13522A62A8E80039DAE6 /* Card.swift */; };
 		E25A13572A62B21F0039DAE6 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A13552A62B21F0039DAE6 /* CardCell.swift */; };
 		E25A13582A62B21F0039DAE6 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E25A13562A62B21F0039DAE6 /* CardCell.xib */; };
-		E25A135B2A62D9D80039DAE6 /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A135A2A62D9D80039DAE6 /* AddCardVC.swift */; };
+		E25A135F2A6328830039DAE6 /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A135D2A6328830039DAE6 /* AddCardVC.swift */; };
 		E26352532A45B2FC00587953 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26352522A45B2FC00587953 /* GoogleService-Info.plist */; };
 		E273E2452A487EBA00722832 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273E2432A487EBA00722832 /* SignupVC.swift */; };
 		E273E2462A487EBA00722832 /* SignupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E273E2442A487EBA00722832 /* SignupVC.xib */; };
@@ -81,7 +81,7 @@
 		E25A13522A62A8E80039DAE6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		E25A13552A62B21F0039DAE6 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		E25A13562A62B21F0039DAE6 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
-		E25A135A2A62D9D80039DAE6 /* AddCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
+		E25A135D2A6328830039DAE6 /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
 		E26352522A45B2FC00587953 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E273E2432A487EBA00722832 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		E273E2442A487EBA00722832 /* SignupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupVC.xib; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 		E25A13592A62D9B80039DAE6 /* AddCardVC */ = {
 			isa = PBXGroup;
 			children = (
-				E25A135A2A62D9D80039DAE6 /* AddCardVC.swift */,
+				E25A135D2A6328830039DAE6 /* AddCardVC.swift */,
 			);
 			path = AddCardVC;
 			sourceTree = "<group>";
@@ -547,7 +547,6 @@
 				E20F7A622A5BE9B20057D451 /* ChangeEmailVC.swift in Sources */,
 				E21586202A617859005632FC /* AuthenticationVM.swift in Sources */,
 				E2931C922A4A19D30028BE46 /* UserDefaultsExt.swift in Sources */,
-				E25A135B2A62D9D80039DAE6 /* AddCardVC.swift in Sources */,
 				E2432FA32A5DED3C00560DEC /* CurrencyVC.swift in Sources */,
 				E2EF63412A3D0AC90084A8CA /* AppColor.swift in Sources */,
 				E2EF63402A3D0AC90084A8CA /* NavController.swift in Sources */,
@@ -563,6 +562,7 @@
 				E2D2793D2A59F783003C6CDA /* TermsConditionsCell.swift in Sources */,
 				E2EF634A2A3D106F0084A8CA /* OnboardingVC.swift in Sources */,
 				E2EF631D2A3C92420084A8CA /* AppDelegate.swift in Sources */,
+				E25A135F2A6328830039DAE6 /* AddCardVC.swift in Sources */,
 				E24F8B672A4E3A55006CB187 /* ShowAlertExt.swift in Sources */,
 				E2A7D2DB2A5EF28A00029BF4 /* CurrencyVM.swift in Sources */,
 				E28F3AD12A45CDEB00233A74 /* HomeVC.swift in Sources */,
