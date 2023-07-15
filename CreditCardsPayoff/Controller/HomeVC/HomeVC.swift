@@ -7,12 +7,18 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    
     
     @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: "CardCell")
         getUserData()
     }
     
@@ -33,9 +39,23 @@ class HomeVC: UIViewController {
         }
     }
     
-    @IBAction func clearUserDefaultsBtn(_ sender: Any) {
-        UserVM.removeLocalUser()
-        UserDefaults.standard.synchronize()
-        welcomeLabel.text = "\(UserVM.getLocalUser()?.firstName ?? "")"+" "+"\(UserVM.getLocalUser()?.lastName ?? "")"
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as! CardCell
+
+        return cell
+    }
+    
+//    @IBAction func clearUserDefaultsBtn(_ sender: Any) {
+//        UserVM.removeLocalUser()
+//        UserDefaults.standard.synchronize()
+//        welcomeLabel.text = "\(UserVM.getLocalUser()?.firstName ?? "")"+" "+"\(UserVM.getLocalUser()?.lastName ?? "")"
+//    }
 }
