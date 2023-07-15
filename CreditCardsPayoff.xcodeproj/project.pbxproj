@@ -18,6 +18,7 @@
 		E24F8B612A4E3162006CB187 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B602A4E3162006CB187 /* UserVM.swift */; };
 		E24F8B652A4E36A0006CB187 /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B642A4E36A0006CB187 /* AlertVC.swift */; };
 		E24F8B672A4E3A55006CB187 /* ShowAlertExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B662A4E3A55006CB187 /* ShowAlertExt.swift */; };
+		E25A13512A62A5910039DAE6 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E25A134F2A62A5910039DAE6 /* CoreDataModel.xcdatamodeld */; };
 		E26352532A45B2FC00587953 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26352522A45B2FC00587953 /* GoogleService-Info.plist */; };
 		E273E2452A487EBA00722832 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273E2432A487EBA00722832 /* SignupVC.swift */; };
 		E273E2462A487EBA00722832 /* SignupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E273E2442A487EBA00722832 /* SignupVC.xib */; };
@@ -72,6 +73,7 @@
 		E24F8B602A4E3162006CB187 /* UserVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 		E24F8B642A4E36A0006CB187 /* AlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		E24F8B662A4E3A55006CB187 /* ShowAlertExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAlertExt.swift; sourceTree = "<group>"; };
+		E25A13502A62A5910039DAE6 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		E26352522A45B2FC00587953 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E273E2432A487EBA00722832 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		E273E2442A487EBA00722832 /* SignupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupVC.xib; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				E2EF63272A3C92440084A8CA /* LaunchScreen.storyboard */,
 				E2EF632A2A3C92440084A8CA /* Info.plist */,
 				E26352522A45B2FC00587953 /* GoogleService-Info.plist */,
+				E25A134F2A62A5910039DAE6 /* CoreDataModel.xcdatamodeld */,
 			);
 			path = CreditCardsPayoff;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				E2D2794B2A59F783003C6CDA /* ProfileHeaderCell.swift in Sources */,
 				E2EF633F2A3D0AC90084A8CA /* UIView+Extension.swift in Sources */,
 				E2D2793C2A59F783003C6CDA /* AppSettingsCell.swift in Sources */,
+				E25A13512A62A5910039DAE6 /* CoreDataModel.xcdatamodeld in Sources */,
 				E24F8B5F2A4DEC53006CB187 /* CodableExt.swift in Sources */,
 				E20F7A622A5BE9B20057D451 /* ChangeEmailVC.swift in Sources */,
 				E21586202A617859005632FC /* AuthenticationVM.swift in Sources */,
@@ -789,6 +793,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E25A134F2A62A5910039DAE6 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E25A13502A62A5910039DAE6 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = E25A13502A62A5910039DAE6 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E2EF63112A3C92420084A8CA /* Project object */;
 }
