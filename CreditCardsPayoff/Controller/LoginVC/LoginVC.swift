@@ -6,13 +6,9 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
 
 class LoginVC: UIViewController {
-    
-    let db = Firestore.firestore()
-    
+        
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var labelSubTitle: UILabel!
     @IBOutlet var imageViewLogo: UIImageView!
@@ -22,49 +18,54 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
-        
-        textFieldEmail.setLeftPadding(value: 15)
-        textFieldPassword.setLeftPadding(value: 15)
-        textFieldPassword.setRightPadding(value: 40)
-        
+        navigationControllerSetup()
+        textFieldsPaddingSetup()
         loadData()
-    }
-    
-    func getUserData(userId: String) {
-        db.collection("users").whereField("userId", isEqualTo: userId)
-            .getDocuments() { [weak self] (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        print("\(document.documentID) => \(document.data())")
-                        let data = document.data()
-                        if let firstName = data["firstName"] as? String, let lastName = data["lastName"] as? String {
-                            UserDefaults.standard.setFirstName(value: firstName)
-                            UserDefaults.standard.setLastName(value: lastName)
-                            UserDefaults.standard.setUserID(value: userId)
-                            UserDefaults.standard.setLoggedIn(value: true)
-                            
-                            self?.goToHomeVC()
-                        }
-                    }
-                }
-            }
     }
     
     func goToHomeVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabBarController = storyboard.instantiateViewController(identifier: "TabBarController")
-        
+
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabBarController)
+    }
+    
+    func navigationControllerSetup() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
     
     // MARK: - Data methods
     
     func loadData() {
-        labelTitle.text = "Welcome to\nAppDesignKit"
-        labelSubTitle.text = "An exciting place for the whole family to shop."
+        labelTitle.text = "Welcome to \nCredit Cards Payoff"
+        labelSubTitle.text = "A simple way to organize and payoff your credit cards"
+    }
+    
+    func textFieldsPaddingSetup() {
+        textFieldEmail.setLeftPadding(value: 15)
+        textFieldPassword.setLeftPadding(value: 15)
+        textFieldPassword.setRightPadding(value: 40)
+    }
+    
+    func login(email: String, password: String) {
+        self.showSpinner(onView: self.view)
+        AuthenticationVM.login(email: email, password: password) { userId, error in
+            self.removeSpinner()
+            if let userId = userId {
+                self.showSpinner(onView: self.view)
+                AuthenticationVM.getUserDataFromDB(userId: userId) { userVM, error in
+                    self.removeSpinner()
+                    if let userVM = userVM {
+                        userVM.saveUserLocally()
+                        self.goToHomeVC()
+                    } else {
+                        self.showAlert(message: error ?? "Unknown Error", type: false)
+                    }
+                }
+            } else {
+                self.showAlert(message: error ?? "Unknown Error", type: false)
+            }
+        }
     }
     
     // MARK: - User actions
@@ -75,23 +76,15 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func actionLogin(_ sender: Any) {
-        if let email = textFieldEmail.text, let password = textFieldPassword.text {
-            Auth.auth().signIn(withEmail: email, password: password) { [weak self]authResult, error in
-                if let error = error {
-                    print(error)
-                    let alert = UIAlertController(title: "error", message: "\(error.localizedDescription))", preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                    self?.present(alert, animated: true, completion: nil)
-                    self?.textFieldEmail.text = ""
-                    self?.textFieldPassword.text = ""
-                } else {
-                    
-                    if let userId = Auth.auth().currentUser?.uid {
-                        self?.getUserData(userId: userId)
-                    }
-                }
-            }
+        if textFieldEmail.text == "" || !textFieldEmail.text!.isEmail {
+            self.showAlert(message: "Enter Valid Email Address!", type: false)
+            return
         }
+        if textFieldPassword.text == "" {
+            self.showAlert(message: "Enter Password!", type: false)
+            return
+        }
+        self.login(email: textFieldEmail.text!, password: textFieldPassword.text!)
     }
     
     @IBAction func actionForgotPassword(_ sender: Any) {
@@ -102,7 +95,6 @@ class LoginVC: UIViewController {
     @IBAction func actionSignUp(_ sender: Any) {
         let signupVC : SignupVC = SignupVC(nibName :"SignupVC",bundle : nil)
         self.navigationController?.pushViewController(signupVC, animated: true)
-        
         dismiss(animated: true)
     }
 }

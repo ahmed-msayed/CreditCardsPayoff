@@ -49,10 +49,9 @@ extension UserDefaults{
     }
     
     func resetUserDefaults() {
-        UserDefaults.standard.set(false, forKey: "isLoggedIn")
-        UserDefaults.standard.set("", forKey: "userID")
-        UserDefaults.standard.set("", forKey: "firstName")
-        UserDefaults.standard.set("", forKey: "lastName")
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
     }
 }
 

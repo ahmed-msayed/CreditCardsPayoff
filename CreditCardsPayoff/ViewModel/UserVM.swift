@@ -23,7 +23,10 @@ struct UserVM {
         return user.email ?? ""
     }
 
-
+    static var isLoggedIn: Bool {
+        return UserVM.getLocalUser() != nil
+    }
+    
     func saveUserLocally() {
         UserDefaults.standard.saveObject(rawData: self.user, forKey: "userAccount")
     }
@@ -37,5 +40,7 @@ struct UserVM {
     
     static func removeLocalUser() {
         UserDefaults.standard.removeObject(forKey: "userAccount")
+//        UserDefaults.standard.removeObject(forKey: "\((UserVM.getLocalUser()?.email) ?? "")userCurrency")
+        UserDefaults.standard.synchronize()
     }
 }

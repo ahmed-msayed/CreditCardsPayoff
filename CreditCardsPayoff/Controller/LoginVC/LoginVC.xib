@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yio-pd-3cZ">
-                    <rect key="frame" x="30" y="84" width="73" height="43"/>
+                    <rect key="frame" x="30" y="84" width="150" height="43"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                     <nil key="textColor"/>
@@ -37,18 +37,18 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
                 </label>
-                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.grid.2x2.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6mY-FI-59H">
-                    <rect key="frame" x="258" y="85" width="32" height="30"/>
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CreditCardPayoffMainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="6mY-FI-59H">
+                    <rect key="frame" x="190" y="55.5" width="100" height="100"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                     <color key="tintColor" name="Theme"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="32" id="D0B-G6-FDj"/>
-                        <constraint firstAttribute="width" constant="32" id="flX-gX-Ww2"/>
+                        <constraint firstAttribute="height" constant="100" id="D0B-G6-FDj"/>
+                        <constraint firstAttribute="width" constant="100" id="flX-gX-Ww2"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test1@a.com" placeholder="Email" translatesAutoresizingMaskIntoConstraints="NO" id="WS9-XG-Odj">
                     <rect key="frame" x="30" y="233.5" width="260" height="44"/>
-                    <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" name="Theme"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Pl3-GT-ruk"/>
@@ -63,7 +63,7 @@
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="aaaaaa" placeholder="Password" translatesAutoresizingMaskIntoConstraints="NO" id="kEO-kg-Vqr">
                     <rect key="frame" x="30" y="287.5" width="260" height="40.5"/>
-                    <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" name="Theme"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -104,7 +104,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="715-HL-vUa">
-                    <rect key="frame" x="30" y="470" width="260" height="48"/>
+                    <rect key="frame" x="30" y="440" width="260" height="48"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -127,12 +127,12 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="P3k-01-CVK">
-                    <rect key="frame" x="262.5" y="486" width="12.5" height="16.5"/>
+                    <rect key="frame" x="262.5" y="456" width="12.5" height="16.5"/>
                     <color key="tintColor" systemColor="secondaryLabelColor"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cr-lm-T6G">
                     <rect key="frame" x="248" y="287.5" width="27" height="40.5"/>
-                    <color key="tintColor" systemColor="secondaryLabelColor"/>
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" image="eye.fill" catalog="system"/>
                     <state key="selected" image="eye.slash.fill" catalog="system"/>
                     <connections>
@@ -146,9 +146,10 @@
                 <constraint firstItem="bPQ-b5-OLK" firstAttribute="top" secondItem="kEO-kg-Vqr" secondAttribute="bottom" constant="20" id="1Su-Zu-0Fq"/>
                 <constraint firstItem="kEO-kg-Vqr" firstAttribute="leading" secondItem="WS9-XG-Odj" secondAttribute="leading" id="2EN-Yn-YM0"/>
                 <constraint firstItem="4f8-BC-Xs6" firstAttribute="leading" secondItem="bPQ-b5-OLK" secondAttribute="leading" id="5kE-Qk-5ca"/>
+                <constraint firstItem="6mY-FI-59H" firstAttribute="centerY" secondItem="yio-pd-3cZ" secondAttribute="centerY" id="75q-tj-m49"/>
                 <constraint firstItem="r1b-a9-nKA" firstAttribute="leading" secondItem="yio-pd-3cZ" secondAttribute="leading" id="7kg-4y-EkG"/>
                 <constraint firstItem="yio-pd-3cZ" firstAttribute="leading" secondItem="uEt-Ne-Kpo" secondAttribute="leading" constant="30" id="8fi-Uq-y85"/>
-                <constraint firstItem="Bwk-xK-TgM" firstAttribute="bottom" secondItem="715-HL-vUa" secondAttribute="bottom" constant="50" id="EVq-0S-gfR"/>
+                <constraint firstItem="Bwk-xK-TgM" firstAttribute="bottom" secondItem="715-HL-vUa" secondAttribute="bottom" constant="80" id="EVq-0S-gfR"/>
                 <constraint firstItem="r1b-a9-nKA" firstAttribute="top" secondItem="yio-pd-3cZ" secondAttribute="bottom" constant="11" id="FNv-9R-Ix7"/>
                 <constraint firstItem="9Cr-lm-T6G" firstAttribute="centerY" secondItem="kEO-kg-Vqr" secondAttribute="centerY" id="FOs-nL-LyS"/>
                 <constraint firstItem="715-HL-vUa" firstAttribute="centerX" secondItem="uEt-Ne-Kpo" secondAttribute="centerX" id="KXv-oz-jvV"/>
@@ -167,7 +168,7 @@
                 <constraint firstItem="WS9-XG-Odj" firstAttribute="centerY" secondItem="uEt-Ne-Kpo" secondAttribute="centerY" multiplier="0.9" id="eAq-6O-ln9"/>
                 <constraint firstItem="9Cr-lm-T6G" firstAttribute="bottom" secondItem="kEO-kg-Vqr" secondAttribute="bottom" id="gS6-oN-2rz"/>
                 <constraint firstItem="P3k-01-CVK" firstAttribute="trailing" secondItem="715-HL-vUa" secondAttribute="trailing" constant="-15" id="jFm-eZ-apb"/>
-                <constraint firstItem="6mY-FI-59H" firstAttribute="top" secondItem="yio-pd-3cZ" secondAttribute="top" id="mHb-JO-W1m"/>
+                <constraint firstItem="6mY-FI-59H" firstAttribute="leading" secondItem="yio-pd-3cZ" secondAttribute="trailing" constant="10" id="md4-PU-cY0"/>
                 <constraint firstItem="yio-pd-3cZ" firstAttribute="top" secondItem="Bwk-xK-TgM" secondAttribute="top" constant="64" id="oON-gH-8DU"/>
                 <constraint firstItem="Bwk-xK-TgM" firstAttribute="trailing" secondItem="WS9-XG-Odj" secondAttribute="trailing" constant="30" id="uF7-zz-j6s"/>
                 <constraint firstAttribute="trailing" secondItem="6mY-FI-59H" secondAttribute="trailing" constant="30" id="vU1-Fd-CBf"/>
@@ -179,8 +180,8 @@
         </view>
     </objects>
     <resources>
+        <image name="CreditCardPayoffMainIcon" width="2605" height="2604"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="circle.grid.2x2.fill" catalog="system" width="128" height="111"/>
         <image name="eye.fill" catalog="system" width="128" height="80"/>
         <image name="eye.slash.fill" catalog="system" width="128" height="85"/>
         <namedColor name="Border">
@@ -197,9 +198,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tertiarySystemFillColor">
-            <color red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

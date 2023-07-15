@@ -8,20 +8,34 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
-    var welcomeLabelText = ""
-
+    
     @IBOutlet weak var welcomeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.welcomeLabel.text = "\(UserDefaults.standard.getFirstName())" + " " +  "\(UserDefaults.standard.getLastName())"
+        getUserData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let user = UserVM.getLocalUser() else {return}
+        self.welcomeLabel.text = "\(user.firstName)"+" "+"\(user.lastName)"+" "+"\(user.email)"
+    }
+    
+    func getUserData() {
+        let userId = AuthenticationVM.getCurrentUserId()
+        AuthenticationVM.getUserDataFromDB(userId: userId) { userVM, error in
+            if let userVM = userVM {
+                userVM.saveUserLocally()
+            } else {
+                self.showAlert(message: error ?? "Unknown Error", type: false)
+            }
+        }
     }
     
     @IBAction func clearUserDefaultsBtn(_ sender: Any) {
-        UserDefaults.standard.resetUserDefaults()
-        
-        welcomeLabel.text = "\(UserDefaults.standard.getFirstName())" + " " +  "\(UserDefaults.standard.getLastName())"
+        UserVM.removeLocalUser()
+        UserDefaults.standard.synchronize()
+        welcomeLabel.text = "\(UserVM.getLocalUser()?.firstName ?? "")"+" "+"\(UserVM.getLocalUser()?.lastName ?? "")"
     }
 }

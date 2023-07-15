@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		93EF22DCBD50C635B327B248 /* Pods_CreditCardsPayoff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9355362CEDFBEE7BE470E /* Pods_CreditCardsPayoff.framework */; };
+		E20F7A612A5BE9B20057D451 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F7A5E2A5BE9B20057D451 /* ChangePasswordVC.swift */; };
+		E20F7A622A5BE9B20057D451 /* ChangeEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */; };
+		E21586202A617859005632FC /* AuthenticationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215861F2A617859005632FC /* AuthenticationVM.swift */; };
+		E23D1A6B2A5AB9D100049489 /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */; };
 		E23F118F2A48E6000072A78A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F118E2A48E6000072A78A /* User.swift */; };
+		E2432FA32A5DED3C00560DEC /* CurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2432FA22A5DED3C00560DEC /* CurrencyVC.swift */; };
 		E24F8B5F2A4DEC53006CB187 /* CodableExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */; };
 		E24F8B612A4E3162006CB187 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B602A4E3162006CB187 /* UserVM.swift */; };
 		E24F8B652A4E36A0006CB187 /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B642A4E36A0006CB187 /* AlertVC.swift */; };
@@ -21,6 +26,21 @@
 		E2931C8F2A4A15330028BE46 /* SpinnerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2931C8D2A4A15320028BE46 /* SpinnerExt.swift */; };
 		E2931C902A4A15330028BE46 /* ValidationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2931C8E2A4A15330028BE46 /* ValidationExt.swift */; };
 		E2931C922A4A19D30028BE46 /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2931C912A4A19D30028BE46 /* UserDefaultsExt.swift */; };
+		E2A7D2D92A5ED56300029BF4 /* CurrencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7D2D82A5ED56300029BF4 /* CurrencyList.swift */; };
+		E2A7D2DB2A5EF28A00029BF4 /* CurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7D2DA2A5EF28A00029BF4 /* CurrencyVM.swift */; };
+		E2A7D2DD2A5EF29F00029BF4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7D2DC2A5EF29F00029BF4 /* Currency.swift */; };
+		E2D279382A59F783003C6CDA /* ProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279132A59F782003C6CDA /* ProfileHeaderCell.xib */; };
+		E2D279392A59F783003C6CDA /* TermsConditionsCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D279152A59F782003C6CDA /* TermsConditionsCell.strings */; };
+		E2D2793C2A59F783003C6CDA /* AppSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2791B2A59F782003C6CDA /* AppSettingsCell.swift */; };
+		E2D2793D2A59F783003C6CDA /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2791C2A59F782003C6CDA /* TermsConditionsCell.swift */; };
+		E2D2793F2A59F783003C6CDA /* AppSettingsCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D2791F2A59F783003C6CDA /* AppSettingsCell.strings */; };
+		E2D279422A59F783003C6CDA /* AccountSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279252A59F783003C6CDA /* AccountSettingsCell.xib */; };
+		E2D279432A59F783003C6CDA /* ProfileHeaderCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D279272A59F783003C6CDA /* ProfileHeaderCell.strings */; };
+		E2D279462A59F783003C6CDA /* AccountSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2792D2A59F783003C6CDA /* AccountSettingsCell.swift */; };
+		E2D279472A59F783003C6CDA /* AccountSettingsCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D2792F2A59F783003C6CDA /* AccountSettingsCell.strings */; };
+		E2D2794A2A59F783003C6CDA /* TermsConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279352A59F783003C6CDA /* TermsConditionsCell.xib */; };
+		E2D2794B2A59F783003C6CDA /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D279362A59F783003C6CDA /* ProfileHeaderCell.swift */; };
+		E2D2794C2A59F783003C6CDA /* AppSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279372A59F783003C6CDA /* AppSettingsCell.xib */; };
 		E2EF631D2A3C92420084A8CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EF631C2A3C92420084A8CA /* AppDelegate.swift */; };
 		E2EF631F2A3C92420084A8CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EF631E2A3C92420084A8CA /* SceneDelegate.swift */; };
 		E2EF63242A3C92420084A8CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2EF63222A3C92420084A8CA /* Main.storyboard */; };
@@ -42,7 +62,12 @@
 		7373CA4087E2E7BB78DA3E51 /* Pods-CreditCardsPayoff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditCardsPayoff.debug.xcconfig"; path = "Target Support Files/Pods-CreditCardsPayoff/Pods-CreditCardsPayoff.debug.xcconfig"; sourceTree = "<group>"; };
 		A9A9355362CEDFBEE7BE470E /* Pods_CreditCardsPayoff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CreditCardsPayoff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA39B46B15CDF13EE745007 /* Pods-CreditCardsPayoff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditCardsPayoff.release.xcconfig"; path = "Target Support Files/Pods-CreditCardsPayoff/Pods-CreditCardsPayoff.release.xcconfig"; sourceTree = "<group>"; };
+		E20F7A5E2A5BE9B20057D451 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailVC.swift; sourceTree = "<group>"; };
+		E215861F2A617859005632FC /* AuthenticationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVM.swift; sourceTree = "<group>"; };
+		E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		E23F118E2A48E6000072A78A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E2432FA22A5DED3C00560DEC /* CurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVC.swift; sourceTree = "<group>"; };
 		E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExt.swift; sourceTree = "<group>"; };
 		E24F8B602A4E3162006CB187 /* UserVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 		E24F8B642A4E36A0006CB187 /* AlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
@@ -55,6 +80,25 @@
 		E2931C8D2A4A15320028BE46 /* SpinnerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerExt.swift; sourceTree = "<group>"; };
 		E2931C8E2A4A15330028BE46 /* ValidationExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationExt.swift; sourceTree = "<group>"; };
 		E2931C912A4A19D30028BE46 /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
+		E2A7D2D82A5ED56300029BF4 /* CurrencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyList.swift; sourceTree = "<group>"; };
+		E2A7D2DA2A5EF28A00029BF4 /* CurrencyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVM.swift; sourceTree = "<group>"; };
+		E2A7D2DC2A5EF29F00029BF4 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		E2D279132A59F782003C6CDA /* ProfileHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderCell.xib; sourceTree = "<group>"; };
+		E2D279162A59F782003C6CDA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/TermsConditionsCell.strings; sourceTree = "<group>"; };
+		E2D279172A59F782003C6CDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TermsConditionsCell.strings; sourceTree = "<group>"; };
+		E2D2791B2A59F782003C6CDA /* AppSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsCell.swift; sourceTree = "<group>"; };
+		E2D2791C2A59F782003C6CDA /* TermsConditionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsConditionsCell.swift; sourceTree = "<group>"; };
+		E2D279202A59F783003C6CDA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AppSettingsCell.strings; sourceTree = "<group>"; };
+		E2D279212A59F783003C6CDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppSettingsCell.strings; sourceTree = "<group>"; };
+		E2D279252A59F783003C6CDA /* AccountSettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountSettingsCell.xib; sourceTree = "<group>"; };
+		E2D279282A59F783003C6CDA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ProfileHeaderCell.strings; sourceTree = "<group>"; };
+		E2D2792A2A59F783003C6CDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ProfileHeaderCell.strings; sourceTree = "<group>"; };
+		E2D2792D2A59F783003C6CDA /* AccountSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsCell.swift; sourceTree = "<group>"; };
+		E2D279302A59F783003C6CDA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AccountSettingsCell.strings; sourceTree = "<group>"; };
+		E2D279312A59F783003C6CDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AccountSettingsCell.strings; sourceTree = "<group>"; };
+		E2D279352A59F783003C6CDA /* TermsConditionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TermsConditionsCell.xib; sourceTree = "<group>"; };
+		E2D279362A59F783003C6CDA /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		E2D279372A59F783003C6CDA /* AppSettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppSettingsCell.xib; sourceTree = "<group>"; };
 		E2EF63192A3C92420084A8CA /* CreditCardsPayoff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCardsPayoff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2EF631C2A3C92420084A8CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2EF631E2A3C92420084A8CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,10 +147,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E20F7A5D2A5BE9B20057D451 /* ChangePasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				E20F7A5E2A5BE9B20057D451 /* ChangePasswordVC.swift */,
+			);
+			path = ChangePasswordVC;
+			sourceTree = "<group>";
+		};
+		E20F7A5F2A5BE9B20057D451 /* ChangeEmailVC */ = {
+			isa = PBXGroup;
+			children = (
+				E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */,
+			);
+			path = ChangeEmailVC;
+			sourceTree = "<group>";
+		};
+		E23D1A692A5AB9D100049489 /* ChangeNameVC */ = {
+			isa = PBXGroup;
+			children = (
+				E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */,
+			);
+			path = ChangeNameVC;
+			sourceTree = "<group>";
+		};
+		E2432FA12A5DED0E00560DEC /* CurrencyVC */ = {
+			isa = PBXGroup;
+			children = (
+				E2432FA22A5DED3C00560DEC /* CurrencyVC.swift */,
+				E2A7D2D82A5ED56300029BF4 /* CurrencyList.swift */,
+			);
+			path = CurrencyVC;
+			sourceTree = "<group>";
+		};
 		E24F8B622A4E3168006CB187 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				E24F8B602A4E3162006CB187 /* UserVM.swift */,
+				E2A7D2DA2A5EF28A00029BF4 /* CurrencyVM.swift */,
+				E215861F2A617859005632FC /* AuthenticationVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -140,8 +219,52 @@
 			isa = PBXGroup;
 			children = (
 				E28F3AD32A45CF5E00233A74 /* SettingsVC.swift */,
+				E2D2792E2A59F783003C6CDA /* AccountSettingsCell */,
+				E2D2791E2A59F783003C6CDA /* AppSettingsCell */,
+				E2D279262A59F783003C6CDA /* ProfileHeaderCell */,
+				E2D279142A59F782003C6CDA /* TermsConditionsCell */,
 			);
 			path = SettingsVC;
+			sourceTree = "<group>";
+		};
+		E2D279142A59F782003C6CDA /* TermsConditionsCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2D2791C2A59F782003C6CDA /* TermsConditionsCell.swift */,
+				E2D279352A59F783003C6CDA /* TermsConditionsCell.xib */,
+				E2D279152A59F782003C6CDA /* TermsConditionsCell.strings */,
+			);
+			path = TermsConditionsCell;
+			sourceTree = "<group>";
+		};
+		E2D2791E2A59F783003C6CDA /* AppSettingsCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2D2791B2A59F782003C6CDA /* AppSettingsCell.swift */,
+				E2D279372A59F783003C6CDA /* AppSettingsCell.xib */,
+				E2D2791F2A59F783003C6CDA /* AppSettingsCell.strings */,
+			);
+			path = AppSettingsCell;
+			sourceTree = "<group>";
+		};
+		E2D279262A59F783003C6CDA /* ProfileHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2D279362A59F783003C6CDA /* ProfileHeaderCell.swift */,
+				E2D279132A59F782003C6CDA /* ProfileHeaderCell.xib */,
+				E2D279272A59F783003C6CDA /* ProfileHeaderCell.strings */,
+			);
+			path = ProfileHeaderCell;
+			sourceTree = "<group>";
+		};
+		E2D2792E2A59F783003C6CDA /* AccountSettingsCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2D2792D2A59F783003C6CDA /* AccountSettingsCell.swift */,
+				E2D279252A59F783003C6CDA /* AccountSettingsCell.xib */,
+				E2D2792F2A59F783003C6CDA /* AccountSettingsCell.strings */,
+			);
+			path = AccountSettingsCell;
 			sourceTree = "<group>";
 		};
 		E2EF63102A3C92420084A8CA = {
@@ -185,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				E23F118E2A48E6000072A78A /* User.swift */,
+				E2A7D2DC2A5EF29F00029BF4 /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,12 +323,16 @@
 		E2EF63322A3D05590084A8CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E24F8B632A4E368A006CB187 /* AlertVC */,
-				E273E2422A487E8A00722832 /* SignupVC */,
-				E28F3AD22A45CF1800233A74 /* SettingsVC */,
-				E28F3ACF2A45CDBB00233A74 /* HomeVC */,
 				E2EF63432A3D10510084A8CA /* OnboardingVC */,
 				E2EF63332A3D07430084A8CA /* LoginVC */,
+				E273E2422A487E8A00722832 /* SignupVC */,
+				E20F7A5F2A5BE9B20057D451 /* ChangeEmailVC */,
+				E20F7A5D2A5BE9B20057D451 /* ChangePasswordVC */,
+				E23D1A692A5AB9D100049489 /* ChangeNameVC */,
+				E28F3ACF2A45CDBB00233A74 /* HomeVC */,
+				E2432FA12A5DED0E00560DEC /* CurrencyVC */,
+				E24F8B632A4E368A006CB187 /* AlertVC */,
+				E28F3AD22A45CF1800233A74 /* SettingsVC */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -289,6 +417,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = E2EF63102A3C92420084A8CA;
 			productRefGroup = E2EF631A2A3C92420084A8CA /* Products */;
@@ -305,10 +434,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D279382A59F783003C6CDA /* ProfileHeaderCell.xib in Resources */,
+				E2D2794C2A59F783003C6CDA /* AppSettingsCell.xib in Resources */,
+				E2D279472A59F783003C6CDA /* AccountSettingsCell.strings in Resources */,
+				E2D279392A59F783003C6CDA /* TermsConditionsCell.strings in Resources */,
 				E26352532A45B2FC00587953 /* GoogleService-Info.plist in Resources */,
+				E2D2794A2A59F783003C6CDA /* TermsConditionsCell.xib in Resources */,
 				E2EF63372A3D077A0084A8CA /* LoginVC.xib in Resources */,
+				E2D2793F2A59F783003C6CDA /* AppSettingsCell.strings in Resources */,
 				E273E2462A487EBA00722832 /* SignupVC.xib in Resources */,
+				E2D279422A59F783003C6CDA /* AccountSettingsCell.xib in Resources */,
 				E2EF63292A3C92440084A8CA /* LaunchScreen.storyboard in Resources */,
+				E2D279432A59F783003C6CDA /* ProfileHeaderCell.strings in Resources */,
 				E2EF63262A3C92440084A8CA /* Assets.xcassets in Resources */,
 				E2EF63242A3C92420084A8CA /* Main.storyboard in Resources */,
 				E2EF634E2A3D106F0084A8CA /* OnboardingCell.xib in Resources */,
@@ -369,21 +506,33 @@
 				E24F8B612A4E3162006CB187 /* UserVM.swift in Sources */,
 				E2EF63422A3D0AC90084A8CA /* UITextField+Extension.swift in Sources */,
 				E24F8B652A4E36A0006CB187 /* AlertVC.swift in Sources */,
+				E2D2794B2A59F783003C6CDA /* ProfileHeaderCell.swift in Sources */,
 				E2EF633F2A3D0AC90084A8CA /* UIView+Extension.swift in Sources */,
+				E2D2793C2A59F783003C6CDA /* AppSettingsCell.swift in Sources */,
 				E24F8B5F2A4DEC53006CB187 /* CodableExt.swift in Sources */,
+				E20F7A622A5BE9B20057D451 /* ChangeEmailVC.swift in Sources */,
+				E21586202A617859005632FC /* AuthenticationVM.swift in Sources */,
 				E2931C922A4A19D30028BE46 /* UserDefaultsExt.swift in Sources */,
+				E2432FA32A5DED3C00560DEC /* CurrencyVC.swift in Sources */,
 				E2EF63412A3D0AC90084A8CA /* AppColor.swift in Sources */,
 				E2EF63402A3D0AC90084A8CA /* NavController.swift in Sources */,
+				E23D1A6B2A5AB9D100049489 /* ChangeNameVC.swift in Sources */,
 				E23F118F2A48E6000072A78A /* User.swift in Sources */,
 				E2EF633E2A3D0AC90084A8CA /* UIImageView+Extension.swift in Sources */,
 				E2931C8F2A4A15330028BE46 /* SpinnerExt.swift in Sources */,
+				E2A7D2D92A5ED56300029BF4 /* CurrencyList.swift in Sources */,
 				E2EF63362A3D077A0084A8CA /* LoginVC.swift in Sources */,
+				E2A7D2DD2A5EF29F00029BF4 /* Currency.swift in Sources */,
+				E20F7A612A5BE9B20057D451 /* ChangePasswordVC.swift in Sources */,
 				E2931C902A4A15330028BE46 /* ValidationExt.swift in Sources */,
+				E2D2793D2A59F783003C6CDA /* TermsConditionsCell.swift in Sources */,
 				E2EF634A2A3D106F0084A8CA /* OnboardingVC.swift in Sources */,
 				E2EF631D2A3C92420084A8CA /* AppDelegate.swift in Sources */,
 				E24F8B672A4E3A55006CB187 /* ShowAlertExt.swift in Sources */,
+				E2A7D2DB2A5EF28A00029BF4 /* CurrencyVM.swift in Sources */,
 				E28F3AD12A45CDEB00233A74 /* HomeVC.swift in Sources */,
 				E2EF634B2A3D106F0084A8CA /* OnboardingCell.swift in Sources */,
+				E2D279462A59F783003C6CDA /* AccountSettingsCell.swift in Sources */,
 				E2EF631F2A3C92420084A8CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +540,42 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E2D279152A59F782003C6CDA /* TermsConditionsCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2D279162A59F782003C6CDA /* ar */,
+				E2D279172A59F782003C6CDA /* en */,
+			);
+			name = TermsConditionsCell.strings;
+			sourceTree = "<group>";
+		};
+		E2D2791F2A59F783003C6CDA /* AppSettingsCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2D279202A59F783003C6CDA /* ar */,
+				E2D279212A59F783003C6CDA /* en */,
+			);
+			name = AppSettingsCell.strings;
+			sourceTree = "<group>";
+		};
+		E2D279272A59F783003C6CDA /* ProfileHeaderCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2D279282A59F783003C6CDA /* ar */,
+				E2D2792A2A59F783003C6CDA /* en */,
+			);
+			name = ProfileHeaderCell.strings;
+			sourceTree = "<group>";
+		};
+		E2D2792F2A59F783003C6CDA /* AccountSettingsCell.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2D279302A59F783003C6CDA /* ar */,
+				E2D279312A59F783003C6CDA /* en */,
+			);
+			name = AccountSettingsCell.strings;
+			sourceTree = "<group>";
+		};
 		E2EF63222A3C92420084A8CA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
