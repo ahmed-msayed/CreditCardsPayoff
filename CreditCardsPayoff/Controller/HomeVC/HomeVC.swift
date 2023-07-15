@@ -6,16 +6,39 @@
 //
 
 import UIKit
+import FittedSheets
+import CoreData
+
+var cardList = [Card]()
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
+    var firstLoad = true
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (firstLoad) {
+            firstLoad = false
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Card")
+            do {
+            let results: NSArray = try context.fetch(request) as NSArray
+            for result in results
+            {
+            let card = result as! Card
+            cardList.append(card)
+            }
+            }
+            catch
+            {
+                print("fetch failed")
+            }
+        }
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: "CardCell")
@@ -39,8 +62,23 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    @IBAction func addCardButtonClick(_ sender: Any) {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddCardVC") as? AddCardVC {
+            let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(650)])
+            sheetController.cornerRadius = 35
+            
+            viewController.isDismissed = { [weak self] in
+                self?.tableView.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    self?.showAlert(message: "Card Added successfully!", type: true)
+                }
+            }
+            self.present(sheetController, animated: true, completion: nil)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        return cardList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -50,6 +88,13 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as! CardCell
 
+        let thisCard: Card
+        thisCard = cardList[indexPath.row]
+        
+        cell.titleLabel.text = thisCard.title
+        cell.bankLabel.text = thisCard.bank
+        cell.availableLabel.text = "\(thisCard.available ?? 0)"
+        
         return cell
     }
     
