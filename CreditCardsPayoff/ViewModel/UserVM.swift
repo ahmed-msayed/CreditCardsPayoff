@@ -40,6 +40,7 @@ struct UserVM {
     
     static func removeLocalUser() {
         UserDefaults.standard.removeObject(forKey: "userAccount")
+//        UserDefaults.standard.removeObject(forKey: "\((UserVM.getLocalUser()?.email) ?? "")userCurrency")
         UserDefaults.standard.synchronize()
     }
 }

@@ -21,6 +21,7 @@ class AlertVC: UIViewController {
         super.viewDidLoad()
         initializeViews()
         initializeGestures()
+        dismissAlertAfter()
     }
     
     func initializeViews() {
@@ -36,5 +37,11 @@ class AlertVC: UIViewController {
     
     @IBAction func alertViewTapped(_ sender: UITapGestureRecognizer) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func dismissAlertAfter() {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3){
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

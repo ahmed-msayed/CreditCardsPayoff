@@ -10,5 +10,6 @@ target 'CreditCardsPayoff' do
 pod 'FirebaseAnalytics'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
+pod 'FittedSheets'
 
 end

@@ -6,14 +6,9 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
 
 class SignupVC: UIViewController {
-    
-    let db = Firestore.firestore()
-    var userId = ""
-    
+        
     @IBOutlet var textFieldFirstName: UITextField!
     @IBOutlet var textFieldLastName: UITextField!
     @IBOutlet var textFieldEmail: UITextField!
@@ -24,23 +19,6 @@ class SignupVC: UIViewController {
         super.viewDidLoad()
         navigationControllerSetup()
         textFieldsPaddingSetup()
-    }
-    
-    func saveUserData(userId: String) {
-        if let firstName = textFieldFirstName.text, let lastName = textFieldLastName.text, let email = Auth.auth().currentUser?.email {
-            self.showSpinner(onView: self.view)
-            db.collection("users").addDocument(data: ["firstName": firstName, "lastName": lastName, "email": email, "userId": userId]) { [weak self] (error) in
-                self?.removeSpinner()
-                if let error = error?.localizedDescription {
-                    self?.showAlert(message: error , type: false)
-                } else {
-                    let user = User(userId: userId, firstName: firstName, lastName: lastName, email: email)
-                    let userVM = UserVM(user: user)
-                    userVM.saveUserLocally()
-                    self?.goToHomeVC()
-                }
-            }
-        }
     }
     
     func goToHomeVC() {
@@ -64,6 +42,27 @@ class SignupVC: UIViewController {
         textFieldPassword2.setLeftPadding(value: 15)
     }
     
+    func signUp(email: String, password: String) {
+        self.showSpinner(onView: self.view)
+        AuthenticationVM.signUp(email: email, password: password) { userId, error in
+            self.removeSpinner()
+            if error == nil, let userId = userId, let firstName = self.textFieldFirstName.text, let lastName = self.textFieldLastName.text {
+                self.showSpinner(onView: self.view)
+                AuthenticationVM.saveUserDataToDB(userId: userId, firstName: firstName, lastName: lastName, email: email) { userVM, error  in
+                    self.removeSpinner()
+                    if let userVM = userVM {
+                        userVM.saveUserLocally()
+                        self.goToHomeVC()
+                    } else {
+                        self.showAlert(message: error ?? "Unknown Error", type: false)
+                    }
+                }
+            } else {
+                self.showAlert(message: error ?? "Unknown Error" , type: false)
+            }
+        }
+    }
+    
     @IBAction func actionFacebook(_ sender: Any) {
         print(#function)
     }
@@ -85,15 +84,7 @@ class SignupVC: UIViewController {
             self.showAlert(message: "Passwords don't match!", type: false)
             return
         }
-        self.showSpinner(onView: self.view)
-        Auth.auth().createUser(withEmail: textFieldEmail.text!, password: textFieldPassword.text!) {[weak self] authResult, error in
-            self?.removeSpinner()
-            if error == nil, let userId = Auth.auth().currentUser?.uid {
-                self?.saveUserData(userId: userId)
-            } else {
-                self?.showAlert(message: error?.localizedDescription ?? "" , type: false)
-            }
-        }
+        self.signUp(email: textFieldEmail.text!, password: textFieldPassword.text!)
     }
     
     @IBAction func actionTerms(_ sender: Any) {
