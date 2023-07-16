@@ -13,19 +13,20 @@ class AddCardView: UIViewController {
     var isDismissed: (() -> Void)?
 
 	@IBOutlet var viewCardBackground: UIView!
-	@IBOutlet var labelName: UITextField!
 	@IBOutlet var viewCard: UIView!
 	@IBOutlet var imageCard: UIImageView!
-	@IBOutlet var labelCardNumber: UITextField!
-	@IBOutlet var CVVTextField: UITextField!
-	@IBOutlet var expiryDateTextField: UITextField!
-	@IBOutlet var labelCardDesign: UILabel!
-	@IBOutlet var textFieldCardHolder: UITextField!
-	@IBOutlet var textFieldCardNumber: UITextField!
-	@IBOutlet var textFieldExpDate: UITextField!
-	@IBOutlet var textFieldCVV: UITextField!
 
-	override func viewDidLoad() {
+    @IBOutlet weak var cardNumberTextField: UITextField!
+    @IBOutlet weak var bankNameTextField: UITextField!
+    @IBOutlet weak var holderNameTextField: UITextField!
+    @IBOutlet weak var expiryDateTextField: UITextField!
+
+    @IBOutlet weak var cardTitleTextField: UITextField!
+    @IBOutlet weak var cardLimitTextField: UITextField!
+    @IBOutlet weak var availableAmountTextField: UITextField!
+    @IBOutlet weak var notesTextView: UITextView!
+    
+    override func viewDidLoad() {
 		super.viewDidLoad()
         
 		viewCardBackground.layer.borderWidth = 1
@@ -37,16 +38,7 @@ class AddCardView: UIViewController {
 	}
 
 	func loadData() {
-		labelName.text = "Dave Smith"
-		labelCardNumber.text = "3742 8892 2573 3800"
-		CVVTextField.text = "143"
         expiryDateTextField.text = "02/2021"
-		labelCardDesign.text = "Light"
-
-		textFieldCardHolder.text = "Dave Smith"
-		textFieldCardNumber.text = "3742 8892 2573 3800"
-		textFieldExpDate.text = "02/2021"
-		textFieldCVV.text = "143"
 	}
 
 	// MARK: - User actions
@@ -57,8 +49,8 @@ class AddCardView: UIViewController {
         let entity = NSEntityDescription.entity(forEntityName: "Card", in: context)
         let newCard = Card(entity: entity!, insertInto: context)
         newCard.id = cardList.count as NSNumber
-        newCard.title = labelName.text
-        newCard.bank = labelCardNumber.text
+        newCard.title = cardTitleTextField.text
+        newCard.bank = bankNameTextField.text
         newCard.limit = 10000
         do
         {
