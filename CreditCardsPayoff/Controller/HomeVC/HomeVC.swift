@@ -88,7 +88,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //            self.present(sheetController, animated: true, completion: nil)
 //        }
         
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddCardView") as? AddCardView {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddCardVC") as? AddCardVC {
             let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(750)])
             sheetController.cornerRadius = 35
             

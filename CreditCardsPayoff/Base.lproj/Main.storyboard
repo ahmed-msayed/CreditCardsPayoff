@@ -163,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="3527.480916030534" y="168.3098591549296"/>
         </scene>
-        <!--Add Card View-->
+        <!--Add CardVC-->
         <scene sceneID="9P7-h9-dtY">
             <objects>
-                <viewController storyboardIdentifier="AddCardView" id="Iby-5L-CEa" customClass="AddCardView" customModule="CreditCardsPayoff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCardVC" id="Iby-5L-CEa" customClass="AddCardVC" customModule="CreditCardsPayoff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="o4A-po-4ah">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

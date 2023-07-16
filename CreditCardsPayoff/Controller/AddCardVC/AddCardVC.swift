@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class AddCardView: UIViewController {
+class AddCardVC: UIViewController {
 
     var isDismissed: (() -> Void)?
 
