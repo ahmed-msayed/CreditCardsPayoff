@@ -20,7 +20,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        clearDatabase()
         getUserData()
         initializeTableView()
         getCardsData()
@@ -30,6 +30,10 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewWillAppear(animated)
         guard let user = UserVM.getLocalUser() else {return}
         self.welcomeLabel.text = "Welcome \(user.firstName) \(user.lastName)"
+    }
+    
+    public func clearDatabase() {
+
     }
     
     func getUserData() {
@@ -88,6 +92,13 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(750)])
             sheetController.cornerRadius = 35
             
+            viewController.isDismissed = { [weak self] in
+//                self?.getCardsData()
+                self?.tableView.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    self?.showAlert(message: "Card Added successfully!", type: true)
+                }
+            }
             self.present(sheetController, animated: true, completion: nil)
         }
     }
@@ -108,8 +119,11 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         cell.titleLabel.text = thisCard.title
         cell.bankLabel.text = thisCard.bank
-        cell.availableLabel.text = "\(thisCard.available ?? 0)"
-        
+        if let limit = Double(thisCard.limit), let available = Double(thisCard.available) {
+            cell.dueLabel.text = "\(limit - available)"
+        }
+        cell.availableLabel.text = thisCard.available
+        cell.firstFourDigitsLabel.text = "\(thisCard.number.suffix(4))"
         return cell
     }
     

@@ -12,12 +12,12 @@ class Card: NSManagedObject {
     @NSManaged var id: NSNumber!
     @NSManaged var email: String!
     @NSManaged var title: String!
+    @NSManaged var holder: String!
     @NSManaged var bank: String!
-    @NSManaged var limit: NSNumber!
-    @NSManaged var deducted: NSNumber!
-    @NSManaged var available: NSNumber!
+    @NSManaged var limit: String!
+    @NSManaged var available: String!
     @NSManaged var expire: String!
-    @NSManaged var firstFourDigits: NSNumber!
+    @NSManaged var number: String!
     @NSManaged var dateAdded: Date!
     @NSManaged var notes: String!
 }

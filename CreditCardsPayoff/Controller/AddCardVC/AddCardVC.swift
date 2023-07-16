@@ -28,15 +28,17 @@ class AddCardView: UIViewController {
     
     override func viewDidLoad() {
 		super.viewDidLoad()
-        
-		viewCardBackground.layer.borderWidth = 1
-        viewCardBackground.layer.borderColor = UIColor.blue.cgColor
-		viewCard.layer.borderWidth = 1
-		viewCard.layer.borderColor = UIColor.blue.cgColor
-
+        initializeViews()
 		loadData()
 	}
 
+    func initializeViews() {
+        viewCardBackground.layer.borderWidth = 1
+        viewCardBackground.layer.borderColor = UIColor.blue.cgColor
+        viewCard.layer.borderWidth = 1
+        viewCard.layer.borderColor = UIColor.blue.cgColor
+    }
+    
 	func loadData() {
         expiryDateTextField.text = "02/2021"
 	}
@@ -49,9 +51,14 @@ class AddCardView: UIViewController {
         let entity = NSEntityDescription.entity(forEntityName: "Card", in: context)
         let newCard = Card(entity: entity!, insertInto: context)
         newCard.id = cardList.count as NSNumber
-        newCard.title = cardTitleTextField.text
+        newCard.number = cardNumberTextField.text
         newCard.bank = bankNameTextField.text
-        newCard.limit = 10000
+        newCard.holder = holderNameTextField.text
+        newCard.expire = expiryDateTextField.text
+        newCard.title = cardTitleTextField.text
+        newCard.limit = cardLimitTextField.text
+        newCard.available = availableAmountTextField.text
+        newCard.notes = notesTextView.text
         do
         {
             try context.save()
@@ -59,7 +66,7 @@ class AddCardView: UIViewController {
             dismissModalVC()
         }
         catch {
-            print ("context save error")
+            self.showAlert(message: "Card Save Error", type: false)
         }
 	}
     
