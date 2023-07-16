@@ -9,29 +9,29 @@ import UIKit
 import CoreData
 
 class AddCardVC: UIViewController {
-
+    
     var isDismissed: (() -> Void)?
-
-	@IBOutlet var viewCardBackground: UIView!
-	@IBOutlet var viewCard: UIView!
-	@IBOutlet var imageCard: UIImageView!
-
+    
+    @IBOutlet var viewCardBackground: UIView!
+    @IBOutlet var viewCard: UIView!
+    @IBOutlet var imageCard: UIImageView!
+    
     @IBOutlet weak var cardNumberTextField: UITextField!
     @IBOutlet weak var bankNameTextField: UITextField!
     @IBOutlet weak var holderNameTextField: UITextField!
     @IBOutlet weak var expiryDateTextField: UITextField!
-
+    
     @IBOutlet weak var cardTitleTextField: UITextField!
     @IBOutlet weak var cardLimitTextField: UITextField!
     @IBOutlet weak var availableAmountTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
     
     override func viewDidLoad() {
-		super.viewDidLoad()
+        super.viewDidLoad()
         initializeViews()
-		loadData()
-	}
-
+        loadData()
+    }
+    
     func initializeViews() {
         viewCardBackground.layer.borderWidth = 1
         viewCardBackground.layer.borderColor = UIColor.blue.cgColor
@@ -39,13 +39,13 @@ class AddCardVC: UIViewController {
         viewCard.layer.borderColor = UIColor.blue.cgColor
     }
     
-	func loadData() {
+    func loadData() {
         expiryDateTextField.text = "02/2021"
-	}
-
-	// MARK: - User actions
-
-	@IBAction func actionAddCard(_ sender: UIButton) {
+    }
+    
+    // MARK: - User actions
+    
+    @IBAction func actionAddCard(_ sender: UIButton) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Card", in: context)
@@ -68,7 +68,7 @@ class AddCardVC: UIViewController {
         catch {
             self.showAlert(message: "Card Save Error", type: false)
         }
-	}
+    }
     
     func dismissModalVC() {
         self.isDismissed?()

@@ -11,6 +11,7 @@
 		E20F7A612A5BE9B20057D451 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F7A5E2A5BE9B20057D451 /* ChangePasswordVC.swift */; };
 		E20F7A622A5BE9B20057D451 /* ChangeEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */; };
 		E21586202A617859005632FC /* AuthenticationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215861F2A617859005632FC /* AuthenticationVM.swift */; };
+		E231149B2A647A4B0053F949 /* EditCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E231149A2A647A4B0053F949 /* EditCardVC.swift */; };
 		E23D1A6B2A5AB9D100049489 /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */; };
 		E23F118F2A48E6000072A78A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F118E2A48E6000072A78A /* User.swift */; };
 		E2432FA32A5DED3C00560DEC /* CurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2432FA22A5DED3C00560DEC /* CurrencyVC.swift */; };
@@ -70,6 +71,7 @@
 		E20F7A5E2A5BE9B20057D451 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailVC.swift; sourceTree = "<group>"; };
 		E215861F2A617859005632FC /* AuthenticationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVM.swift; sourceTree = "<group>"; };
+		E231149A2A647A4B0053F949 /* EditCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardVC.swift; sourceTree = "<group>"; };
 		E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		E23F118E2A48E6000072A78A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E2432FA22A5DED3C00560DEC /* CurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVC.swift; sourceTree = "<group>"; };
@@ -171,6 +173,14 @@
 				E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */,
 			);
 			path = ChangeEmailVC;
+			sourceTree = "<group>";
+		};
+		E23114992A647A340053F949 /* EditCardVC */ = {
+			isa = PBXGroup;
+			children = (
+				E231149A2A647A4B0053F949 /* EditCardVC.swift */,
+			);
+			path = EditCardVC;
 			sourceTree = "<group>";
 		};
 		E23D1A692A5AB9D100049489 /* ChangeNameVC */ = {
@@ -353,6 +363,7 @@
 		E2EF63322A3D05590084A8CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E23114992A647A340053F949 /* EditCardVC */,
 				E25A13592A62D9B80039DAE6 /* AddCardVC */,
 				E2EF63432A3D10510084A8CA /* OnboardingVC */,
 				E2EF63332A3D07430084A8CA /* LoginVC */,
@@ -565,6 +576,7 @@
 				E25A135F2A6328830039DAE6 /* AddCardVC.swift in Sources */,
 				E24F8B672A4E3A55006CB187 /* ShowAlertExt.swift in Sources */,
 				E2A7D2DB2A5EF28A00029BF4 /* CurrencyVM.swift in Sources */,
+				E231149B2A647A4B0053F949 /* EditCardVC.swift in Sources */,
 				E28F3AD12A45CDEB00233A74 /* HomeVC.swift in Sources */,
 				E2EF634B2A3D106F0084A8CA /* OnboardingCell.swift in Sources */,
 				E2D279462A59F783003C6CDA /* AccountSettingsCell.swift in Sources */,
