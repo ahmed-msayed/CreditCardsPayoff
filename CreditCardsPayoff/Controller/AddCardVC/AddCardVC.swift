@@ -51,6 +51,8 @@ class AddCardVC: UIViewController {
         let entity = NSEntityDescription.entity(forEntityName: "Card", in: context)
         let newCard = Card(entity: entity!, insertInto: context)
         newCard.id = cardList.count as NSNumber
+        guard let user = UserVM.getLocalUser() else {return}
+        newCard.email = user.email
         newCard.number = cardNumberTextField.text
         newCard.bank = bankNameTextField.text
         newCard.holder = holderNameTextField.text

@@ -28,6 +28,7 @@ class SettingsVC: UIViewController {
         tableView.register(UINib(nibName: "AccountSettingsCell", bundle: nil), forCellReuseIdentifier: "AccountSettingsCell")
         tableView.register(UINib(nibName: "AppSettingsCell", bundle: nil), forCellReuseIdentifier: "AppSettingsCell")
         tableView.register(UINib(nibName: "TermsConditionsCell", bundle: nil), forCellReuseIdentifier: "TermsConditionsCell")
+        tableView.register(UINib(nibName: "LogoutCell", bundle: nil), forCellReuseIdentifier: "LogoutCell")
         self.tableView.reloadData()
     }
 }
@@ -36,7 +37,7 @@ class SettingsVC: UIViewController {
 extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,6 +54,8 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
             return "Account Settings"
         case 3:
             return "Terms & Conditions"
+        case 4:
+            return "LogOut"
         default:
             return ""
         }
@@ -78,6 +81,10 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TermsConditionsCell", for: indexPath) as! TermsConditionsCell
             cell.delegate = self
             return cell
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LogoutCell", for: indexPath) as! LogoutCell
+            cell.delegate = self
+            return cell
         default:
             let cell = UITableViewCell()
             return cell
@@ -94,6 +101,8 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
             return 120
         case 3:
             return 60
+        case 4:
+            return 60
         default:
             return 90
         }
@@ -101,7 +110,7 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 // MARK: - ProfileDelegates
-extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, AppSettingsTapsDelegate, TermsConditionsTapsDelegate {
+extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, AppSettingsTapsDelegate, TermsConditionsTapsDelegate, LogoutTapsDelegate {
     
     func didTapEdit() {
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChangeNameVC") as? ChangeNameVC {
@@ -188,5 +197,14 @@ extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, Ap
         //                title: "Terms & Conditions".localized(), style: .plain, target: nil, action: nil)
         //            navigationItem.backBarButtonItem?.tintColor = .white
         //        }
+    }
+    
+    func didTapLogout() {
+        UserVM.removeLocalUser()
+        UserDefaults.standard.synchronize()
+        cardList = []
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "MainNavigationController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController)
     }
 }

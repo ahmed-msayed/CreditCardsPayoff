@@ -35,6 +35,8 @@
 		E2A7D2D92A5ED56300029BF4 /* CurrencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7D2D82A5ED56300029BF4 /* CurrencyList.swift */; };
 		E2A7D2DB2A5EF28A00029BF4 /* CurrencyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7D2DA2A5EF28A00029BF4 /* CurrencyVM.swift */; };
 		E2A7D2DD2A5EF29F00029BF4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7D2DC2A5EF29F00029BF4 /* Currency.swift */; };
+		E2AE59502A65410A002F8637 /* LogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE594E2A65410A002F8637 /* LogoutCell.swift */; };
+		E2AE59512A65410A002F8637 /* LogoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2AE594F2A65410A002F8637 /* LogoutCell.xib */; };
 		E2D279382A59F783003C6CDA /* ProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279132A59F782003C6CDA /* ProfileHeaderCell.xib */; };
 		E2D279392A59F783003C6CDA /* TermsConditionsCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D279152A59F782003C6CDA /* TermsConditionsCell.strings */; };
 		E2D2793C2A59F783003C6CDA /* AppSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2791B2A59F782003C6CDA /* AppSettingsCell.swift */; };
@@ -95,6 +97,8 @@
 		E2A7D2D82A5ED56300029BF4 /* CurrencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyList.swift; sourceTree = "<group>"; };
 		E2A7D2DA2A5EF28A00029BF4 /* CurrencyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVM.swift; sourceTree = "<group>"; };
 		E2A7D2DC2A5EF29F00029BF4 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		E2AE594E2A65410A002F8637 /* LogoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutCell.swift; sourceTree = "<group>"; };
+		E2AE594F2A65410A002F8637 /* LogoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutCell.xib; sourceTree = "<group>"; };
 		E2D279132A59F782003C6CDA /* ProfileHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderCell.xib; sourceTree = "<group>"; };
 		E2D279162A59F782003C6CDA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/TermsConditionsCell.strings; sourceTree = "<group>"; };
 		E2D279172A59F782003C6CDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TermsConditionsCell.strings; sourceTree = "<group>"; };
@@ -183,6 +187,15 @@
 			path = EditCardVC;
 			sourceTree = "<group>";
 		};
+		E231149C2A6539710053F949 /* LogoutCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2AE594E2A65410A002F8637 /* LogoutCell.swift */,
+				E2AE594F2A65410A002F8637 /* LogoutCell.xib */,
+			);
+			path = LogoutCell;
+			sourceTree = "<group>";
+		};
 		E23D1A692A5AB9D100049489 /* ChangeNameVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +274,7 @@
 				E2D2791E2A59F783003C6CDA /* AppSettingsCell */,
 				E2D279262A59F783003C6CDA /* ProfileHeaderCell */,
 				E2D279142A59F782003C6CDA /* TermsConditionsCell */,
+				E231149C2A6539710053F949 /* LogoutCell */,
 			);
 			path = SettingsVC;
 			sourceTree = "<group>";
@@ -480,6 +494,7 @@
 				E2D2794C2A59F783003C6CDA /* AppSettingsCell.xib in Resources */,
 				E2D279472A59F783003C6CDA /* AccountSettingsCell.strings in Resources */,
 				E2D279392A59F783003C6CDA /* TermsConditionsCell.strings in Resources */,
+				E2AE59512A65410A002F8637 /* LogoutCell.xib in Resources */,
 				E26352532A45B2FC00587953 /* GoogleService-Info.plist in Resources */,
 				E2D2794A2A59F783003C6CDA /* TermsConditionsCell.xib in Resources */,
 				E2EF63372A3D077A0084A8CA /* LoginVC.xib in Resources */,
@@ -551,6 +566,7 @@
 				E2EF63422A3D0AC90084A8CA /* UITextField+Extension.swift in Sources */,
 				E24F8B652A4E36A0006CB187 /* AlertVC.swift in Sources */,
 				E2D2794B2A59F783003C6CDA /* ProfileHeaderCell.swift in Sources */,
+				E2AE59502A65410A002F8637 /* LogoutCell.swift in Sources */,
 				E2EF633F2A3D0AC90084A8CA /* UIView+Extension.swift in Sources */,
 				E2D2793C2A59F783003C6CDA /* AppSettingsCell.swift in Sources */,
 				E25A13512A62A5910039DAE6 /* CoreDataModel.xcdatamodeld in Sources */,
