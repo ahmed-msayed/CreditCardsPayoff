@@ -10,7 +10,8 @@ import CoreData
 
 class EditCardVC: UIViewController {
     
-    var isDismissed: (() -> Void)?
+    var saveAndDismissed: (() -> Void)?
+    var deleteAndDismissed: (() -> Void)?
     var selectedCard: Card? = nil
     
     @IBOutlet var viewCardBackground: UIView!
@@ -62,7 +63,7 @@ class EditCardVC: UIViewController {
                     card.available = availableAmountTextField.text
                     card.notes = notesTextView.text
                     try context.save()
-                    dismissModalVC()
+                    saveAndDismissModalVC()
                 }
             }
         }
@@ -72,8 +73,17 @@ class EditCardVC: UIViewController {
         }
     }
     
-    func dismissModalVC() {
-        self.isDismissed?()
+    @IBAction func deleteCardButtonClick(_ sender: Any) {
+        deleteAndDismissModalVC()
+    }
+    
+    func saveAndDismissModalVC() {
+        self.saveAndDismissed?()
+        dismiss(animated: true)
+    }
+    
+    func deleteAndDismissModalVC() {
+        self.deleteAndDismissed?()
         dismiss(animated: true)
     }
 }

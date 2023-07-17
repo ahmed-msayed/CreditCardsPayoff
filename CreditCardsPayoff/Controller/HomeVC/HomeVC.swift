@@ -75,19 +75,6 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func addCardButtonClick(_ sender: Any) {
-        //        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddCardVC") as? AddCardVC {
-        //            let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(650)])
-        //            sheetController.cornerRadius = 35
-        //
-        //            viewController.isDismissed = { [weak self] in
-        //                self?.tableView.reloadData()
-        //                DispatchQueue.main.asyncAfter(deadline: .now()) {
-        //                    self?.showAlert(message: "Card Added successfully!", type: true)
-        //                }
-        //            }
-        //            self.present(sheetController, animated: true, completion: nil)
-        //        }
-        
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddCardVC") as? AddCardVC {
             let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(750)])
             sheetController.cornerRadius = 35
@@ -133,11 +120,28 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             selectedCard = cardList[indexPath.row]
             viewController.selectedCard = selectedCard
             tableView.deselectRow(at: indexPath, animated: true)
-
+            
             let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(750)])
             sheetController.cornerRadius = 35
             
-            viewController.isDismissed = { [weak self] in
+            viewController.deleteAndDismissed = { [weak self] in
+                // remove the deleted item from the model and List
+                let appDel = UIApplication.shared.delegate as! AppDelegate
+                let context: NSManagedObjectContext = appDel.persistentContainer.viewContext
+                context.delete(cardList[indexPath.row] )
+                cardList.remove(at: (indexPath.row))
+                do {
+                    try context.save()
+                } catch _ {
+                }
+                
+                self?.tableView.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    self?.showAlert(message: "Card Deleted successfully!", type: true)
+                }
+            }
+            
+            viewController.saveAndDismissed = { [weak self] in
                 self?.tableView.reloadData()
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     self?.showAlert(message: "Card Saved successfully!", type: true)
