@@ -37,6 +37,8 @@
 		E2A7D2DD2A5EF29F00029BF4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7D2DC2A5EF29F00029BF4 /* Currency.swift */; };
 		E2AE59502A65410A002F8637 /* LogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE594E2A65410A002F8637 /* LogoutCell.swift */; };
 		E2AE59512A65410A002F8637 /* LogoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2AE594F2A65410A002F8637 /* LogoutCell.xib */; };
+		E2AE59562A657B91002F8637 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE59542A657B91002F8637 /* BaseVC.swift */; };
+		E2AE59572A657B91002F8637 /* FloatingTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE59552A657B91002F8637 /* FloatingTabbar.swift */; };
 		E2D279382A59F783003C6CDA /* ProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279132A59F782003C6CDA /* ProfileHeaderCell.xib */; };
 		E2D279392A59F783003C6CDA /* TermsConditionsCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D279152A59F782003C6CDA /* TermsConditionsCell.strings */; };
 		E2D2793C2A59F783003C6CDA /* AppSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2791B2A59F782003C6CDA /* AppSettingsCell.swift */; };
@@ -99,6 +101,8 @@
 		E2A7D2DC2A5EF29F00029BF4 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		E2AE594E2A65410A002F8637 /* LogoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutCell.swift; sourceTree = "<group>"; };
 		E2AE594F2A65410A002F8637 /* LogoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutCell.xib; sourceTree = "<group>"; };
+		E2AE59542A657B91002F8637 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		E2AE59552A657B91002F8637 /* FloatingTabbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingTabbar.swift; sourceTree = "<group>"; };
 		E2D279132A59F782003C6CDA /* ProfileHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderCell.xib; sourceTree = "<group>"; };
 		E2D279162A59F782003C6CDA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/TermsConditionsCell.strings; sourceTree = "<group>"; };
 		E2D279172A59F782003C6CDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TermsConditionsCell.strings; sourceTree = "<group>"; };
@@ -279,6 +283,13 @@
 			path = SettingsVC;
 			sourceTree = "<group>";
 		};
+		E2AE59582A657CE0002F8637 /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
 		E2D279142A59F782003C6CDA /* TermsConditionsCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +388,7 @@
 		E2EF63322A3D05590084A8CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E2AE59582A657CE0002F8637 /* BaseVC */,
 				E23114992A647A340053F949 /* EditCardVC */,
 				E25A13592A62D9B80039DAE6 /* AddCardVC */,
 				E2EF63432A3D10510084A8CA /* OnboardingVC */,
@@ -415,6 +427,8 @@
 				E2931C912A4A19D30028BE46 /* UserDefaultsExt.swift */,
 				E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */,
 				E24F8B662A4E3A55006CB187 /* ShowAlertExt.swift */,
+				E2AE59542A657B91002F8637 /* BaseVC.swift */,
+				E2AE59552A657B91002F8637 /* FloatingTabbar.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -562,12 +576,14 @@
 				E273E2452A487EBA00722832 /* SignupVC.swift in Sources */,
 				E28F3AD42A45CF5E00233A74 /* SettingsVC.swift in Sources */,
 				E25A13532A62A8E80039DAE6 /* Card.swift in Sources */,
+				E2AE59572A657B91002F8637 /* FloatingTabbar.swift in Sources */,
 				E24F8B612A4E3162006CB187 /* UserVM.swift in Sources */,
 				E2EF63422A3D0AC90084A8CA /* UITextField+Extension.swift in Sources */,
 				E24F8B652A4E36A0006CB187 /* AlertVC.swift in Sources */,
 				E2D2794B2A59F783003C6CDA /* ProfileHeaderCell.swift in Sources */,
 				E2AE59502A65410A002F8637 /* LogoutCell.swift in Sources */,
 				E2EF633F2A3D0AC90084A8CA /* UIView+Extension.swift in Sources */,
+				E2AE59562A657B91002F8637 /* BaseVC.swift in Sources */,
 				E2D2793C2A59F783003C6CDA /* AppSettingsCell.swift in Sources */,
 				E25A13512A62A5910039DAE6 /* CoreDataModel.xcdatamodeld in Sources */,
 				E24F8B5F2A4DEC53006CB187 /* CodableExt.swift in Sources */,

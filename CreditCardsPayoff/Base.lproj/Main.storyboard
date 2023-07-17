@@ -582,12 +582,12 @@
             </objects>
             <point key="canvasLocation" x="4743" y="177"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--BaseVC-->
         <scene sceneID="38v-Ov-xEi">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="bjt-yy-nVb" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="bjt-yy-nVb" customClass="BaseVC" customModule="CreditCardsPayoff" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xga-nx-bq4">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xga-nx-bq4" customClass="FloatingTabbar" customModule="CreditCardsPayoff" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
