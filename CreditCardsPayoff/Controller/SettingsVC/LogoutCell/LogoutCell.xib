@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogoutCell" rowHeight="70" id="Kmb-J4-68u" userLabel="LogoutCell" customClass="LogoutCell" customModule="CreditCardsPayoff" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kmb-J4-68u" id="Pon-f0-Dwo" userLabel="LogoutView">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete.left.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QbI-MX-9IB" userLabel="LogoutIcon">
+                        <rect key="frame" x="20" y="19.333333333333336" width="25" height="22.000000000000007"/>
+                        <color key="tintColor" name="Theme"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="RND-qi-MPC"/>
+                            <constraint firstAttribute="width" constant="25" id="kkm-w8-Hfo"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LogOut User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgl-BW-pEb">
+                        <rect key="frame" x="65" y="20.666666666666668" width="146" height="19.000000000000004"/>
+                        <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Fw-7w-u21" userLabel="Arrow">
+                        <rect key="frame" x="320" y="22" width="30" height="16.333333333333329"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="49v-Vi-zCi"/>
+                            <constraint firstAttribute="width" constant="30" id="mUN-Pt-HFZ"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="1Fw-7w-u21" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Hgl-BW-pEb" secondAttribute="trailing" constant="109" id="4SP-jq-3kF"/>
+                    <constraint firstItem="QbI-MX-9IB" firstAttribute="centerY" secondItem="Pon-f0-Dwo" secondAttribute="centerY" id="9Ow-Bg-aHw"/>
+                    <constraint firstItem="1Fw-7w-u21" firstAttribute="centerY" secondItem="Pon-f0-Dwo" secondAttribute="centerY" id="C79-oP-bdK"/>
+                    <constraint firstItem="QbI-MX-9IB" firstAttribute="leading" secondItem="Pon-f0-Dwo" secondAttribute="leading" constant="20" id="KVw-Iz-sFX"/>
+                    <constraint firstItem="Hgl-BW-pEb" firstAttribute="leading" secondItem="QbI-MX-9IB" secondAttribute="trailing" constant="20" id="L1e-iL-LM5"/>
+                    <constraint firstItem="Hgl-BW-pEb" firstAttribute="centerY" secondItem="Pon-f0-Dwo" secondAttribute="centerY" id="ezS-jq-fB8"/>
+                    <constraint firstAttribute="trailing" secondItem="1Fw-7w-u21" secondAttribute="trailing" constant="10" id="l6u-ZW-FbA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="53C-7W-uqu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="logoutArrowImage" destination="1Fw-7w-u21" id="6eS-JX-U12"/>
+                <outlet property="logoutView" destination="Pon-f0-Dwo" id="wNX-Fc-USA"/>
+            </connections>
+            <point key="canvasLocation" x="160.86956521739131" y="117.1875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <image name="delete.left.fill" catalog="system" width="128" height="102"/>
+        <namedColor name="Theme">
+            <color red="0.80400002002716064" green="0.34900000691413879" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

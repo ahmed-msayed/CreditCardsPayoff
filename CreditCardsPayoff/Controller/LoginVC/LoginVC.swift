@@ -57,6 +57,7 @@ class LoginVC: UIViewController {
                     self.removeSpinner()
                     if let userVM = userVM {
                         userVM.saveUserLocally()
+                        UserDefaults.standard.synchronize()
                         self.goToHomeVC()
                     } else {
                         self.showAlert(message: error ?? "Unknown Error", type: false)
