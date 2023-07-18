@@ -11,6 +11,7 @@ import UIKit
 class FloatingTabbar: UITabBar {
     
     private var shapeLayer: CALayer?
+    
     private func addShape() {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = createPath()
@@ -30,9 +31,11 @@ class FloatingTabbar: UITabBar {
         }
         self.shapeLayer = shapeLayer
     }
+    
     override func draw(_ rect: CGRect) {
         self.addShape()
     }
+    
     func createPath() -> CGPath {
         let height: CGFloat = 37.0
         let path = UIBezierPath()
@@ -53,7 +56,6 @@ class FloatingTabbar: UITabBar {
         
         return path.cgPath
     }
-    
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         guard !clipsToBounds && !isHidden && alpha > 0 else { return nil }
