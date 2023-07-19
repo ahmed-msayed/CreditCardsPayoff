@@ -57,15 +57,11 @@ class BaseVC: UITabBarController, UITabBarControllerDelegate {
     
     // Menu Button Touch Action
     @objc func menuButtonAction(sender: UIButton) {
-        //        self.selectedIndex = 1   //to select the middle tab. use "1" if you have only 3 tabs.
-        print("hello")
-        
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddCardVC") as? AddCardVC {
             let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(750)])
             sheetController.cornerRadius = 35
             
             viewController.isDismissed = { [weak self] in
-                //                        self?.tableView.reloadData()
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     self?.showAlert(message: "Card Added successfully!", type: true)
                 }

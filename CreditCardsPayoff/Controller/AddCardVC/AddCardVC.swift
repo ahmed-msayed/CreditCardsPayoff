@@ -25,6 +25,7 @@ class AddCardVC: UIViewController {
     @IBOutlet weak var cardLimitTextField: UITextField!
     @IBOutlet weak var availableAmountTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
+    @IBOutlet weak var addCardButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class AddCardVC: UIViewController {
     }
     
     func loadData() {
-        expiryDateTextField.text = "02/2021"
+        expiryDateTextField.text = "02/2025"
     }
     
     // MARK: - User actions
@@ -75,5 +76,10 @@ class AddCardVC: UIViewController {
     func dismissModalVC() {
         self.isDismissed?()
         dismiss(animated: true)
+        notificationCenterReloadHomeTable()
+    }
+    
+    func notificationCenterReloadHomeTable() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateTableView"), object: nil)
     }
 }

@@ -20,6 +20,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         getUserData()
         initializeTableView()
+        initializeNotificationCenter()
         getCardsData()
     }
     
@@ -47,6 +48,16 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.register(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: "CardCell")
     }
     
+    func initializeNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateTableView), name: NSNotification.Name(rawValue: "updateTableView"), object: nil)
+    }
+    
+    @objc func updateTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     func getCardsData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -69,21 +80,6 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         catch
         {
             self.showAlert(message: "Getting Data Failed", type: false)
-        }
-    }
-    
-    @IBAction func addCardButtonClick(_ sender: Any) {
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddCardVC") as? AddCardVC {
-            let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(750)])
-            sheetController.cornerRadius = 35
-            
-            viewController.isDismissed = { [weak self] in
-                self?.tableView.reloadData()
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    self?.showAlert(message: "Card Added successfully!", type: true)
-                }
-            }
-            self.present(sheetController, animated: true, completion: nil)
         }
     }
     
