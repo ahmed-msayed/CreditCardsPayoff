@@ -88,7 +88,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 140
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,14 +96,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let thisCard: Card
         thisCard = cardList[indexPath.row]
-        
-        cell.titleLabel.text = thisCard.title
-        cell.bankLabel.text = thisCard.bank
-        if let limit = Double(thisCard.limit), let available = Double(thisCard.available) {
-            cell.dueLabel.text = "\(limit - available)"
-        }
-        cell.availableLabel.text = thisCard.available
-        cell.firstFourDigitsLabel.text = "\(thisCard.number.suffix(4))"
+        cell.updateViews(card: thisCard)
         return cell
     }
     

@@ -12,5 +12,6 @@
         <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="number" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
 </model>

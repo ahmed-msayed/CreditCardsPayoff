@@ -8,9 +8,10 @@
 import UIKit
 import CoreData
 
-class AddCardVC: UIViewController {
+class AddCardVC: UIViewController, UITextFieldDelegate {
     
     var isDismissed: (() -> Void)?
+    var cardType: CardType = .other
     
     @IBOutlet var viewCardBackground: UIView!
     @IBOutlet var viewCard: UIView!
@@ -38,6 +39,7 @@ class AddCardVC: UIViewController {
         viewCardBackground.layer.borderColor = UIColor.blue.cgColor
         viewCard.layer.borderWidth = 1
         viewCard.layer.borderColor = UIColor.blue.cgColor
+        cardNumberTextField.delegate = self
     }
     
     func loadData() {
@@ -62,6 +64,7 @@ class AddCardVC: UIViewController {
         newCard.limit = cardLimitTextField.text
         newCard.available = availableAmountTextField.text
         newCard.notes = notesTextView.text
+        newCard.type = "\(cardType)"
         do
         {
             try context.save()
@@ -81,5 +84,20 @@ class AddCardVC: UIViewController {
     
     func notificationCenterReloadHomeTable() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateTableView"), object: nil)
+    }
+    
+    @IBAction func cardNumberChanged(_ sender: UITextField) {
+        let text = cardNumberTextField.text
+        
+        if text?.prefix(1) == "5" {
+            imageCard.image = UIImage(named: "mastercard-100")
+            cardType = .mastercard
+        } else if text?.prefix(1) == "4" {
+            imageCard.image = UIImage(named: "visa-100")
+            cardType = .visa
+        } else {
+            imageCard.image = UIImage(named: "magnetic-card-100")
+            cardType = .other
+        }
     }
 }
