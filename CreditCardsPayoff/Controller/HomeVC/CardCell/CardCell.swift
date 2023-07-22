@@ -35,11 +35,12 @@ class CardCell: UITableViewCell {
     
     func updateViews(card: Card) {
         titleLabel.text = card.title
-        bankLabel.text = card.bank
-        availableLabel.text = card.available
+        bankLabel.text = card.bank        
         firstFourDigitsLabel.text = card.number == "" ? "XXXX-XXXX-XXXX-XXXX" : "XXXX-XXXX-XXXX-\(card.number.suffix(4))"
         if let limit = Double(card.limit), let available = Double(card.available) {
-            dueLabel.text = "\(limit - available)"
+            let due = limit - available
+            dueLabel.text = "\(due.formatted())"
+            availableLabel.text = "\(available.formatted())"
         }
         
         switch card.type {

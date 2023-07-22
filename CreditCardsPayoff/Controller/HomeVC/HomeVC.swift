@@ -13,11 +13,13 @@ var cardList = [Card]()
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeViews()
         getUserData()
         initializeTableView()
         initializeNotificationCenter()
@@ -28,6 +30,10 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewWillAppear(animated)
         guard let user = UserVM.getLocalUser() else {return}
         self.welcomeLabel.text = "Welcome \(user.firstName) \(user.lastName)"
+    }
+    
+    func initializeViews() {
+        titleView.cornerRadius = 15
     }
     
     func getUserData() {

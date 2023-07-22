@@ -51,6 +51,7 @@
 		E2D2794A2A59F783003C6CDA /* TermsConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279352A59F783003C6CDA /* TermsConditionsCell.xib */; };
 		E2D2794B2A59F783003C6CDA /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D279362A59F783003C6CDA /* ProfileHeaderCell.swift */; };
 		E2D2794C2A59F783003C6CDA /* AppSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279372A59F783003C6CDA /* AppSettingsCell.xib */; };
+		E2D9CE132A6C6DE800D2E44E /* AlertAskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9CE122A6C6DE800D2E44E /* AlertAskVC.swift */; };
 		E2EF631D2A3C92420084A8CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EF631C2A3C92420084A8CA /* AppDelegate.swift */; };
 		E2EF631F2A3C92420084A8CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EF631E2A3C92420084A8CA /* SceneDelegate.swift */; };
 		E2EF63242A3C92420084A8CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2EF63222A3C92420084A8CA /* Main.storyboard */; };
@@ -119,6 +120,7 @@
 		E2D279352A59F783003C6CDA /* TermsConditionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TermsConditionsCell.xib; sourceTree = "<group>"; };
 		E2D279362A59F783003C6CDA /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		E2D279372A59F783003C6CDA /* AppSettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppSettingsCell.xib; sourceTree = "<group>"; };
+		E2D9CE122A6C6DE800D2E44E /* AlertAskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAskVC.swift; sourceTree = "<group>"; };
 		E2EF63192A3C92420084A8CA /* CreditCardsPayoff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCardsPayoff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2EF631C2A3C92420084A8CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2EF631E2A3C92420084A8CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -330,6 +332,14 @@
 			path = AccountSettingsCell;
 			sourceTree = "<group>";
 		};
+		E2D9CE112A6C6DC400D2E44E /* AlertAskVC */ = {
+			isa = PBXGroup;
+			children = (
+				E2D9CE122A6C6DE800D2E44E /* AlertAskVC.swift */,
+			);
+			path = AlertAskVC;
+			sourceTree = "<group>";
+		};
 		E2EF63102A3C92420084A8CA = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +398,7 @@
 		E2EF63322A3D05590084A8CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E2D9CE112A6C6DC400D2E44E /* AlertAskVC */,
 				E2AE59582A657CE0002F8637 /* BaseVC */,
 				E23114992A647A340053F949 /* EditCardVC */,
 				E25A13592A62D9B80039DAE6 /* AddCardVC */,
@@ -578,6 +589,7 @@
 				E25A13532A62A8E80039DAE6 /* Card.swift in Sources */,
 				E2AE59572A657B91002F8637 /* FloatingTabbar.swift in Sources */,
 				E24F8B612A4E3162006CB187 /* UserVM.swift in Sources */,
+				E2D9CE132A6C6DE800D2E44E /* AlertAskVC.swift in Sources */,
 				E2EF63422A3D0AC90084A8CA /* UITextField+Extension.swift in Sources */,
 				E24F8B652A4E36A0006CB187 /* AlertVC.swift in Sources */,
 				E2D2794B2A59F783003C6CDA /* ProfileHeaderCell.swift in Sources */,
