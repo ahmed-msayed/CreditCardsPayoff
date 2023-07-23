@@ -100,6 +100,16 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as! CardCell
         
+        let layer = CAGradientLayer()
+        layer.frame = cell.cardMainView.frame
+        layer.frame = cell.bounds
+        layer.colors = [UIColor(named: "cardBackgroundG1")!.cgColor, UIColor(named: "cardBackgroundG2")!.cgColor]
+        layer.startPoint = CGPoint(x: 0.0, y: 1.0)
+        layer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        layer.cornerRadius = 20
+        cell.cardMainView.layer.insertSublayer(layer, at: 0)
+        
+        
         let thisCard: Card
         thisCard = cardList[indexPath.row]
         cell.updateViews(card: thisCard)

@@ -19,7 +19,7 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpC-e0-beu">
                         <rect key="frame" x="10" y="5" width="370" height="130"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YpC-ju-dEm">
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YpC-ju-dEm">
                                 <rect key="frame" x="0.0" y="0.0" width="370" height="130"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1W-fn-DPg">
@@ -60,6 +60,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -101,6 +102,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="GQH-Rr-6tV" firstAttribute="centerX" secondItem="ik5-1N-dcC" secondAttribute="centerX" id="7Hi-BS-Tfn"/>
                                                     <constraint firstItem="YEW-bY-lo1" firstAttribute="centerX" secondItem="ik5-1N-dcC" secondAttribute="centerX" id="J5s-6s-OWz"/>
@@ -121,7 +123,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.38290821320653706" green="0.67970722853535348" blue="0.61906619669500773" alpha="0.89970509105960261" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YpC-ju-dEm" firstAttribute="leading" secondItem="RpC-e0-beu" secondAttribute="leading" id="2cv-PU-zVR"/>
                             <constraint firstAttribute="bottom" secondItem="YpC-ju-dEm" secondAttribute="bottom" id="swe-c4-muV"/>

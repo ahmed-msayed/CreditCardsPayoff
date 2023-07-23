@@ -10,7 +10,7 @@ import UIKit
 class CardCell: UITableViewCell {
     
     let cardType: CardType = .other
-    
+
     @IBOutlet weak var cardMainView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
@@ -26,11 +26,13 @@ class CardCell: UITableViewCell {
     
     func initializeViews() {
         cardMainView.layer.cornerRadius = 15
-        cardMainView.layer.shadowColor = UIColor.lightGray.cgColor
-        cardMainView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        cardMainView.layer.shadowRadius = 4
-        cardMainView.layer.shadowOpacity = 0.5
-        cardMainView.layer.masksToBounds = false
+//        cardMainView.layer.shadowColor = UIColor.lightGray.cgColor
+//        cardMainView.layer.shadowOffset = CGSize(width: 1, height: 1)
+//        cardMainView.layer.shadowRadius = 4
+//        cardMainView.layer.shadowOpacity = 0.5
+//        cardMainView.layer.masksToBounds = false
+//        cardMainView.backgroundColor = UIColor(named: "cardBackground")
+//        cardMainView.setGradientBackground(colorOne: UIColor(named: "cardBackgroundG1")!, colorTwo: UIColor(named: "cardBackgroundG2")!)
     }
     
     func updateViews(card: Card) {
