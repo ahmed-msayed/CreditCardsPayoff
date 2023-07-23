@@ -20,7 +20,7 @@ class BaseVC: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         setupMiddleButton()
         
-        tabBar.tintColor = .systemGreen
+        tabBar.tintColor = UIColor(named: "tabBarSelectedTab")
         tabBar.unselectedItemTintColor = .gray
     }
     

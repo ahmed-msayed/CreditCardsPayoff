@@ -200,11 +200,10 @@ extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, Ap
     }
     
     func didTapLogout() {
-        UserVM.removeLocalUser()
-        UserDefaults.standard.synchronize()
-        cardList = []
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "MainNavigationController")
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController)
+        let alertAskVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlertAskVC") as! AlertAskVC
+        alertAskVC.alertMessage = "Are you sure you want's to logout?"
+        alertAskVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        alertAskVC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(alertAskVC, animated: true)
     }
 }

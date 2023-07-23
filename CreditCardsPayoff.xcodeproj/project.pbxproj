@@ -288,6 +288,7 @@
 		E2AE59582A657CE0002F8637 /* BaseVC */ = {
 			isa = PBXGroup;
 			children = (
+				E2AE59542A657B91002F8637 /* BaseVC.swift */,
 			);
 			path = BaseVC;
 			sourceTree = "<group>";
@@ -438,7 +439,6 @@
 				E2931C912A4A19D30028BE46 /* UserDefaultsExt.swift */,
 				E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */,
 				E24F8B662A4E3A55006CB187 /* ShowAlertExt.swift */,
-				E2AE59542A657B91002F8637 /* BaseVC.swift */,
 				E2AE59552A657B91002F8637 /* FloatingTabbar.swift */,
 			);
 			path = Utilities;

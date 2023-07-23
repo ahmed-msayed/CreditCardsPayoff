@@ -113,7 +113,7 @@
                             <constraint firstItem="99F-lc-qRk" firstAttribute="leading" secondItem="8Cg-aZ-trm" secondAttribute="leading" id="uuZ-z4-QBr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="hwa-bn-sQL"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="hwa-bn-sQL"/>
                     <connections>
                         <outlet property="tableView" destination="SLU-vJ-yRP" id="pkG-9M-cMo"/>
                         <outlet property="titleView" destination="99F-lc-qRk" id="RfU-MZ-PLJ"/>
@@ -146,7 +146,7 @@
                             <constraint firstItem="5IW-Il-i69" firstAttribute="trailing" secondItem="xnO-My-bgX" secondAttribute="trailing" constant="20" id="zzk-VY-sTS"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="BXg-i3-KG9"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" catalog="system" id="BXg-i3-KG9"/>
                     <connections>
                         <outlet property="tableView" destination="xnO-My-bgX" id="FFS-83-hIe"/>
                     </connections>
@@ -1657,13 +1657,14 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lkO-bQ-zCU"/>
-                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="fYL-Px-UFB" firstAttribute="centerY" secondItem="XVu-aO-ohD" secondAttribute="centerY" id="KvG-ld-fjz"/>
                             <constraint firstItem="fYL-Px-UFB" firstAttribute="centerX" secondItem="XVu-aO-ohD" secondAttribute="centerX" id="tEU-98-oIJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alertMessageLabel" destination="oxU-Ry-eLP" id="L3x-dT-SsZ"/>
                         <outlet property="alertView" destination="fYL-Px-UFB" id="Cfl-Td-GzS"/>
                         <outlet property="mainView" destination="XVu-aO-ohD" id="0HM-JH-zoP"/>
                         <outlet property="noButtonView" destination="3VF-Uf-KjT" id="NbA-9P-1dD"/>
@@ -1679,8 +1680,8 @@
         <image name="check-circle-wrong-100" width="100" height="100"/>
         <image name="creditcard.fill" catalog="system" width="128" height="88"/>
         <image name="eye.fill" catalog="system" width="128" height="80"/>
-        <image name="gearshape" catalog="system" width="128" height="123"/>
-        <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="pencil-icon" width="30" height="30"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
