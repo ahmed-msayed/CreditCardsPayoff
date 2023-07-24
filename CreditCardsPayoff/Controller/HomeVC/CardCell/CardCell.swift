@@ -26,13 +26,16 @@ class CardCell: UITableViewCell {
     
     func initializeViews() {
         cardMainView.layer.cornerRadius = 15
-//        cardMainView.layer.shadowColor = UIColor.lightGray.cgColor
-//        cardMainView.layer.shadowOffset = CGSize(width: 1, height: 1)
-//        cardMainView.layer.shadowRadius = 4
-//        cardMainView.layer.shadowOpacity = 0.5
-//        cardMainView.layer.masksToBounds = false
-//        cardMainView.backgroundColor = UIColor(named: "cardBackground")
-//        cardMainView.setGradientBackground(colorOne: UIColor(named: "cardBackgroundG1")!, colorTwo: UIColor(named: "cardBackgroundG2")!)
+    }
+    
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        //Add shadow
+        self.layer.masksToBounds = false
+        self.layer.shadowOffset = .zero
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowRadius = 5
+        self.layer.shadowOpacity = 1
     }
     
     func updateViews(card: Card) {
@@ -91,20 +94,3 @@ class CardCell: UITableViewCell {
 //    self.view.endEditing(true)
 //}
 //}
-//
-//enum Card: String {
-//case visa = "visa"
-//case mastercard = "mastercard"
-//case mada = "mada"
-//
-//var cardString: String {
-//    switch self {
-//    case .visa:
-//        return "visa"
-//    case .mastercard:
-//        return "mastercard"
-//    case .mada:
-//        return "mada"
-//    }
-//}
-
