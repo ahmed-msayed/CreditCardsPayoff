@@ -8,9 +8,11 @@
 import UIKit
 import CoreData
 
-class AddCardVC: UIViewController {
+class AddCardVC: UIViewController, UITextFieldDelegate {
     
     var isDismissed: (() -> Void)?
+    var cardType: CardType = .other
+    let datePicker = UIDatePicker()
     
     @IBOutlet var viewCardBackground: UIView!
     @IBOutlet var viewCard: UIView!
@@ -25,11 +27,12 @@ class AddCardVC: UIViewController {
     @IBOutlet weak var cardLimitTextField: UITextField!
     @IBOutlet weak var availableAmountTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
+    @IBOutlet weak var addCardButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeViews()
-        loadData()
+        setDatePicker()
     }
     
     func initializeViews() {
@@ -37,14 +40,10 @@ class AddCardVC: UIViewController {
         viewCardBackground.layer.borderColor = UIColor.blue.cgColor
         viewCard.layer.borderWidth = 1
         viewCard.layer.borderColor = UIColor.blue.cgColor
-    }
-    
-    func loadData() {
-        expiryDateTextField.text = "02/2021"
+        cardNumberTextField.delegate = self
     }
     
     // MARK: - User actions
-    
     @IBAction func actionAddCard(_ sender: UIButton) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -61,6 +60,7 @@ class AddCardVC: UIViewController {
         newCard.limit = cardLimitTextField.text
         newCard.available = availableAmountTextField.text
         newCard.notes = notesTextView.text
+        newCard.type = "\(cardType)"
         do
         {
             try context.save()
@@ -75,5 +75,53 @@ class AddCardVC: UIViewController {
     func dismissModalVC() {
         self.isDismissed?()
         dismiss(animated: true)
+        notificationCenterReloadHomeTable()
+    }
+    
+    func notificationCenterReloadHomeTable() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateTableView"), object: nil)
+    }
+    
+    @IBAction func cardNumberChanged(_ sender: UITextField) {
+        let text = cardNumberTextField.text
+        
+        if text?.prefix(1) == "5" {
+            imageCard.image = UIImage(named: "mastercard-100")
+            cardType = .mastercard
+        } else if text?.prefix(1) == "4" {
+            imageCard.image = UIImage(named: "visa-100")
+            cardType = .visa
+        } else {
+            imageCard.image = UIImage(named: "magnetic-card-100")
+            cardType = .other
+        }
+    }
+    
+    // MARK: - Expiry Date Picker
+    func setDatePicker() {
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        expiryDateTextField.inputAccessoryView = toolbar
+        expiryDateTextField.inputView = datePicker
+    }
+    
+    @objc func doneDatePicker() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/yy"
+        expiryDateTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker() {
+        self.view.endEditing(true)
     }
 }

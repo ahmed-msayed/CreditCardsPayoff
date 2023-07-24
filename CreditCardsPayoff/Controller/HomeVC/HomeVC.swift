@@ -13,13 +13,16 @@ var cardList = [Card]()
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeViews()
         getUserData()
         initializeTableView()
+        initializeNotificationCenter()
         getCardsData()
     }
     
@@ -27,6 +30,10 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewWillAppear(animated)
         guard let user = UserVM.getLocalUser() else {return}
         self.welcomeLabel.text = "Welcome \(user.firstName) \(user.lastName)"
+    }
+    
+    func initializeViews() {
+        titleView.cornerRadius = 15
     }
     
     func getUserData() {
@@ -45,6 +52,16 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: "CardCell")
+    }
+    
+    func initializeNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateTableView), name: NSNotification.Name(rawValue: "updateTableView"), object: nil)
+    }
+    
+    @objc func updateTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func getCardsData() {
@@ -72,42 +89,30 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    @IBAction func addCardButtonClick(_ sender: Any) {
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddCardVC") as? AddCardVC {
-            let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(750)])
-            sheetController.cornerRadius = 35
-            
-            viewController.isDismissed = { [weak self] in
-                self?.tableView.reloadData()
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    self?.showAlert(message: "Card Added successfully!", type: true)
-                }
-            }
-            self.present(sheetController, animated: true, completion: nil)
-        }
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cardList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 140
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as! CardCell
         
+        //Add Cell Gradient
+        let layer = CAGradientLayer()
+        layer.frame = cell.cardMainView.frame
+        layer.frame = cell.bounds
+        layer.colors = [UIColor(named: "cardBackgroundG1")!.cgColor, UIColor(named: "cardBackgroundG2")!.cgColor]
+        layer.startPoint = CGPoint(x: 0.0, y: 1.0)
+        layer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        layer.cornerRadius = 20
+        cell.cardMainView.layer.insertSublayer(layer, at: 0)
+        
         let thisCard: Card
         thisCard = cardList[indexPath.row]
-        
-        cell.titleLabel.text = thisCard.title
-        cell.bankLabel.text = thisCard.bank
-        if let limit = Double(thisCard.limit), let available = Double(thisCard.available) {
-            cell.dueLabel.text = "\(limit - available)"
-        }
-        cell.availableLabel.text = thisCard.available
-        cell.firstFourDigitsLabel.text = "\(thisCard.number.suffix(4))"
+        cell.updateViews(card: thisCard)
         return cell
     }
     

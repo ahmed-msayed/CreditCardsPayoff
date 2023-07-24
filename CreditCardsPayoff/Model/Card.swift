@@ -20,4 +20,11 @@ class Card: NSManagedObject {
     @NSManaged var number: String!
     @NSManaged var dateAdded: Date!
     @NSManaged var notes: String!
+    @NSManaged var type: String!
+}
+
+enum CardType: Codable {
+    case visa
+    case mastercard
+    case other
 }

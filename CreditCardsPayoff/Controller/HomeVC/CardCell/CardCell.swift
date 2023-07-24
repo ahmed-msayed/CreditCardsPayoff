@@ -8,29 +8,57 @@
 import UIKit
 
 class CardCell: UITableViewCell {
-
+    
+    let cardType: CardType = .other
+    
     @IBOutlet weak var cardMainView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var firstFourDigitsLabel: UILabel!
     @IBOutlet weak var dueLabel: UILabel!
     @IBOutlet weak var availableLabel: UILabel!
+    @IBOutlet weak var cardImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        cardMainView.layer.cornerRadius = 15
-        cardMainView.layer.shadowColor = UIColor.lightGray.cgColor
-        cardMainView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        cardMainView.layer.shadowRadius = 4
-        cardMainView.layer.shadowOpacity = 0.5
-        cardMainView.layer.masksToBounds = false
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        initializeViews()
     }
     
+    func initializeViews() {
+        cardMainView.layer.cornerRadius = 15
+    }
+    
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        //Add shadow
+        self.layer.masksToBounds = false
+        self.layer.shadowOffset = .zero
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowRadius = 5
+        self.layer.shadowOpacity = 1
+    }
+    
+    func updateViews(card: Card) {
+        titleLabel.text = card.title
+        bankLabel.text = card.bank
+        firstFourDigitsLabel.text = card.number == "" ? "XXXX-XXXX-XXXX-XXXX" : "XXXX-XXXX-XXXX-\(card.number.suffix(4))"
+        if let limit = Double(card.limit), let available = Double(card.available) {
+            let due = limit - available
+            dueLabel.text = "\(due.formatted())"
+            availableLabel.text = "\(available.formatted())"
+        }
+        
+        switch card.type {
+        case "mastercard":
+            cardImage.image = UIImage(named: "mastercard-100")
+        case "visa":
+            cardImage.image = UIImage(named: "visa-100")
+        case "other":
+            cardImage.image = UIImage(named: "magnetic-card-100")
+        case .none:
+            return
+        case .some(_):
+            return
+        }
+    }
 }
