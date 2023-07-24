@@ -10,7 +10,7 @@ import UIKit
 class CardCell: UITableViewCell {
     
     let cardType: CardType = .other
-
+    
     @IBOutlet weak var cardMainView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
@@ -40,7 +40,7 @@ class CardCell: UITableViewCell {
     
     func updateViews(card: Card) {
         titleLabel.text = card.title
-        bankLabel.text = card.bank        
+        bankLabel.text = card.bank
         firstFourDigitsLabel.text = card.number == "" ? "XXXX-XXXX-XXXX-XXXX" : "XXXX-XXXX-XXXX-\(card.number.suffix(4))"
         if let limit = Double(card.limit), let available = Double(card.available) {
             let due = limit - available
@@ -62,35 +62,3 @@ class CardCell: UITableViewCell {
         }
     }
 }
-
-
-
-
-
-//func setDatePicker() {
-//    datePicker.datePickerMode = .date
-//    datePicker.preferredDatePickerStyle = .wheels
-//
-//    let toolbar = UIToolbar();
-//    toolbar.sizeToFit()
-//    let doneButton = UIBarButtonItem(title: "Done".localized(), style: .plain, target: self, action: #selector(doneDatePicker));
-//    let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-//    let cancelButton = UIBarButtonItem(title: "Cancel".localized(), style: .plain, target: self, action: #selector(cancelDatePicker));
-//
-//    toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-//
-//    expirationTextField.inputAccessoryView = toolbar
-//    expirationTextField.inputView = datePicker
-//}
-//
-//@objc func doneDatePicker() {
-//    let formatter = DateFormatter()
-//    formatter.dateFormat = "MM/yy"
-//    expirationTextField.text = formatter.string(from: datePicker.date)
-//    self.view.endEditing(true)
-//}
-//
-//@objc func cancelDatePicker() {
-//    self.view.endEditing(true)
-//}
-//}
