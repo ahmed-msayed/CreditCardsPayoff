@@ -42,6 +42,14 @@ class EditCardVC: UIViewController {
         cardLimitTextField.text = selectedCard?.limit
         availableAmountTextField.text = selectedCard?.available
         notesTextView.text = selectedCard?.notes
+        
+        if selectedCard?.type == "mastercard" {
+            imageCard.image = UIImage(named: "mastercard-100")
+        } else if selectedCard?.type == "visa" {
+            imageCard.image = UIImage(named: "visa-100")
+        } else {
+            imageCard.image = UIImage(named: "magnetic-card-100")
+        }
     }
     
     @IBAction func saveChangesButtonClick(_ sender: Any) {

@@ -11,7 +11,7 @@ import CoreData
 
 var cardList = [Card]()
 
-class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SaveTransactionTapsDelegate {
     
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -152,5 +152,30 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
             self.present(sheetController, animated: true, completion: nil)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let addAction = UIContextualAction(style: .normal,
+                                           title: "Add") { [weak self] (addAction, view, completionHandler) in
+            let selectedCard: Card
+            selectedCard = cardList[indexPath.row]
+            self?.swipeLefttAction(selectedCard: selectedCard)
+            completionHandler(true)
+        }
+        addAction.backgroundColor = .systemGreen
+        return UISwipeActionsConfiguration(actions: [addAction])
+    }
+    
+    func swipeLefttAction(selectedCard: Card) {
+        let alertAskVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlertTransVC") as! AlertTransVC
+        alertAskVC.delegate = self
+        alertAskVC.selectedCard = selectedCard
+        alertAskVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        alertAskVC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(alertAskVC, animated: true)
+    }
+    
+    func didTapSaveTransaction() {
+        print("saved")
     }
 }

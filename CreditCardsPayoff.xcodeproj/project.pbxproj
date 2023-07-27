@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		93EF22DCBD50C635B327B248 /* Pods_CreditCardsPayoff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9355362CEDFBEE7BE470E /* Pods_CreditCardsPayoff.framework */; };
+		E200FB5E2A72A1D0003C34A8 /* AlertTransVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200FB5D2A72A1D0003C34A8 /* AlertTransVC.swift */; };
 		E20F7A612A5BE9B20057D451 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F7A5E2A5BE9B20057D451 /* ChangePasswordVC.swift */; };
 		E20F7A622A5BE9B20057D451 /* ChangeEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */; };
 		E21586202A617859005632FC /* AuthenticationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215861F2A617859005632FC /* AuthenticationVM.swift */; };
@@ -73,6 +74,7 @@
 		7373CA4087E2E7BB78DA3E51 /* Pods-CreditCardsPayoff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditCardsPayoff.debug.xcconfig"; path = "Target Support Files/Pods-CreditCardsPayoff/Pods-CreditCardsPayoff.debug.xcconfig"; sourceTree = "<group>"; };
 		A9A9355362CEDFBEE7BE470E /* Pods_CreditCardsPayoff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CreditCardsPayoff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA39B46B15CDF13EE745007 /* Pods-CreditCardsPayoff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditCardsPayoff.release.xcconfig"; path = "Target Support Files/Pods-CreditCardsPayoff/Pods-CreditCardsPayoff.release.xcconfig"; sourceTree = "<group>"; };
+		E200FB5D2A72A1D0003C34A8 /* AlertTransVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTransVC.swift; sourceTree = "<group>"; };
 		E20F7A5E2A5BE9B20057D451 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailVC.swift; sourceTree = "<group>"; };
 		E215861F2A617859005632FC /* AuthenticationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVM.swift; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 				A9A9355362CEDFBEE7BE470E /* Pods_CreditCardsPayoff.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E200FB5C2A72A1A6003C34A8 /* AlertTransVC */ = {
+			isa = PBXGroup;
+			children = (
+				E200FB5D2A72A1D0003C34A8 /* AlertTransVC.swift */,
+			);
+			path = AlertTransVC;
 			sourceTree = "<group>";
 		};
 		E20F7A5D2A5BE9B20057D451 /* ChangePasswordVC */ = {
@@ -399,6 +409,8 @@
 		E2EF63322A3D05590084A8CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E200FB5C2A72A1A6003C34A8 /* AlertTransVC */,
+				E24F8B632A4E368A006CB187 /* AlertVC */,
 				E2D9CE112A6C6DC400D2E44E /* AlertAskVC */,
 				E2AE59582A657CE0002F8637 /* BaseVC */,
 				E23114992A647A340053F949 /* EditCardVC */,
@@ -411,7 +423,6 @@
 				E23D1A692A5AB9D100049489 /* ChangeNameVC */,
 				E28F3ACF2A45CDBB00233A74 /* HomeVC */,
 				E2432FA12A5DED0E00560DEC /* CurrencyVC */,
-				E24F8B632A4E368A006CB187 /* AlertVC */,
 				E28F3AD22A45CF1800233A74 /* SettingsVC */,
 			);
 			path = Controller;
@@ -590,6 +601,7 @@
 				E2AE59572A657B91002F8637 /* FloatingTabbar.swift in Sources */,
 				E24F8B612A4E3162006CB187 /* UserVM.swift in Sources */,
 				E2D9CE132A6C6DE800D2E44E /* AlertAskVC.swift in Sources */,
+				E200FB5E2A72A1D0003C34A8 /* AlertTransVC.swift in Sources */,
 				E2EF63422A3D0AC90084A8CA /* UITextField+Extension.swift in Sources */,
 				E24F8B652A4E36A0006CB187 /* AlertVC.swift in Sources */,
 				E2D2794B2A59F783003C6CDA /* ProfileHeaderCell.swift in Sources */,
