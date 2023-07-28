@@ -11,7 +11,7 @@ import CoreData
 
 var cardList = [Card]()
 
-class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SaveTransactionTapsDelegate {
+class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -168,14 +168,15 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Save
     
     func swipeLefttAction(selectedCard: Card) {
         let alertAskVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlertTransVC") as! AlertTransVC
-        alertAskVC.delegate = self
         alertAskVC.selectedCard = selectedCard
         alertAskVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         alertAskVC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        alertAskVC.depositAndDismissed = { [weak self] in
+            self?.tableView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self?.showAlert(message: "Card Updated successfully!", type: true)
+            }
+        }
         self.present(alertAskVC, animated: true)
-    }
-    
-    func didTapSaveTransaction() {
-        print("saved")
     }
 }

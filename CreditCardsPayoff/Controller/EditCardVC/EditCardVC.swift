@@ -39,8 +39,8 @@ class EditCardVC: UIViewController {
         holderNameTextField.text = selectedCard?.holder
         expiryDateTextField.text = selectedCard?.expire
         cardTitleTextField.text = selectedCard?.title
-        cardLimitTextField.text = selectedCard?.limit
-        availableAmountTextField.text = selectedCard?.available
+        cardLimitTextField.text = "\(selectedCard?.limit ?? 0)"
+        availableAmountTextField.text = "\(selectedCard?.available ?? 0)"
         notesTextView.text = selectedCard?.notes
         
         if selectedCard?.type == "mastercard" {
@@ -67,8 +67,10 @@ class EditCardVC: UIViewController {
                     card.holder = holderNameTextField.text
                     card.expire = expiryDateTextField.text
                     card.title = cardTitleTextField.text
-                    card.limit = cardLimitTextField.text
-                    card.available = availableAmountTextField.text
+                    guard let limit = Double(cardLimitTextField.text ?? "") else {return}
+                    card.limit = limit
+                    guard let available = Double(availableAmountTextField.text ?? "") else {return}
+                    card.available = available
                     card.notes = notesTextView.text
                     try context.save()
                     saveAndDismissModalVC()

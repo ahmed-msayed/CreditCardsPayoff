@@ -58,14 +58,16 @@ class AddCardVC: UIViewController, UITextFieldDelegate {
         newCard.expire = expiryDateTextField.text
         newCard.title = cardTitleTextField.text
         if cardLimitTextField.text == "" {
-            newCard.limit = "0"
+            newCard.limit = 0
         } else {
-            newCard.limit = cardLimitTextField.text
+            guard let limit = Double(cardLimitTextField.text ?? "") else {return}
+            newCard.limit = limit
         }
         if availableAmountTextField.text == "" {
-            newCard.available = "0"
+            newCard.available = 0
         } else {
-            newCard.available = availableAmountTextField.text
+            guard let available = Double(availableAmountTextField.text ?? "") else {return}
+            newCard.available = available
         }
         newCard.notes = notesTextView.text
         newCard.type = "\(cardType)"

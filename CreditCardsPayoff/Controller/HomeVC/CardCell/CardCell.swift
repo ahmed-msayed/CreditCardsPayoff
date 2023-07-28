@@ -42,11 +42,10 @@ class CardCell: UITableViewCell {
         titleLabel.text = card.title
         bankLabel.text = card.bank
         firstFourDigitsLabel.text = card.number == "" ? "XXXX-XXXX-XXXX-XXXX" : "XXXX-XXXX-XXXX-\(card.number.suffix(4))"
-        if let limit = Double(card.limit), let available = Double(card.available) {
-            let due = limit - available
+            let due = card.limit - card.available
             dueLabel.text = "\(due.formatted())"
-            availableLabel.text = "\(available.formatted())"
-        }
+            availableLabel.text = "\(card.available.formatted())"
+        
         
         switch card.type {
         case "mastercard":

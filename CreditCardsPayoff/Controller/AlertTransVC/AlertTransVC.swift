@@ -6,16 +6,13 @@
 //
 
 import UIKit
-
-protocol SaveTransactionTapsDelegate: AnyObject {
-    func didTapSaveTransaction()
-}
+import CoreData
 
 class AlertTransVC: UIViewController {
-
-    weak var delegate: SaveTransactionTapsDelegate?
+    
     var selectedCard: Card? = nil
-
+    var depositAndDismissed: (() -> Void)?
+    
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -46,20 +43,46 @@ class AlertTransVC: UIViewController {
     }
     
     func loadData() {
-        if let limit = Double(selectedCard?.limit ?? ""), let available = Double(selectedCard?.available ?? "") {
-        cardLimitLabel.text = "\(limit.formatted())"
-        availableAmountLabel.text = "\(available.formatted())"
-
-            let due = limit - available
-            dueAmountLabel.text = "\(due.formatted())"
-        }
+        guard let limit = selectedCard?.limit else {return}
+        guard let available = selectedCard?.available else {return}
+        
+        cardLimitLabel.text = "\(limit)"
+        availableAmountLabel.text = "\(available)"
+        
+        let due = limit - available
+        dueAmountLabel.text = "\(due)"
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {
-        delegate?.didTapSaveTransaction()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Card")
+        do {
+            let results: NSArray = try context.fetch(request) as NSArray
+            for result in results
+            {
+                let card = result as! Card
+                if (card == selectedCard) {
+                    guard let available = selectedCard?.available else {return}
+                    guard let deposit = Double(addAmountTextField.text ?? "") else {return}
+                    card.available = available + deposit
+                    try context.save()
+                    saveAndDismissAlertTransVC()
+                }
+            }
+        }
+        catch
+        {
+            self.showAlert(message: "Getting Data Failed", type: false)
+        }
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func saveAndDismissAlertTransVC() {
+        self.depositAndDismissed?()
+        dismiss(animated: true)
     }
 }

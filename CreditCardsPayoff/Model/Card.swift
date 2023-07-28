@@ -14,8 +14,9 @@ class Card: NSManagedObject {
     @NSManaged var title: String!
     @NSManaged var holder: String!
     @NSManaged var bank: String!
-    @NSManaged var limit: String!
-    @NSManaged var available: String!
+    @NSManaged var limit: Double
+    @NSManaged var available: Double
+    @NSManaged var duo: Double
     @NSManaged var expire: String!
     @NSManaged var number: String!
     @NSManaged var dateAdded: Date!
