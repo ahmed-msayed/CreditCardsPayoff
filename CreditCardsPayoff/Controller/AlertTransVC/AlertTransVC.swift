@@ -12,6 +12,7 @@ class AlertTransVC: UIViewController {
     
     var selectedCard: Card? = nil
     var depositAndDismissed: (() -> Void)?
+    var transType = true
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -22,6 +23,7 @@ class AlertTransVC: UIViewController {
     @IBOutlet weak var dueAmountLabel: UILabel!
     
     @IBOutlet weak var addAmountView: UIView!
+    @IBOutlet weak var addAmountLabel: UILabel!
     @IBOutlet weak var addAmountTextField: UITextField!
     
     @IBOutlet weak var descriptionView: UIView!
@@ -53,6 +55,11 @@ class AlertTransVC: UIViewController {
         dueAmountLabel.text = "\(due)"
     }
     
+    func initializeData(title: String, amountTitle: String) {
+        titleLabel.text = title
+        addAmountLabel.text = amountTitle
+    }
+    
     @IBAction func saveButtonClicked(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -64,8 +71,12 @@ class AlertTransVC: UIViewController {
                 let card = result as! Card
                 if (card == selectedCard) {
                     guard let available = selectedCard?.available else {return}
-                    guard let deposit = Double(addAmountTextField.text ?? "") else {return}
-                    card.available = available + deposit
+                    guard let transAmount = Double(addAmountTextField.text ?? "") else {return}
+                    if transType {
+                        card.available = available + transAmount
+                    } else {
+                        card.available = available - transAmount
+                    }
                     try context.save()
                     saveAndDismissAlertTransVC()
                 }

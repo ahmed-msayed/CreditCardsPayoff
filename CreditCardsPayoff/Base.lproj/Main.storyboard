@@ -1908,6 +1908,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addAmountLabel" destination="Wts-u1-xlA" id="rjT-2T-YRA"/>
                         <outlet property="addAmountTextField" destination="wZx-Og-fNH" id="NMe-gd-Puc"/>
                         <outlet property="addAmountView" destination="32o-gb-N56" id="6LE-ne-Zhv"/>
                         <outlet property="availableAmountLabel" destination="b5t-DX-bLT" id="nOM-jm-cI9"/>

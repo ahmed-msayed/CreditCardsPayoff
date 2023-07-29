@@ -155,20 +155,21 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let addAction = UIContextualAction(style: .normal,
-                                           title: "Add") { [weak self] (addAction, view, completionHandler) in
+        let depositAction = UIContextualAction(style: .normal,
+                                           title: "Deposit") { [weak self] (depositAction, view, completionHandler) in
             let selectedCard: Card
             selectedCard = cardList[indexPath.row]
             self?.swipeLefttAction(selectedCard: selectedCard)
             completionHandler(true)
         }
-        addAction.backgroundColor = .systemGreen
-        return UISwipeActionsConfiguration(actions: [addAction])
+        depositAction.backgroundColor = .systemGreen
+        return UISwipeActionsConfiguration(actions: [depositAction])
     }
     
     func swipeLefttAction(selectedCard: Card) {
         let alertAskVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlertTransVC") as! AlertTransVC
         alertAskVC.selectedCard = selectedCard
+        alertAskVC.transType = true
         alertAskVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         alertAskVC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         alertAskVC.depositAndDismissed = { [weak self] in
@@ -178,5 +179,34 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
         self.present(alertAskVC, animated: true)
+        alertAskVC.initializeData(title: "Deposit Amount", amountTitle: "Deposit Amount")
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let withdrawAction = UIContextualAction(style: .normal,
+                                           title: "Withdraw") { [weak self] (withdrawAction, view, completionHandler) in
+            let selectedCard: Card
+            selectedCard = cardList[indexPath.row]
+            self?.swipeRightAction(selectedCard: selectedCard)
+            completionHandler(true)
+        }
+        withdrawAction.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [withdrawAction])
+    }
+    
+    func swipeRightAction(selectedCard: Card) {
+        let alertAskVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlertTransVC") as! AlertTransVC
+        alertAskVC.selectedCard = selectedCard
+        alertAskVC.transType = false
+        alertAskVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        alertAskVC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        alertAskVC.depositAndDismissed = { [weak self] in
+            self?.tableView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self?.showAlert(message: "Card Updated successfully!", type: true)
+            }
+        }
+        self.present(alertAskVC, animated: true)
+        alertAskVC.initializeData(title: "Withdraw Amount", amountTitle: "Withdraw Amount")
     }
 }
