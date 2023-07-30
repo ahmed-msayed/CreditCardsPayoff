@@ -110,7 +110,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as! CardCell
-        
+        cell.selectionStyle = .none
         //Add Cell Gradient
         let layer = CAGradientLayer()
         layer.frame = cell.cardMainView.frame
