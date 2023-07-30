@@ -52,6 +52,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func initializeTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.clipsToBounds = true
         tableView.register(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: "CardCell")
     }
     
@@ -167,8 +168,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //Cell Animation
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.alpha = 0
-
-        UIView.animate(withDuration: 1, delay: 0.25 * Double(indexPath.row), animations: {
+        
+        UIView.animate(withDuration: 0.7, delay: 0.1 * Double(indexPath.row), animations: {
             cell.alpha = 1
         })
     }
@@ -176,7 +177,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //Swipe Actions
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let depositAction = UIContextualAction(style: .normal,
-                                           title: "Deposit") { [weak self] (depositAction, view, completionHandler) in
+                                               title: "Deposit") { [weak self] (depositAction, view, completionHandler) in
             let selectedCard: Card
             selectedCard = cardList[indexPath.row]
             self?.swipeLefttAction(selectedCard: selectedCard)
@@ -204,7 +205,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let withdrawAction = UIContextualAction(style: .normal,
-                                           title: "Withdraw") { [weak self] (withdrawAction, view, completionHandler) in
+                                                title: "Withdraw") { [weak self] (withdrawAction, view, completionHandler) in
             let selectedCard: Card
             selectedCard = cardList[indexPath.row]
             self?.swipeRightAction(selectedCard: selectedCard)
