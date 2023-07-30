@@ -10,6 +10,7 @@ import FittedSheets
 import CoreData
 
 var cardList = [Card]()
+var sortedCardList = [Card]()
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -54,12 +55,21 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.register(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: "CardCell")
     }
     
+    func cardListDateSorted() {
+        sortedCardList = cardList.sorted {
+            $0.dateAdded > $1.dateAdded
+        }
+        cardList = sortedCardList
+        self.tableView.reloadData()
+    }
+    
     func initializeNotificationCenter() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateTableView), name: NSNotification.Name(rawValue: "updateTableView"), object: nil)
     }
     
     @objc func updateTableView() {
         DispatchQueue.main.async {
+            self.cardListDateSorted()
             self.tableView.reloadData()
         }
     }
@@ -81,7 +91,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 let card = result as! Card
                 cardList.append(card)
             }
-            self.tableView.reloadData()
+            self.cardListDateSorted()
         }
         catch
         {
@@ -154,6 +164,16 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    //Cell Animation
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = 0
+
+        UIView.animate(withDuration: 1, delay: 0.25 * Double(indexPath.row), animations: {
+            cell.alpha = 1
+        })
+    }
+    
+    //Swipe Actions
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let depositAction = UIContextualAction(style: .normal,
                                            title: "Deposit") { [weak self] (depositAction, view, completionHandler) in

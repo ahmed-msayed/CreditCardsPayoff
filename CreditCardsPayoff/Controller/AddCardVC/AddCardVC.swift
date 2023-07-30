@@ -57,6 +57,7 @@ class AddCardVC: UIViewController, UITextFieldDelegate {
         newCard.holder = holderNameTextField.text
         newCard.expire = expiryDateTextField.text
         newCard.title = cardTitleTextField.text
+        newCard.dateAdded = Date.now
         if cardLimitTextField.text == "" {
             newCard.limit = 0
         } else {
