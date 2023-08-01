@@ -41,6 +41,31 @@ class AddCardVC: UIViewController, UITextFieldDelegate {
         viewCard.layer.borderWidth = 1
         viewCard.layer.borderColor = UIColor.blue.cgColor
         cardNumberTextField.delegate = self
+        cardLimitTextField.delegate = self
+        availableAmountTextField.delegate = self
+        expiryDateTextField.delegate = self
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let isNumber = CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string))
+        let withDecimal = (
+            string == NumberFormatter().decimalSeparator &&
+            textField.text?.contains(string) == false
+        )
+        
+        switch textField {
+        case cardNumberTextField:
+            return isNumber
+        case cardLimitTextField:
+            return isNumber || withDecimal
+        case availableAmountTextField:
+            return isNumber || withDecimal
+        case expiryDateTextField:
+            return false
+        default:
+            return true
+        }
     }
     
     // MARK: - User actions

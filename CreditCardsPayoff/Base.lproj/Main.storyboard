@@ -1936,7 +1936,7 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="pencil-icon" width="30" height="30"/>
         <namedColor name="swipeAlertBackground">
-            <color red="0.78743348375855426" green="1" blue="0.76716850317731966" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.78823529411764703" green="1" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
