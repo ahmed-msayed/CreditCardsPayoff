@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class EditCardVC: UIViewController {
+class EditCardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     var saveAndDismissed: (() -> Void)?
     var deleteAndDismissed: (() -> Void)?
@@ -30,7 +30,19 @@ class EditCardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTextFieldsDelegate()
         loadData()
+    }
+    
+    func setTextFieldsDelegate() {
+        cardNumberTextField.delegate = self
+        cardLimitTextField.delegate = self
+        availableAmountTextField.delegate = self
+        expiryDateTextField.delegate = self
+        bankNameTextField.delegate = self
+        holderNameTextField.delegate = self
+        cardTitleTextField.delegate = self
+        notesTextView.delegate = self
     }
     
     func loadData() {
@@ -50,6 +62,47 @@ class EditCardVC: UIViewController {
         } else {
             imageCard.image = UIImage(named: "magnetic-card-100")
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let isNumber = CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string))
+        let withDecimal = ( string == NumberFormatter().decimalSeparator &&
+            textField.text?.contains(string) == false )
+        let maxLength : Int
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+        
+        switch textField {
+        case cardNumberTextField:
+            maxLength = 16
+            return isNumber && newString.length <= maxLength
+        case bankNameTextField:
+            maxLength = 30
+            return newString.length <= maxLength
+        case holderNameTextField:
+            maxLength = 30
+            return newString.length <= maxLength
+        case expiryDateTextField:
+            return false
+        case cardTitleTextField:
+            maxLength = 40
+            return newString.length <= maxLength
+        case cardLimitTextField:
+            maxLength = 15
+            return (isNumber || withDecimal) && newString.length <= maxLength
+        case availableAmountTextField:
+            maxLength = 15
+            return (isNumber || withDecimal) && newString.length <= maxLength
+        default:
+            return true
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        let numberOfChars = newText.count
+        return numberOfChars <= 100
     }
     
     @IBAction func saveChangesButtonClick(_ sender: Any) {

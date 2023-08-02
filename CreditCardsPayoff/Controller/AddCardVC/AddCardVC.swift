@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class AddCardVC: UIViewController, UITextFieldDelegate {
+class AddCardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     var isDismissed: (() -> Void)?
     var cardType: CardType = .other
@@ -32,7 +32,19 @@ class AddCardVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeViews()
+        setTextFieldsDelegate()
         setDatePicker()
+    }
+    
+    func setTextFieldsDelegate() {
+        cardNumberTextField.delegate = self
+        cardLimitTextField.delegate = self
+        availableAmountTextField.delegate = self
+        expiryDateTextField.delegate = self
+        bankNameTextField.delegate = self
+        holderNameTextField.delegate = self
+        cardTitleTextField.delegate = self
+        notesTextView.delegate = self
     }
     
     func initializeViews() {
@@ -40,32 +52,47 @@ class AddCardVC: UIViewController, UITextFieldDelegate {
         viewCardBackground.layer.borderColor = UIColor.blue.cgColor
         viewCard.layer.borderWidth = 1
         viewCard.layer.borderColor = UIColor.blue.cgColor
-        cardNumberTextField.delegate = self
-        cardLimitTextField.delegate = self
-        availableAmountTextField.delegate = self
-        expiryDateTextField.delegate = self
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let isNumber = CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string))
-        let withDecimal = (
-            string == NumberFormatter().decimalSeparator &&
-            textField.text?.contains(string) == false
-        )
+        let withDecimal = ( string == NumberFormatter().decimalSeparator &&
+            textField.text?.contains(string) == false )
+        let maxLength : Int
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
         
         switch textField {
         case cardNumberTextField:
-            return isNumber
-        case cardLimitTextField:
-            return isNumber || withDecimal
-        case availableAmountTextField:
-            return isNumber || withDecimal
+            maxLength = 16
+            return isNumber && newString.length <= maxLength
+        case bankNameTextField:
+            maxLength = 30
+            return newString.length <= maxLength
+        case holderNameTextField:
+            maxLength = 30
+            return newString.length <= maxLength
         case expiryDateTextField:
             return false
+        case cardTitleTextField:
+            maxLength = 40
+            return newString.length <= maxLength
+        case cardLimitTextField:
+            maxLength = 15
+            return (isNumber || withDecimal) && newString.length <= maxLength
+        case availableAmountTextField:
+            maxLength = 15
+            return (isNumber || withDecimal) && newString.length <= maxLength
         default:
             return true
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        let numberOfChars = newText.count
+        return numberOfChars <= 100
     }
     
     // MARK: - User actions

@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class AlertTransVC: UIViewController {
+class AlertTransVC: UIViewController, UITextFieldDelegate {
     
     var selectedCard: Card? = nil
     var depositAndDismissed: (() -> Void)?
@@ -35,6 +35,7 @@ class AlertTransVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeViews()
+        setTextFieldsDelegate()
         loadData()
     }
     
@@ -42,6 +43,32 @@ class AlertTransVC: UIViewController {
         mainView.layer.cornerRadius = 21
         saveButton.layer.cornerRadius = 14
         cancelButton.layer.cornerRadius = 14
+    }
+    
+    func setTextFieldsDelegate() {
+        addAmountTextField.delegate = self
+        descriptionTextField.delegate = self
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let isNumber = CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string))
+        let withDecimal = ( string == NumberFormatter().decimalSeparator &&
+            textField.text?.contains(string) == false )
+        let maxLength : Int
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+        
+        switch textField {
+        case addAmountTextField:
+            maxLength = 15
+            return (isNumber || withDecimal) && newString.length <= maxLength
+        case descriptionTextField:
+            maxLength = 40
+            return newString.length <= maxLength
+        default:
+            return true
+        }
     }
     
     func loadData() {
