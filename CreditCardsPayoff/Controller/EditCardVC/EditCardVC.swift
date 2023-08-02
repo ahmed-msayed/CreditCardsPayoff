@@ -13,6 +13,7 @@ class EditCardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     var saveAndDismissed: (() -> Void)?
     var deleteAndDismissed: (() -> Void)?
     var selectedCard: Card? = nil
+    let datePicker = UIDatePicker()
     
     @IBOutlet var viewCardBackground: UIView!
     @IBOutlet var viewCard: UIView!
@@ -32,6 +33,7 @@ class EditCardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         super.viewDidLoad()
         setTextFieldsDelegate()
         loadData()
+        setDatePicker()
     }
     
     func setTextFieldsDelegate() {
@@ -148,5 +150,33 @@ class EditCardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     func deleteAndDismissModalVC() {
         self.deleteAndDismissed?()
         dismiss(animated: true)
+    }
+    
+    // MARK: - Expiry Date Picker
+    func setDatePicker() {
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        expiryDateTextField.inputAccessoryView = toolbar
+        expiryDateTextField.inputView = datePicker
+    }
+    
+    @objc func doneDatePicker() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/yy"
+        expiryDateTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker() {
+        self.view.endEditing(true)
     }
 }
