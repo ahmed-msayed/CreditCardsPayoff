@@ -14,6 +14,7 @@
 		E21586202A617859005632FC /* AuthenticationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215861F2A617859005632FC /* AuthenticationVM.swift */; };
 		E231149B2A647A4B0053F949 /* EditCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E231149A2A647A4B0053F949 /* EditCardVC.swift */; };
 		E23D1A6B2A5AB9D100049489 /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */; };
+		E23ECC452A7A8202003BC1BB /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23ECC442A7A8202003BC1BB /* TermsVC.swift */; };
 		E23F118F2A48E6000072A78A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F118E2A48E6000072A78A /* User.swift */; };
 		E2432FA32A5DED3C00560DEC /* CurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2432FA22A5DED3C00560DEC /* CurrencyVC.swift */; };
 		E24F8B5F2A4DEC53006CB187 /* CodableExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */; };
@@ -80,6 +81,7 @@
 		E215861F2A617859005632FC /* AuthenticationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVM.swift; sourceTree = "<group>"; };
 		E231149A2A647A4B0053F949 /* EditCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardVC.swift; sourceTree = "<group>"; };
 		E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
+		E23ECC442A7A8202003BC1BB /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
 		E23F118E2A48E6000072A78A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E2432FA22A5DED3C00560DEC /* CurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyVC.swift; sourceTree = "<group>"; };
 		E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExt.swift; sourceTree = "<group>"; };
@@ -218,6 +220,14 @@
 				E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */,
 			);
 			path = ChangeNameVC;
+			sourceTree = "<group>";
+		};
+		E23ECC432A7A81E0003BC1BB /* TermsVC */ = {
+			isa = PBXGroup;
+			children = (
+				E23ECC442A7A8202003BC1BB /* TermsVC.swift */,
+			);
+			path = TermsVC;
 			sourceTree = "<group>";
 		};
 		E2432FA12A5DED0E00560DEC /* CurrencyVC */ = {
@@ -409,6 +419,7 @@
 		E2EF63322A3D05590084A8CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E23ECC432A7A81E0003BC1BB /* TermsVC */,
 				E200FB5C2A72A1A6003C34A8 /* AlertTransVC */,
 				E24F8B632A4E368A006CB187 /* AlertVC */,
 				E2D9CE112A6C6DC400D2E44E /* AlertAskVC */,
@@ -623,6 +634,7 @@
 				E2931C8F2A4A15330028BE46 /* SpinnerExt.swift in Sources */,
 				E2A7D2D92A5ED56300029BF4 /* CurrencyList.swift in Sources */,
 				E2EF63362A3D077A0084A8CA /* LoginVC.swift in Sources */,
+				E23ECC452A7A8202003BC1BB /* TermsVC.swift in Sources */,
 				E2A7D2DD2A5EF29F00029BF4 /* Currency.swift in Sources */,
 				E20F7A612A5BE9B20057D451 /* ChangePasswordVC.swift in Sources */,
 				E2931C902A4A15330028BE46 /* ValidationExt.swift in Sources */,

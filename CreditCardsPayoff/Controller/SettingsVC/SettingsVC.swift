@@ -191,12 +191,11 @@ extension SettingsVC: ProfileHeaderTapsDelegate, AccountSettingsTapsDelegate, Ap
     }
     
     func didTapTerms() {
-        //        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TermsVC") as? TermsVC {
-        //            self.navigationController?.pushViewController(viewController, animated: true)
-        //            navigationItem.backBarButtonItem = UIBarButtonItem(
-        //                title: "Terms & Conditions".localized(), style: .plain, target: nil, action: nil)
-        //            navigationItem.backBarButtonItem?.tintColor = .white
-        //        }
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TermsVC") as? TermsVC {
+            let sheetController = SheetViewController(controller: viewController, sizes: [.fixed(700)])
+            sheetController.cornerRadius = 35
+            self.present(sheetController, animated: true, completion: nil)
+        }
     }
     
     func didTapLogout() {
