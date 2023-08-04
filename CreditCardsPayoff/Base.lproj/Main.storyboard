@@ -167,7 +167,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHG-7W-grn">
                                 <rect key="frame" x="10" y="69" width="373" height="739"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">Terms And Conditions Please read these terms and conditions ("terms and conditions", "terms") carefully before using [mobile name] mobile
+                                <string key="text">Terms And Conditions Please read these terms and conditions ("terms and conditions", "terms") carefully before using [mobile name] mobile
 application ("app", "service") operated by [company name] ("us", 'We", "our").
 Conditions of use By using this app, you certify that you have read and reviewed this Agreement and that you agree to comply with its terms. If you do not want to be bound by the terms of this Agreement, you are advised to stop using the app accordingly. [company name] only grants use and access of this app, its products, and its services to those who have
 accepted its terms.
@@ -190,7 +190,7 @@ Indemnification You agree to indemnify company name and its affiliates and hold 
 counsel.
 Limitation on liability
 [company namel is not liable for any damages that may occur to vou as a result of vour misuse of our app. [company name] reserves the right to edit, modify, and change this Agreement at any time. We shall let our users know of these changes through electronic mail. This Agreement is an understanding between [company name] and
-the user, and this supersedes and replaces all prior agreements regarding the use of this app</mutableString>
+the user, and this supersedes and replaces all prior agreements regarding the use of this app</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -205,6 +205,9 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             <constraint firstItem="WHG-7W-grn" firstAttribute="leading" secondItem="XRV-pw-52G" secondAttribute="leading" constant="10" id="pBj-ap-NK1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="termsTextView" destination="WHG-7W-grn" id="lS4-P2-Dhv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nc9-NA-OyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

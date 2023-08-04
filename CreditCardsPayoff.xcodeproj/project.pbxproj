@@ -13,6 +13,7 @@
 		E20F7A622A5BE9B20057D451 /* ChangeEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */; };
 		E21586202A617859005632FC /* AuthenticationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215861F2A617859005632FC /* AuthenticationVM.swift */; };
 		E231149B2A647A4B0053F949 /* EditCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E231149A2A647A4B0053F949 /* EditCardVC.swift */; };
+		E2345B4C2A7D8C10009339A8 /* TermsAndConditions.html in Resources */ = {isa = PBXBuildFile; fileRef = E2345B4B2A7D8C10009339A8 /* TermsAndConditions.html */; };
 		E23D1A6B2A5AB9D100049489 /* ChangeNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */; };
 		E23ECC452A7A8202003BC1BB /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23ECC442A7A8202003BC1BB /* TermsVC.swift */; };
 		E23F118F2A48E6000072A78A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F118E2A48E6000072A78A /* User.swift */; };
@@ -80,6 +81,7 @@
 		E20F7A602A5BE9B20057D451 /* ChangeEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailVC.swift; sourceTree = "<group>"; };
 		E215861F2A617859005632FC /* AuthenticationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVM.swift; sourceTree = "<group>"; };
 		E231149A2A647A4B0053F949 /* EditCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardVC.swift; sourceTree = "<group>"; };
+		E2345B4B2A7D8C10009339A8 /* TermsAndConditions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TermsAndConditions.html; sourceTree = "<group>"; };
 		E23D1A6A2A5AB9D100049489 /* ChangeNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameVC.swift; sourceTree = "<group>"; };
 		E23ECC442A7A8202003BC1BB /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
 		E23F118E2A48E6000072A78A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		E23ECC432A7A81E0003BC1BB /* TermsVC */ = {
 			isa = PBXGroup;
 			children = (
+				E2345B4B2A7D8C10009339A8 /* TermsAndConditions.html */,
 				E23ECC442A7A8202003BC1BB /* TermsVC.swift */,
 			);
 			path = TermsVC;
@@ -539,6 +542,7 @@
 			files = (
 				E2D279382A59F783003C6CDA /* ProfileHeaderCell.xib in Resources */,
 				E2D2794C2A59F783003C6CDA /* AppSettingsCell.xib in Resources */,
+				E2345B4C2A7D8C10009339A8 /* TermsAndConditions.html in Resources */,
 				E2D279472A59F783003C6CDA /* AccountSettingsCell.strings in Resources */,
 				E2D279392A59F783003C6CDA /* TermsConditionsCell.strings in Resources */,
 				E2AE59512A65410A002F8637 /* LogoutCell.xib in Resources */,
