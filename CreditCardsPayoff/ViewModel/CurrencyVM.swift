@@ -11,11 +11,11 @@ struct CurrencyVM {
     var currency: Currency
     
     var country: String {
-        return currency.country ?? ""
+        return currency.country ?? "United States"
     }
     
     var currencyCode: String {
-        return currency.currencyCode ?? ""
+        return currency.currencyCode ?? "USD"
     }
     
     func saveCurrencyLocally() {

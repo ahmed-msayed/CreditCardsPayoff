@@ -36,7 +36,11 @@ class CurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     @IBAction func selectCurrencyButtonClick(_ sender: Any) {
-        saveUserCurrency()
+        let currency = Currency(country: self.selectedCurrencyCountry, currencyCode: self.selectedCurrencyCode)
+        let currencyVM = CurrencyVM(currency: currency)
+        currencyVM.saveCurrencyLocally()
+        UserDefaults.standard.synchronize()
+        self.dismissModalVC()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -66,14 +70,6 @@ class CurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.selectedCurrencyCode = pickerDataSource[row].currencyCode
         self.selectedCurrencyCountry = pickerDataSource[row].country
-    }
-    
-    func saveUserCurrency() {
-        let currency = Currency(country: self.selectedCurrencyCountry, currencyCode: self.selectedCurrencyCode)
-        let currencyVM = CurrencyVM(currency: currency)
-        currencyVM.saveCurrencyLocally()
-        UserDefaults.standard.synchronize()
-        self.dismissModalVC()
     }
     
     func dismissModalVC() {

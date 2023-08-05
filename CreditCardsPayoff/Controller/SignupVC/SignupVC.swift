@@ -52,6 +52,7 @@ class SignupVC: UIViewController {
                     self.removeSpinner()
                     if let userVM = userVM {
                         userVM.saveUserLocally()
+                        self.saveDefaultCurrency()
                         self.goToHomeVC()
                     } else {
                         self.showAlert(message: error ?? "Unknown Error", type: false)
@@ -61,6 +62,13 @@ class SignupVC: UIViewController {
                 self.showAlert(message: error ?? "Unknown Error" , type: false)
             }
         }
+    }
+    
+    func saveDefaultCurrency() {
+        let currency = Currency(country: "United States", currencyCode: "USD")
+        let currencyVM = CurrencyVM(currency: currency)
+        currencyVM.saveCurrencyLocally()
+        UserDefaults.standard.synchronize()
     }
     
     @IBAction func actionFacebook(_ sender: Any) {
