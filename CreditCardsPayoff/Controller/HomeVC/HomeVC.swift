@@ -121,9 +121,10 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         layer.cornerRadius = 20
         cell.cardMainView.layer.insertSublayer(layer, at: 0)
         
+        let currency = CurrencyVM.getLocalUserCurrency()?.currencyCode ?? ""
         let thisCard: Card
         thisCard = cardList[indexPath.row]
-        cell.updateViews(card: thisCard)
+        cell.updateViews(card: thisCard, currency: currency)
         return cell
     }
     

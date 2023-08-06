@@ -75,5 +75,10 @@ class CurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     func dismissModalVC() {
         self.isDismissed?()
         dismiss(animated: true)
+        notificationCenterReloadHomeTable()
+    }
+    
+    func notificationCenterReloadHomeTable() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateTableView"), object: nil)
     }
 }

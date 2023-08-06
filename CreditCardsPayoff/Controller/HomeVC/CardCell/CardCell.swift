@@ -10,7 +10,6 @@ import UIKit
 class CardCell: UITableViewCell {
     
     let cardType: CardType = .other
-    let currency = CurrencyVM.getLocalUserCurrency()?.currencyCode
     
     @IBOutlet weak var cardMainView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -39,13 +38,13 @@ class CardCell: UITableViewCell {
         self.layer.shadowOpacity = 1
     }
     
-    func updateViews(card: Card) {
+    func updateViews(card: Card, currency: String) {
         titleLabel.text = card.title
         bankLabel.text = card.bank
         firstFourDigitsLabel.text = card.number == "" ? "XXXX-XXXX-XXXX-XXXX" : "XXXX-XXXX-XXXX-\(card.number.suffix(4))"
         let due = card.limit - card.available
-        dueLabel.text = "\(due.formatted())" + " \(currency ?? "")"
-        availableLabel.text = "\(card.available.formatted())" + " \(currency ?? "")"
+        dueLabel.text = "\(due.formatted())" + " \(currency)"
+        availableLabel.text = "\(card.available.formatted())" + " \(currency)"
         
         switch card.type {
         case "mastercard":
