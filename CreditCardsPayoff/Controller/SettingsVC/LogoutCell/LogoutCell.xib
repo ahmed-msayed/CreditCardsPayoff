@@ -45,7 +45,7 @@
                         </constraints>
                     </imageView>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" name="settingsCellsBackground"/>
                 <constraints>
                     <constraint firstItem="1Fw-7w-u21" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Hgl-BW-pEb" secondAttribute="trailing" constant="109" id="4SP-jq-3kF"/>
                     <constraint firstItem="QbI-MX-9IB" firstAttribute="centerY" secondItem="Pon-f0-Dwo" secondAttribute="centerY" id="9Ow-Bg-aHw"/>
@@ -70,6 +70,9 @@
         <image name="delete.left.fill" catalog="system" width="128" height="102"/>
         <namedColor name="Theme">
             <color red="0.80400002002716064" green="0.34900000691413879" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="settingsCellsBackground">
+            <color red="0.8666666666666667" green="1" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

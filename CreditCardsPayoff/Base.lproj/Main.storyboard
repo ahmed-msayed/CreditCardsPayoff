@@ -135,11 +135,11 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xnO-My-bgX">
                                 <rect key="frame" x="20" y="69" width="353" height="710"/>
-                                <color key="backgroundColor" red="0.86666666670000003" green="1" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="mainBackground"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5IW-Il-i69"/>
-                        <color key="backgroundColor" red="0.8666666666666667" green="1" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="mainBackground"/>
                         <constraints>
                             <constraint firstItem="xnO-My-bgX" firstAttribute="bottom" secondItem="5IW-Il-i69" secondAttribute="bottom" constant="10" id="Hu6-C1-25P"/>
                             <constraint firstItem="xnO-My-bgX" firstAttribute="leading" secondItem="5IW-Il-i69" secondAttribute="leading" constant="20" id="fVJ-eU-H9j"/>
@@ -166,38 +166,16 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHG-7W-grn">
                                 <rect key="frame" x="10" y="69" width="373" height="739"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Terms And Conditions Please read these terms and conditions ("terms and conditions", "terms") carefully before using [mobile name] mobile
 application ("app", "service") operated by [company name] ("us", 'We", "our").
-Conditions of use By using this app, you certify that you have read and reviewed this Agreement and that you agree to comply with its terms. If you do not want to be bound by the terms of this Agreement, you are advised to stop using the app accordingly. [company name] only grants use and access of this app, its products, and its services to those who have
-accepted its terms.
-Privacy policy Before you continue using our app, we advise you to read our privacy policy [link to privacy policy] regarding our user
-data collection. It will help you better understand our practices.
-Age restriction You must be at least 18 (eighteen) ears of age before you can use this app. By using this app, you warrant that vou are at least 18 years of age and you may legally adhere to this Agreement. [company name] assumes no
-responsibility for liabilities related to age misrepresentation.
-Intellectual property You agree that all materials, products, and services provided on this app are the property of [company name], its affiliates, directors, officers, employees, agents, suppliers, or licensors including all copyrights, trade secrets, trademarks, patents, and other intellectual property. You also agree that you will not reproduce or redistribute the
-[name]'s intellectual property in any way, including electronic, digital, or new trademark registrations. You grant [company name] a royalty free and non-exclusive license to display, use, copy, transmit, and broadcast the content you upload and publish. For issues regarding intellectual property claims, you should contact the company in
-order to come to an agreement.
-User accounts As a user of this app, you may be asked to register with us and provide private information. You are responsible for ensuring the accuracy of this information, and you are responsible for maintaining the safety and security of your
-identifying information. You are also responsible for all activities that occur under your account or password. If you think there are any possible issues regarding the security of your account on the app, inform us immediately so
-we may address them accordingly.
-We reserve all rights to terminate accounts, edit or remove content and cancel orders at our sole discretion.
-Applicable law By using this app, you agree that the laws of the [your location], without regard to principles of conflict laws, will govern these terms and conditions, or any dispute of any sort that might come between [company name] and you, or
-its business partners and associates.
-Disputes Any dispute related in any way to your use of this app or to products you purchase from us shall be arbitrated by state
-or federal court [your location] and you consent to exclusive jurisdiction and venue of such courts.
-Indemnification You agree to indemnify company name and its affiliates and hold [company name] harmless against legal claims and demands that may arise from your use or misuse of our services. We reserve the right to select our own legal
-counsel.
-Limitation on liability
-[company namel is not liable for any damages that may occur to vou as a result of vour misuse of our app. [company name] reserves the right to edit, modify, and change this Agreement at any time. We shall let our users know of these changes through electronic mail. This Agreement is an understanding between [company name] and
-the user, and this supersedes and replaces all prior agreements regarding the use of this app</string>
+Conditions of use By using this app, you certify that you have read and reviewed this Agreement and that you agree to comply with its terms. If you do not want to be bound by the terms of this Agreement, you are advised to stop using the app accordingly.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XRV-pw-52G"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WHG-7W-grn" firstAttribute="top" secondItem="XRV-pw-52G" secondAttribute="top" constant="10" id="8Jk-Ca-fQ1"/>
                             <constraint firstItem="XRV-pw-52G" firstAttribute="bottom" secondItem="WHG-7W-grn" secondAttribute="bottom" constant="10" id="9Kg-1O-H1Q"/>
@@ -587,13 +565,13 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             </scrollView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6h-3s-sw8">
                                 <rect key="frame" x="15" y="753" width="363" height="50"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" name="buttonsBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2w5-sU-lOW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Add Card">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -606,7 +584,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oc4-s7-eh8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="functionsBackground"/>
                         <constraints>
                             <constraint firstItem="Oc4-s7-eh8" firstAttribute="bottom" secondItem="H6h-3s-sw8" secondAttribute="bottom" constant="15" id="3lP-wk-JXV"/>
                             <constraint firstItem="Oc4-s7-eh8" firstAttribute="trailing" secondItem="iZh-dr-o8k" secondAttribute="trailing" id="6zS-UV-6co"/>
@@ -704,7 +682,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="alertsBackground"/>
                                 <constraints>
                                     <constraint firstItem="StI-xW-B0e" firstAttribute="centerX" secondItem="JjG-Fl-uGn" secondAttribute="centerX" id="EeU-C0-WhZ"/>
                                     <constraint firstAttribute="width" constant="346" id="IWx-zd-OgC"/>
@@ -869,15 +847,15 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-Tp-gWR">
                                 <rect key="frame" x="20" y="459" width="353" height="60"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" name="buttonsBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="GKW-q5-yd1"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save Changes">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="saveChangesButtonTapped:" destination="zMe-kE-dx7" eventType="touchUpInside" id="Ajv-Zl-kL3"/>
@@ -885,7 +863,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nEj-zp-FRA"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="functionsBackground"/>
                         <constraints>
                             <constraint firstItem="ePI-Tp-gWR" firstAttribute="leading" secondItem="nEj-zp-FRA" secondAttribute="leading" constant="20" id="FEY-Vl-0P7"/>
                             <constraint firstItem="x6m-jR-aWY" firstAttribute="trailing" secondItem="nEj-zp-FRA" secondAttribute="trailing" id="Gey-Do-LKD"/>
@@ -921,14 +899,15 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjr-c5-hD3">
                                 <rect key="frame" x="20" y="574" width="353" height="60"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" name="buttonsBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="laY-c1-cIy"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Select">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="selectCurrencyButtonClick:" destination="i6J-N6-iye" eventType="touchUpInside" id="CYU-4d-afg"/>
@@ -936,7 +915,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t3X-rk-W1e"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="functionsBackground"/>
                         <constraints>
                             <constraint firstItem="Xjr-c5-hD3" firstAttribute="leading" secondItem="t3X-rk-W1e" secondAttribute="leading" constant="20" id="X8H-2r-qZA"/>
                             <constraint firstItem="Xjr-c5-hD3" firstAttribute="top" secondItem="E94-9X-3Y0" secondAttribute="bottom" constant="40" id="cwb-Wt-0zS"/>
@@ -1025,7 +1004,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvy-Pa-odm" customClass="GreenButton" customModule="CreditCardsPayoff" customModuleProvider="target">
                                 <rect key="frame" x="20" y="479" width="353" height="60"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" name="buttonsBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="9GI-W9-FDk"/>
                                 </constraints>
@@ -1033,6 +1012,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save Password">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="savePasswordButtonTapped:" destination="rUh-ZK-Fen" eventType="touchUpInside" id="lWT-Ch-3nf"/>
@@ -1040,7 +1020,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nvy-g4-m8z"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="functionsBackground"/>
                         <constraints>
                             <constraint firstItem="NTS-eC-d8b" firstAttribute="top" secondItem="Nvy-g4-m8z" secondAttribute="top" constant="40" id="5sq-az-tK8"/>
                             <constraint firstItem="fvy-Pa-odm" firstAttribute="top" secondItem="K1x-Mj-45q" secondAttribute="bottom" constant="40" id="LgI-ZE-iER"/>
@@ -1164,7 +1144,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKB-XW-so2" customClass="GreenButton" customModule="CreditCardsPayoff" customModuleProvider="target">
                                 <rect key="frame" x="20" y="479" width="353" height="60"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" name="buttonsBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="gyD-2m-nO4"/>
                                 </constraints>
@@ -1172,6 +1152,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save Email">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="saveEmailButtonTapped:" destination="Lyg-3g-ece" eventType="touchUpInside" id="xHH-5W-CdP"/>
@@ -1179,7 +1160,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hHS-5K-Xnn"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="functionsBackground"/>
                         <constraints>
                             <constraint firstItem="gKB-XW-so2" firstAttribute="top" secondItem="h29-YG-LPr" secondAttribute="bottom" constant="40" id="7WN-CG-Wpe"/>
                             <constraint firstItem="h29-YG-LPr" firstAttribute="leading" secondItem="hHS-5K-Xnn" secondAttribute="leading" constant="20" id="BfD-nq-XGu"/>
@@ -1578,13 +1559,13 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsu-hI-T68">
                                         <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <color key="backgroundColor" name="buttonsBackground"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="vQv-MA-YTY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <state key="normal" title="Save Changes">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1597,13 +1578,13 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqA-UT-sXD">
                                         <rect key="frame" x="191.66666666666663" y="0.0" width="171.33333333333337" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <color key="backgroundColor" name="buttonsBackground"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="wsM-cW-x22"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <state key="normal" title="Delete Card">
-                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                            <color key="titleColor" red="0.71226615646258506" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1621,7 +1602,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Nx-eC-Qz4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="functionsBackground"/>
                         <constraints>
                             <constraint firstItem="8Nx-eC-Qz4" firstAttribute="bottom" secondItem="uos-JC-KOo" secondAttribute="bottom" constant="15" id="1SA-Z1-Dph"/>
                             <constraint firstItem="8Nx-eC-Qz4" firstAttribute="trailing" secondItem="uos-JC-KOo" secondAttribute="trailing" constant="15" id="1aL-NR-YLi"/>
@@ -1664,7 +1645,6 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you really want to logout?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxU-Ry-eLP">
                                         <rect key="frame" x="30" y="30" width="286" height="27.666666666666671"/>
                                         <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="21"/>
-                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2dZ-u1-uNK">
@@ -1672,11 +1652,11 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VF-Uf-KjT">
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="53"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <color key="backgroundColor" name="buttonsBackground"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="No">
                                                     <fontDescription key="titleFontDescription" name="DMSans-Regular" family="DM Sans" pointSize="15"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="noButtonClicked:" destination="pob-to-JUC" eventType="touchUpInside" id="525-z8-bf5"/>
@@ -1684,11 +1664,11 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkZ-YP-Lub">
                                                 <rect key="frame" x="153" y="0.0" width="133" height="53"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <color key="backgroundColor" name="buttonsBackground"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Yes">
                                                     <fontDescription key="titleFontDescription" name="DMSans-Regular" family="DM Sans" pointSize="15"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="yesButtonClicked:" destination="pob-to-JUC" eventType="touchUpInside" id="wF6-mB-8a8"/>
@@ -1700,7 +1680,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="alertsBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="346" id="0Ac-nF-pUx"/>
                                     <constraint firstItem="2dZ-u1-uNK" firstAttribute="leading" secondItem="fYL-Px-UFB" secondAttribute="leading" constant="30" id="0lZ-BC-CKx"/>
@@ -1906,11 +1886,11 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezj-Ug-kiW">
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="53"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <color key="backgroundColor" name="buttonsBackground"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                                     <fontDescription key="titleFontDescription" name="DMSans-Regular" family="DM Sans" pointSize="15"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="saveButtonClicked:" destination="0KI-b6-57O" eventType="touchUpInside" id="qf7-W7-IT9"/>
@@ -1918,11 +1898,11 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZa-zI-dOn">
                                                 <rect key="frame" x="153" y="0.0" width="133" height="53"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <color key="backgroundColor" name="buttonsBackground"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Cancel">
                                                     <fontDescription key="titleFontDescription" name="DMSans-Regular" family="DM Sans" pointSize="15"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="cancelButtonClicked:" destination="0KI-b6-57O" eventType="touchUpInside" id="G8u-9E-7Ja"/>
@@ -1934,7 +1914,7 @@ the user, and this supersedes and replaces all prior agreements regarding the us
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" name="swipeAlertBackground"/>
+                                <color key="backgroundColor" name="functionsBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="C6z-4Y-jd8" secondAttribute="trailing" constant="10" id="1eA-CT-IY6"/>
                                     <constraint firstItem="siw-Hx-xSe" firstAttribute="top" secondItem="1oN-Iz-zO1" secondAttribute="bottom" constant="15" id="34c-ws-s8F"/>
@@ -1992,14 +1972,20 @@ the user, and this supersedes and replaces all prior agreements regarding the us
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="pencil-icon" width="30" height="30"/>
+        <namedColor name="alertsBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonsBackground">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="functionsBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="mainBackground">
             <color red="0.8666666666666667" green="1" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mainTitleBackground">
             <color red="0.71372549019607845" green="0.83137254901960789" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="swipeAlertBackground">
-            <color red="0.78823529411764703" green="1" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2012,12 +1998,6 @@ the user, and this supersedes and replaces all prior agreements regarding the us
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemFillColor">
             <color red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>

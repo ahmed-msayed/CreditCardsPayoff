@@ -104,7 +104,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" name="profile-cells"/>
+                <color key="backgroundColor" name="settingsCellsBackground"/>
                 <constraints>
                     <constraint firstItem="usI-fd-ALq" firstAttribute="leading" secondItem="J7v-cl-Csg" secondAttribute="leading" id="0mZ-LN-BEY"/>
                     <constraint firstAttribute="bottom" secondItem="usI-fd-ALq" secondAttribute="bottom" id="K5j-Jj-5qZ"/>
@@ -131,8 +131,8 @@
         <namedColor name="grey-text">
             <color red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="profile-cells">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="settingsCellsBackground">
+            <color red="0.8666666666666667" green="1" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

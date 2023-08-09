@@ -279,14 +279,6 @@
 			path = AddCardVC;
 			sourceTree = "<group>";
 		};
-		E272415D2A8378B000F1BFFC /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E272415E2A8378D200F1BFFC /* Helper.swift */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		E273E2422A487E8A00722832 /* SignupVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,7 +392,6 @@
 				E2EF63312A3D054F0084A8CA /* View */,
 				E2EF63302A3D05410084A8CA /* Model */,
 				E24F8B622A4E3168006CB187 /* ViewModel */,
-				E272415D2A8378B000F1BFFC /* Resources */,
 				E2EF631C2A3C92420084A8CA /* AppDelegate.swift */,
 				E2EF631E2A3C92420084A8CA /* SceneDelegate.swift */,
 				E2EF63222A3C92420084A8CA /* Main.storyboard */,
@@ -476,6 +467,7 @@
 				E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */,
 				E24F8B662A4E3A55006CB187 /* ShowAlertExt.swift */,
 				E2AE59552A657B91002F8637 /* FloatingTabbar.swift */,
+				E272415E2A8378D200F1BFFC /* Helper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,7 +46,7 @@
                         </constraints>
                     </imageView>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" name="settingsCellsBackground"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="x5Y-fh-9Nt" secondAttribute="trailing" constant="10" id="AiG-s4-a8o"/>
                     <constraint firstItem="x5Y-fh-9Nt" firstAttribute="centerY" secondItem="kkf-bF-hHh" secondAttribute="centerY" id="M8J-PY-hLX"/>
@@ -68,6 +69,9 @@
     <resources>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="text.book.closed.fill" catalog="system" width="115" height="128"/>
+        <namedColor name="settingsCellsBackground">
+            <color red="0.8666666666666667" green="1" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
