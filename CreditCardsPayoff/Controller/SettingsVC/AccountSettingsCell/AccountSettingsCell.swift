@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import FluentDarkModeKit
 
 protocol AccountSettingsTapsDelegate: AnyObject {
     func didTapLanguage()
@@ -32,6 +31,7 @@ class AccountSettingsCell: UITableViewCell {
         setupViews()
         initializeGestures()
         setupArrowViews()
+        setDarkModeSwitchState()
     }
     
     func setupViews() {
@@ -43,14 +43,22 @@ class AccountSettingsCell: UITableViewCell {
         accountSettingsView.layer.masksToBounds = false
     }
     
+    func setDarkModeSwitchState() {
+        if Helper.shared.isDarkMode == true {
+            darkModeSwitch.isOn = true
+        } else {
+            darkModeSwitch.isOn = false
+        }
+    }
+    
     func setupArrowViews() {
-//        if Locale.current.languageCode == "en" {
-//            languageArrowImage.image = UIImage(named: "chevron-right-grey")
-//            currencyArrowImage.image = UIImage(named: "chevron-right-grey")
-//        } else if Locale.current.languageCode == "ar" {
-//            languageArrowImage.image = UIImage(named: "chevron-left-grey")
-//            currencyArrowImage.image = UIImage(named: "chevron-left-grey")
-//        }
+        //        if Locale.current.languageCode == "en" {
+        //            languageArrowImage.image = UIImage(named: "chevron-right-grey")
+        //            currencyArrowImage.image = UIImage(named: "chevron-right-grey")
+        //        } else if Locale.current.languageCode == "ar" {
+        //            languageArrowImage.image = UIImage(named: "chevron-left-grey")
+        //            currencyArrowImage.image = UIImage(named: "chevron-left-grey")
+        //        }
     }
     
     func initializeGestures() {
@@ -76,10 +84,22 @@ class AccountSettingsCell: UITableViewCell {
     }
     
     @IBAction func darkModeSwitchChange(_ sender: UISwitch) {
-//        if sender.isOn {
-//            delegate?.didChangeModeToDark()
-//        } else {
-//            delegate?.didChangeModeToLight()
-//        }
+        if Helper.shared.isDarkMode == false {
+            Helper.shared.isDarkMode = true
+        } else {
+            Helper.shared.isDarkMode = false
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarController = storyboard.instantiateViewController(identifier: "TabBarController")
+        resetWindow(with: tabBarController)
+    }
+    
+    private func resetWindow(with vc: UIViewController?) {
+        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else {
+            fatalError("could not get scene delegate ")
+        }
+        sceneDelegate.window?.rootViewController = vc
+        sceneDelegate.reCheckInterfaceStyle()
     }
 }

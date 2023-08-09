@@ -28,6 +28,7 @@
 		E25A13582A62B21F0039DAE6 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E25A13562A62B21F0039DAE6 /* CardCell.xib */; };
 		E25A135F2A6328830039DAE6 /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A135D2A6328830039DAE6 /* AddCardVC.swift */; };
 		E26352532A45B2FC00587953 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26352522A45B2FC00587953 /* GoogleService-Info.plist */; };
+		E272415F2A8378D200F1BFFC /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272415E2A8378D200F1BFFC /* Helper.swift */; };
 		E273E2452A487EBA00722832 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273E2432A487EBA00722832 /* SignupVC.swift */; };
 		E273E2462A487EBA00722832 /* SignupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E273E2442A487EBA00722832 /* SignupVC.xib */; };
 		E28F3AD12A45CDEB00233A74 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F3AD02A45CDEB00233A74 /* HomeVC.swift */; };
@@ -96,6 +97,7 @@
 		E25A13562A62B21F0039DAE6 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		E25A135D2A6328830039DAE6 /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
 		E26352522A45B2FC00587953 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E272415E2A8378D200F1BFFC /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E273E2432A487EBA00722832 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		E273E2442A487EBA00722832 /* SignupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupVC.xib; sourceTree = "<group>"; };
 		E28F3AD02A45CDEB00233A74 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -277,6 +279,14 @@
 			path = AddCardVC;
 			sourceTree = "<group>";
 		};
+		E272415D2A8378B000F1BFFC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E272415E2A8378D200F1BFFC /* Helper.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E273E2422A487E8A00722832 /* SignupVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +400,7 @@
 				E2EF63312A3D054F0084A8CA /* View */,
 				E2EF63302A3D05410084A8CA /* Model */,
 				E24F8B622A4E3168006CB187 /* ViewModel */,
+				E272415D2A8378B000F1BFFC /* Resources */,
 				E2EF631C2A3C92420084A8CA /* AppDelegate.swift */,
 				E2EF631E2A3C92420084A8CA /* SceneDelegate.swift */,
 				E2EF63222A3C92420084A8CA /* Main.storyboard */,
@@ -642,6 +653,7 @@
 				E2A7D2DD2A5EF29F00029BF4 /* Currency.swift in Sources */,
 				E20F7A612A5BE9B20057D451 /* ChangePasswordVC.swift in Sources */,
 				E2931C902A4A15330028BE46 /* ValidationExt.swift in Sources */,
+				E272415F2A8378D200F1BFFC /* Helper.swift in Sources */,
 				E2D2793D2A59F783003C6CDA /* TermsConditionsCell.swift in Sources */,
 				E2EF634A2A3D106F0084A8CA /* OnboardingVC.swift in Sources */,
 				E2EF631D2A3C92420084A8CA /* AppDelegate.swift in Sources */,

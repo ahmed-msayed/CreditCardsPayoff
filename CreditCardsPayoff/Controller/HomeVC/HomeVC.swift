@@ -56,26 +56,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.register(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: "CardCell")
     }
     
-    func cardListDateSorted() {
-        sortedCardList = cardList.sorted {
-            $0.dateAdded > $1.dateAdded
-        }
-        cardList = sortedCardList
-        self.tableView.reloadData()
-    }
-    
-    func initializeNotificationCenter() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updateTableView), name: NSNotification.Name(rawValue: "updateTableView"), object: nil)
-    }
-    
-    @objc func updateTableView() {
-        DispatchQueue.main.async {
-            self.cardListDateSorted()
-            self.tableView.reloadData()
-        }
-    }
-    
     func getCardsData() {
+        cardList = []
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Card")
@@ -100,6 +82,25 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func cardListDateSorted() {
+        sortedCardList = cardList.sorted {
+            $0.dateAdded > $1.dateAdded
+        }
+        cardList = sortedCardList
+        self.tableView.reloadData()
+    }
+    
+    func initializeNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateTableView), name: NSNotification.Name(rawValue: "updateTableView"), object: nil)
+    }
+    
+    @objc func updateTableView() {
+        DispatchQueue.main.async {
+            self.cardListDateSorted()
+            self.tableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cardList.count
     }
@@ -111,15 +112,6 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as! CardCell
         cell.selectionStyle = .none
-        //Add Cell Gradient
-        let layer = CAGradientLayer()
-        layer.frame = cell.cardMainView.frame
-        layer.frame = cell.bounds
-        layer.colors = [UIColor(named: "cardBackgroundG1")!.cgColor, UIColor(named: "cardBackgroundG2")!.cgColor]
-        layer.startPoint = CGPoint(x: 0.0, y: 1.0)
-        layer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        layer.cornerRadius = 20
-        cell.cardMainView.layer.insertSublayer(layer, at: 0)
         
         let currency = CurrencyVM.getLocalUserCurrency()?.currencyCode ?? ""
         let thisCard: Card

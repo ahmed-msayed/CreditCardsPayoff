@@ -25,17 +25,39 @@ class CardCell: UITableViewCell {
     }
     
     func initializeViews() {
+        if Helper.shared.isDarkMode == true {
+            self.overrideUserInterfaceStyle = .dark
+        } else {
+            self.overrideUserInterfaceStyle = .light
+        }
         cardMainView.layer.cornerRadius = 15
     }
     
     override public func layoutSubviews() {
         super.layoutSubviews()
+        addCellShadow()
+        addCellGradient()
+    }
+    
+    func addCellShadow() {
         //Add shadow
         self.layer.masksToBounds = false
         self.layer.shadowOffset = .zero
         self.layer.shadowColor = UIColor.darkGray.cgColor
         self.layer.shadowRadius = 5
         self.layer.shadowOpacity = 1
+    }
+    
+    func addCellGradient() {
+        //Add Gradient
+        let layer = CAGradientLayer()
+        layer.frame = cardMainView.frame
+        layer.frame = bounds
+        layer.colors = [UIColor(named: "cardBackgroundG1")!.cgColor, UIColor(named: "cardBackgroundG2")!.cgColor]
+        layer.startPoint = CGPoint(x: 0.0, y: 1.0)
+        layer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        layer.cornerRadius = 20
+        cardMainView.layer.insertSublayer(layer, at: 0)
     }
     
     func updateViews(card: Card, currency: String) {

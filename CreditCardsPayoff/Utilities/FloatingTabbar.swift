@@ -15,8 +15,9 @@ class FloatingTabbar: UITabBar {
     private func addShape() {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = createPath()
-        shapeLayer.strokeColor = UIColor.lightGray.cgColor
-        shapeLayer.fillColor = UIColor.white.cgColor
+//        shapeLayer.strokeColor = UIColor.lightGray.cgColor
+        shapeLayer.strokeColor = UIColor(named: "floatingBarStroke")?.cgColor
+        shapeLayer.fillColor = UIColor(named: "floatingBarBackground")?.cgColor
         shapeLayer.lineWidth = 1.0
         
         shapeLayer.shadowOffset = CGSize(width:0, height:0)

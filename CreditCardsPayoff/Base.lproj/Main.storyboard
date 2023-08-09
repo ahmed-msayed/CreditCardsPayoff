@@ -81,7 +81,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.71508778529566908" green="0.83212989267676774" blue="0.71167645514241995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="mainTitleBackground"/>
                                 <constraints>
                                     <constraint firstItem="VW1-zm-9b6" firstAttribute="leading" secondItem="99F-lc-qRk" secondAttribute="leading" constant="10" id="NEl-A3-YMA"/>
                                     <constraint firstItem="0Wx-Ry-pMi" firstAttribute="top" secondItem="VW1-zm-9b6" secondAttribute="bottom" constant="5" id="SD5-AI-3ya"/>
@@ -94,7 +94,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SLU-vJ-yRP">
                                 <rect key="frame" x="0.0" y="129" width="393" height="640"/>
-                                <color key="backgroundColor" red="0.86666666670000003" green="1" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="mainBackground"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="0.0"/>
@@ -103,7 +103,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Cg-aZ-trm"/>
-                        <color key="backgroundColor" red="0.8666666666666667" green="1" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="mainBackground"/>
                         <constraints>
                             <constraint firstItem="SLU-vJ-yRP" firstAttribute="leading" secondItem="8Cg-aZ-trm" secondAttribute="leading" id="CaV-8F-SHt"/>
                             <constraint firstItem="8Cg-aZ-trm" firstAttribute="bottom" secondItem="SLU-vJ-yRP" secondAttribute="bottom" id="ENa-IF-fLs"/>
@@ -1992,6 +1992,12 @@ the user, and this supersedes and replaces all prior agreements regarding the us
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="pencil-icon" width="30" height="30"/>
+        <namedColor name="mainBackground">
+            <color red="0.8666666666666667" green="1" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainTitleBackground">
+            <color red="0.71372549019607845" green="0.83137254901960789" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="swipeAlertBackground">
             <color red="0.78823529411764703" green="1" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
