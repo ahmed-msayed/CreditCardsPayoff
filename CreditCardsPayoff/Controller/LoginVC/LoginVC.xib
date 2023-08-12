@@ -73,7 +73,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPQ-b5-OLK">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPQ-b5-OLK" customClass="CustomButton" customModule="CreditCardsPayoff" customModuleProvider="target">
                     <rect key="frame" x="30" y="348" width="260" height="48"/>
                     <color key="backgroundColor" name="Theme"/>
                     <constraints>

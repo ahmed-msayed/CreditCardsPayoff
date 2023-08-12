@@ -44,14 +44,10 @@
 		E2AE59562A657B91002F8637 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE59542A657B91002F8637 /* BaseVC.swift */; };
 		E2AE59572A657B91002F8637 /* FloatingTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE59552A657B91002F8637 /* FloatingTabbar.swift */; };
 		E2D279382A59F783003C6CDA /* ProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279132A59F782003C6CDA /* ProfileHeaderCell.xib */; };
-		E2D279392A59F783003C6CDA /* TermsConditionsCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D279152A59F782003C6CDA /* TermsConditionsCell.strings */; };
 		E2D2793C2A59F783003C6CDA /* AppSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2791B2A59F782003C6CDA /* AppSettingsCell.swift */; };
 		E2D2793D2A59F783003C6CDA /* TermsConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2791C2A59F782003C6CDA /* TermsConditionsCell.swift */; };
-		E2D2793F2A59F783003C6CDA /* AppSettingsCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D2791F2A59F783003C6CDA /* AppSettingsCell.strings */; };
 		E2D279422A59F783003C6CDA /* AccountSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279252A59F783003C6CDA /* AccountSettingsCell.xib */; };
-		E2D279432A59F783003C6CDA /* ProfileHeaderCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D279272A59F783003C6CDA /* ProfileHeaderCell.strings */; };
 		E2D279462A59F783003C6CDA /* AccountSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2792D2A59F783003C6CDA /* AccountSettingsCell.swift */; };
-		E2D279472A59F783003C6CDA /* AccountSettingsCell.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D2792F2A59F783003C6CDA /* AccountSettingsCell.strings */; };
 		E2D2794A2A59F783003C6CDA /* TermsConditionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279352A59F783003C6CDA /* TermsConditionsCell.xib */; };
 		E2D2794B2A59F783003C6CDA /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D279362A59F783003C6CDA /* ProfileHeaderCell.swift */; };
 		E2D2794C2A59F783003C6CDA /* AppSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D279372A59F783003C6CDA /* AppSettingsCell.xib */; };
@@ -71,6 +67,7 @@
 		E2EF634A2A3D106F0084A8CA /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EF63442A3D106E0084A8CA /* OnboardingVC.swift */; };
 		E2EF634B2A3D106F0084A8CA /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EF63452A3D106E0084A8CA /* OnboardingCell.swift */; };
 		E2EF634E2A3D106F0084A8CA /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EF63492A3D106F0084A8CA /* OnboardingCell.xib */; };
+		E2EFFDBE2A881E1900C2E35C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EFFDBD2A881E1900C2E35C /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,18 +110,10 @@
 		E2AE59542A657B91002F8637 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		E2AE59552A657B91002F8637 /* FloatingTabbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingTabbar.swift; sourceTree = "<group>"; };
 		E2D279132A59F782003C6CDA /* ProfileHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderCell.xib; sourceTree = "<group>"; };
-		E2D279162A59F782003C6CDA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/TermsConditionsCell.strings; sourceTree = "<group>"; };
-		E2D279172A59F782003C6CDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TermsConditionsCell.strings; sourceTree = "<group>"; };
 		E2D2791B2A59F782003C6CDA /* AppSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsCell.swift; sourceTree = "<group>"; };
 		E2D2791C2A59F782003C6CDA /* TermsConditionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsConditionsCell.swift; sourceTree = "<group>"; };
-		E2D279202A59F783003C6CDA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AppSettingsCell.strings; sourceTree = "<group>"; };
-		E2D279212A59F783003C6CDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppSettingsCell.strings; sourceTree = "<group>"; };
 		E2D279252A59F783003C6CDA /* AccountSettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountSettingsCell.xib; sourceTree = "<group>"; };
-		E2D279282A59F783003C6CDA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ProfileHeaderCell.strings; sourceTree = "<group>"; };
-		E2D2792A2A59F783003C6CDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ProfileHeaderCell.strings; sourceTree = "<group>"; };
 		E2D2792D2A59F783003C6CDA /* AccountSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsCell.swift; sourceTree = "<group>"; };
-		E2D279302A59F783003C6CDA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AccountSettingsCell.strings; sourceTree = "<group>"; };
-		E2D279312A59F783003C6CDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AccountSettingsCell.strings; sourceTree = "<group>"; };
 		E2D279352A59F783003C6CDA /* TermsConditionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TermsConditionsCell.xib; sourceTree = "<group>"; };
 		E2D279362A59F783003C6CDA /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		E2D279372A59F783003C6CDA /* AppSettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppSettingsCell.xib; sourceTree = "<group>"; };
@@ -146,6 +135,7 @@
 		E2EF63442A3D106E0084A8CA /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		E2EF63452A3D106E0084A8CA /* OnboardingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		E2EF63492A3D106F0084A8CA /* OnboardingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
+		E2EFFDBD2A881E1900C2E35C /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,7 +313,6 @@
 			children = (
 				E2D2791C2A59F782003C6CDA /* TermsConditionsCell.swift */,
 				E2D279352A59F783003C6CDA /* TermsConditionsCell.xib */,
-				E2D279152A59F782003C6CDA /* TermsConditionsCell.strings */,
 			);
 			path = TermsConditionsCell;
 			sourceTree = "<group>";
@@ -333,7 +322,6 @@
 			children = (
 				E2D2791B2A59F782003C6CDA /* AppSettingsCell.swift */,
 				E2D279372A59F783003C6CDA /* AppSettingsCell.xib */,
-				E2D2791F2A59F783003C6CDA /* AppSettingsCell.strings */,
 			);
 			path = AppSettingsCell;
 			sourceTree = "<group>";
@@ -343,7 +331,6 @@
 			children = (
 				E2D279362A59F783003C6CDA /* ProfileHeaderCell.swift */,
 				E2D279132A59F782003C6CDA /* ProfileHeaderCell.xib */,
-				E2D279272A59F783003C6CDA /* ProfileHeaderCell.strings */,
 			);
 			path = ProfileHeaderCell;
 			sourceTree = "<group>";
@@ -353,7 +340,6 @@
 			children = (
 				E2D2792D2A59F783003C6CDA /* AccountSettingsCell.swift */,
 				E2D279252A59F783003C6CDA /* AccountSettingsCell.xib */,
-				E2D2792F2A59F783003C6CDA /* AccountSettingsCell.strings */,
 			);
 			path = AccountSettingsCell;
 			sourceTree = "<group>";
@@ -467,6 +453,7 @@
 				E24F8B5E2A4DEC53006CB187 /* CodableExt.swift */,
 				E24F8B662A4E3A55006CB187 /* ShowAlertExt.swift */,
 				E2AE59552A657B91002F8637 /* FloatingTabbar.swift */,
+				E2EFFDBD2A881E1900C2E35C /* CustomButton.swift */,
 				E272415E2A8378D200F1BFFC /* Helper.swift */,
 			);
 			path = Utilities;
@@ -546,18 +533,14 @@
 				E2D279382A59F783003C6CDA /* ProfileHeaderCell.xib in Resources */,
 				E2D2794C2A59F783003C6CDA /* AppSettingsCell.xib in Resources */,
 				E2345B4C2A7D8C10009339A8 /* TermsAndConditions.html in Resources */,
-				E2D279472A59F783003C6CDA /* AccountSettingsCell.strings in Resources */,
-				E2D279392A59F783003C6CDA /* TermsConditionsCell.strings in Resources */,
 				E2AE59512A65410A002F8637 /* LogoutCell.xib in Resources */,
 				E26352532A45B2FC00587953 /* GoogleService-Info.plist in Resources */,
 				E2D2794A2A59F783003C6CDA /* TermsConditionsCell.xib in Resources */,
 				E2EF63372A3D077A0084A8CA /* LoginVC.xib in Resources */,
 				E25A13582A62B21F0039DAE6 /* CardCell.xib in Resources */,
-				E2D2793F2A59F783003C6CDA /* AppSettingsCell.strings in Resources */,
 				E273E2462A487EBA00722832 /* SignupVC.xib in Resources */,
 				E2D279422A59F783003C6CDA /* AccountSettingsCell.xib in Resources */,
 				E2EF63292A3C92440084A8CA /* LaunchScreen.storyboard in Resources */,
-				E2D279432A59F783003C6CDA /* ProfileHeaderCell.strings in Resources */,
 				E2EF63262A3C92440084A8CA /* Assets.xcassets in Resources */,
 				E2EF63242A3C92420084A8CA /* Main.storyboard in Resources */,
 				E2EF634E2A3D106F0084A8CA /* OnboardingCell.xib in Resources */,
@@ -657,6 +640,7 @@
 				E2EF634B2A3D106F0084A8CA /* OnboardingCell.swift in Sources */,
 				E2D279462A59F783003C6CDA /* AccountSettingsCell.swift in Sources */,
 				E2EF631F2A3C92420084A8CA /* SceneDelegate.swift in Sources */,
+				E2EFFDBE2A881E1900C2E35C /* CustomButton.swift in Sources */,
 				E25A13572A62B21F0039DAE6 /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,42 +648,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E2D279152A59F782003C6CDA /* TermsConditionsCell.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2D279162A59F782003C6CDA /* ar */,
-				E2D279172A59F782003C6CDA /* en */,
-			);
-			name = TermsConditionsCell.strings;
-			sourceTree = "<group>";
-		};
-		E2D2791F2A59F783003C6CDA /* AppSettingsCell.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2D279202A59F783003C6CDA /* ar */,
-				E2D279212A59F783003C6CDA /* en */,
-			);
-			name = AppSettingsCell.strings;
-			sourceTree = "<group>";
-		};
-		E2D279272A59F783003C6CDA /* ProfileHeaderCell.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2D279282A59F783003C6CDA /* ar */,
-				E2D2792A2A59F783003C6CDA /* en */,
-			);
-			name = ProfileHeaderCell.strings;
-			sourceTree = "<group>";
-		};
-		E2D2792F2A59F783003C6CDA /* AccountSettingsCell.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2D279302A59F783003C6CDA /* ar */,
-				E2D279312A59F783003C6CDA /* en */,
-			);
-			name = AccountSettingsCell.strings;
-			sourceTree = "<group>";
-		};
 		E2EF63222A3C92420084A8CA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
